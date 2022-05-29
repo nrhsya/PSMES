@@ -369,7 +369,7 @@
                 
                 <!-- Current Page Name -->
                 <div class="sidebar-mini-header text-center" style="background-color:#FCDA37; color:#11ADA4;">
-                    <h5>Industry Evaluation Page</h5>
+                    <h5>PSM Coordinator</h5>
                 </div>
 
                 <ul class="list-inline components">
