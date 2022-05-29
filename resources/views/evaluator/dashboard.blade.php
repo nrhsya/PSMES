@@ -376,6 +376,9 @@
                         <li>
                             <a class="customFont" href="/studentEvaluationSchedule">Industry Evaluation</a>
                         </li><br>
+                        <li>
+                            <a class="customFont" href="/Reminder">Reminder</a>
+                        </li><br>
                     </center>
                 </ul>
             </nav>
