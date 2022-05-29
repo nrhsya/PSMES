@@ -1,4 +1,4 @@
-@extends('layouts.PSMCoordinatorHomepageStyle')
+@extends('layouts.studentHomepageStyle')
 
 @section('content')
 <div class="container">
