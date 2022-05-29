@@ -70,6 +70,29 @@ Route::get('/', function () {
     Route::get('manageEvaluationDate', function () {
         return view('manageTop20/manageEvaluationDate');
     });
+
+
+   //route to rubric mainpage
+    
+    Route::get('HomePage', function () {
+        return view('managerubric/HomePage');
+    });
+
+   //route to AddRubric
+     Route::get('AddRubric', function () {
+        return view('managerubric/AddRubric');
+    });
+
+      //route to EditDeleteRubric
+    Route::get('EditDeleteRubric', function () {
+        return view('managerubric/EditDeleteRubric');
+    });
+
+     //route to ViewRubric
+    Route::get('ViewRubric', function () {
+        return view('managerubric/ViewRubric');
+    });
+
 //});
 
 /*

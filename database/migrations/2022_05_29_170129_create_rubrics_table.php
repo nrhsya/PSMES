@@ -15,6 +15,17 @@ return new class extends Migration
     {
         Schema::create('rubrics', function (Blueprint $table) {
             $table->id();
+            $table->string('rubric_id');
+            $table->string('competency');
+            $table->double('excellent_grade');
+            $table->double('good_grade');
+            $table->double('moderate_grade');
+            $table->double('weak_grade');
+            $table->double('vweak_grade');
+            $table->double('fail_grade');
+            $table->double('weightage');
+            $table->double('mark_given');
+            $table->double('final_percent');
             $table->timestamps();
         });
     }
