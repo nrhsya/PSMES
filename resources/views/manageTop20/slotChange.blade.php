@@ -43,7 +43,7 @@
                 </div>
             </div><br><br>
 
-            <a href="#" class="btn btn-success btn-lg" id="customButton">Confirm Change</a>
+            <a href="#" class="btn btn-success btn-lg" id="customButton" onclick="ConfirmChangeBtn()">Confirm Change</a>
         </form>
     </div>
 @endsection
