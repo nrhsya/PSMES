@@ -183,3 +183,8 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
      
     });
 });
+
+//Evaluator
+Route::get('Reminder', function () {
+    return view('ManageReminder/Reminder');
+});
