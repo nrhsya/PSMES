@@ -43,8 +43,7 @@
                 </div>
             </div><br><br>
 
-            <a href="#" class="btn btn-success btn-lg" id="customButton">Confirm Attendance</a>
-            <a href="slotChange" class="btn btn-success btn-lg" id="customButton">Request Slot Change</a>
+            <a href="#" class="btn btn-success btn-lg" id="customButton">Confirm Change</a>
         </form>
     </div>
 @endsection
