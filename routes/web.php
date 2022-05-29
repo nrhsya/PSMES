@@ -120,7 +120,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Route::get('/studentHomepage', 'StudentController@index')->name('student')->middleware('student');
 
 
-//PSM Coordinator
+/*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR
+|--------------------------------------------------------------------------
+*/
 Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],function(){
     Route::get('dashboard',[PSMCoordinatorController::class,'homepage'])->name('coordinator.dashboard');
     Route::get('profile',[PSMCoordinatorController::class,'profile'])->name('coordinator.profile');
@@ -128,7 +132,11 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
   
 }); 
 
-//Students
+/*
+|--------------------------------------------------------------------------
+| STUDENT
+|--------------------------------------------------------------------------
+*/
 Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
     Route::get('dashboard',[StudentController::class,'homepage'])->name('student.dashboard');
     Route::get('profile',[StudentController::class,'profile'])->name('student.profile');
