@@ -37,7 +37,7 @@ class PSMCoordinatorController extends Controller
 
     public function EditReport($id ){
         $data_report = \App\Models\Report::find($id);
-        return view('coordinator/ReportModule/EditReport',['data_report'=>$data_report]);
+        return view('coordinator\ReportModule\EditReport',['data_report'=>$data_report]);
     }
 
     public function updateReport(Request $request,$id){

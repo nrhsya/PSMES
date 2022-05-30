@@ -390,7 +390,7 @@
                             <a class="customFont" href="/industryEvaluationMainpage">Industry Evaluation</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="/ReportModule/ReportPage">Report</a>
+                            <a class="customFont" href="/ReportPage">Report</a>
                         </li>
                     </center>
                 </ul>

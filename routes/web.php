@@ -152,6 +152,11 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
     Route::get('dashboard',[PSMCoordinatorController::class,'homepage'])->name('coordinator.dashboard');
     Route::get('profile',[PSMCoordinatorController::class,'profile'])->name('coordinator.profile');
     Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
+    Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
+    Route::get('/reportdata','App\Http\Controllers\PSMCoordinatorController@ReportPage');
+    Route::post('reportdata/create','App\Http\Controllers\PSMCoordinatorController@createReport');
+    Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\PSMCoordinatorController@EditReport');
+    Route::post('/reportdata/{id}/update','App\Http\Controllers\PSMCoordinatorController@updateReport');
   
 }); 
 
@@ -187,4 +192,10 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
 //Evaluator
 Route::get('Reminder', function () {
     return view('ManageReminder/Reminder');
+});
+
+//Report
+
+Route::get('ReportPage', function () {
+    return view('ReportModule/ReportPage');
 });
