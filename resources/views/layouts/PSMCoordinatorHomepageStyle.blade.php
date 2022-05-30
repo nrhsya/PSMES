@@ -255,6 +255,30 @@
                 color: white;
             }
 
+            #mycustomButton {
+                background-color: #11ADA4;
+                border: black;
+                color: white;
+                padding: 20px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                ;
+            }
+
+            #mycustomButton:hover {
+                background-color: #FCDA37;
+                color: #0958A3;
+            }
+
+            #mycustomAlert {
+                background-color: #436e70;
+                border: none;
+                color: white;
+            }
+
+
             /* ---------------------------------------------------
                 SCROLL BAR
             ----------------------------------------------------- */

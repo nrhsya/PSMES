@@ -29,7 +29,7 @@
         @endif
     
         <br>
-		<h1 style="text-align:center ; position:left">Generate Report</h1><br>
+		<h1 style="text-align:center ; position:left;background-color:#11ADA4; padding:20px; color:white" ><b>Generate Report</b></h1><br>
 		<hr><br>
 		
 		<center>

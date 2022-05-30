@@ -92,7 +92,7 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 
-Route::get('reportDashbaord', function () {
+Route::get('reportDashboard', function () {
     return view('ReportModule/reportDashboard');
 });
 Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');

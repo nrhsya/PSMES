@@ -29,19 +29,16 @@
         @endif
     
         <br>
-		<h1 style="text-align:center ; position:left">Generate Report</h1><br>
+		<h1 style="text-align:center ; position:left;background-color:#11ADA4; padding:20px; color:white" ><b>Generate Report</b></h1><br>
 		<hr><br>
 		
-		<center>
-        
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                 Add 
-        </button><br><br>
-        
+		<center><br><br>
 
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          </div>
+    <a class="btn btn-success btn-lg" id="mycustomButton" href="/reportdata"><b>Report Form</b></a> 
+    <a class="btn btn-success btn-lg" id="mycustomButton" href="/reportdata"><b>Excellent Students</b></a>
+    <a class="btn btn-success btn-lg" id="mycustomButton" href="/reportdata"><b>Student Progress</b></a>
+
+                         
                      </div>
                 </div>
             </div>
