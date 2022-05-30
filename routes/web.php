@@ -4,6 +4,8 @@ use App\Http\Controllers\PSMCoordinatorController;
 use App\Http\Controllers\StudentController;
 
 use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\Evaluator\EvaluatorController;
 
 
@@ -181,11 +183,7 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
     Route::get('profile',[PSMCoordinatorController::class,'profile'])->name('coordinator.profile');
     Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
     Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
-    Route::get('/reportdata','App\Http\Controllers\PSMCoordinatorController@ReportPage');
-    Route::post('reportdata/create','App\Http\Controllers\PSMCoordinatorController@createReport');
-    Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\PSMCoordinatorController@EditReport');
-    Route::post('/reportdata/{id}/update','App\Http\Controllers\PSMCoordinatorController@updateReport');
-  
+   
 }); 
 
 /*
@@ -224,6 +222,7 @@ Route::get('Reminder', function () {
 
 //Report
 
-Route::get('ReportPage', function () {
-    return view('ReportModule/ReportPage');
-});
+Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+    Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+    Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
+    Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
