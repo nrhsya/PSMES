@@ -10,15 +10,16 @@
 
 <div class="container rounded bg-white">
         <div class="row">
-           
+           <center>
             <div class="col-12"style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
 
-            <div style="padding:5px;">
+            <div style="padding:2px; background-color:#e2e9e9">
             <a id="customButton" href="/AddRubric"><b>PSM 1</b></a>
             <a id="customButton" href="/EditDeleteRubric"><b>PSM 2</b></a>
             <a id="customButton" href="/viewRubric"><b>PTA</b></a>
+
         </div>
-     
+
           
                 
                 <h1>Rubric Information</h1><br>
