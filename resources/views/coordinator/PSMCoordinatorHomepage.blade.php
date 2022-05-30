@@ -17,7 +17,7 @@
             <a class="mb-3" id="customButton" href="/HomePage"><b>View Rubric</b></a>
             <a class="mb-3" id="customButton" href="#"><b>View Evaluation Details & Mark</b></a>
             <a class="mb-3" id="customButton" href="/evaluationSchedule"><b>View Industry Evaluation Schedule</b></a>
-            <a class="mb-3" id="customButton" href="#"><b>View Report</b></a>
+            <a class="mb-3" id="customButton" href="/reportDashboard"><b>View Report</b></a>
         </div>
     </div>
 @endsection
