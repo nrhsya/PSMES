@@ -378,7 +378,7 @@
                             <a class="customFont" href="/PSMCoordinatorHomepage">Home</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="#">Student FYP Details</a>
+                            <a class="customFont" href="/FYPMainPage">FYP Details</a>
                         </li><br>
                         <li>
                             <a class="customFont" href="/HomePage">Rubric</a>

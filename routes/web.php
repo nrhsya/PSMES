@@ -93,6 +93,34 @@ Route::get('/', function () {
         return view('managerubric/ViewRubric');
     });
 
+
+    //route to FYP mainpage
+    
+    Route::get('FYPMainPage', function () {
+        return view('ManageFYPDetails/FYPMainPage');
+    });
+
+   //route to AddFYPDetails
+     Route::get('AddFYPDetails', function () {
+        return view('ManageFYPDetails/AddFYPDetails');
+    });
+
+      //route to EditFYPDetails
+    Route::get('EditFYPDetails', function () {
+        return view('ManageFYPDetails/EditFYPDetails');
+    });
+
+     //route to ViewDeleteFYPDetails
+    Route::get('ViewDeleteFYPDetails', function () {
+        return view('ManageFYPDetails/ViewDeleteFYPDetails');
+    });
+
+     //route to ViewFYPDetails
+     Route::get('ViewFYPDetails', function () {
+        return view('ManageFYPDetails/ViewFYPDetails');
+    });
+
+
 //});
 
 /*
