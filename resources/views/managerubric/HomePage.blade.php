@@ -8,7 +8,7 @@
 @section('content')
 
     <!-- Page Content  -->
-    <div class="row text-center" style="padding:20px;background-color:#e2e9e9">
+    <div style="padding:20px;background-color:#e2e9e9">
         <div class="text-center mb-5" style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
             <h1><b>Rubric Homepage</b></h1>
         </div>
