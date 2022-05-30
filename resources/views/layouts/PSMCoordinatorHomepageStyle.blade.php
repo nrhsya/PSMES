@@ -466,7 +466,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Approve All Requests</button>
+                        <button type="submit" class="btn btn-primary text-center">Approve All Requests</button>
                     </form>
                 </div>
                     
