@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- put logo on browser tab -->
+        <link rel="icon" href="images/logoUMPwhite.png">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
@@ -252,6 +255,30 @@
                 color: white;
             }
 
+            #mycustomButton {
+                background-color: #11ADA4;
+                border: black;
+                color: white;
+                padding: 20px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                ;
+            }
+
+            #mycustomButton:hover {
+                background-color: #FCDA37;
+                color: #0958A3;
+            }
+
+            #mycustomAlert {
+                background-color: #436e70;
+                border: none;
+                color: white;
+            }
+
+
             /* ---------------------------------------------------
                 SCROLL BAR
             ----------------------------------------------------- */
@@ -281,9 +308,6 @@
                 text-align: center;
             }
         </style>
-        
-        <!-- put logo on browser tab -->
-        <link rel="icon" href="images/logoUMPwhite.png">
     </head>
 
     <body>
@@ -369,7 +393,7 @@
                 
                 <!-- Current Page Name -->
                 <div class="sidebar-mini-header text-center" style="background-color:#FCDA37; color:#11ADA4;">
-                    <h5>Industry Evaluation Page</h5>
+                    <h5>PSM Coordinator</h5>
                 </div>
 
                 <ul class="list-inline components">
@@ -378,7 +402,7 @@
                             <a class="customFont" href="/PSMCoordinatorHomepage">Home</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="#">Student FYP Details</a>
+                            <a class="customFont" href="/FYPMainPage">FYP Details</a>
                         </li><br>
                         <li>
                             <a class="customFont" href="/HomePage">Rubric</a>
@@ -390,7 +414,7 @@
                             <a class="customFont" href="/industryEvaluationMainpage">Industry Evaluation</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="/ReportModule/ReportPage">Report</a>
+                            <a class="customFont" href="/reportDashboard">Report</a>
                         </li>
                     </center>
                 </ul>
@@ -442,7 +466,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Approve All Requests</button>
+                        <button type="submit" class="btn btn-primary text-center">Approve All Requests</button>
                     </form>
                 </div>
                     

@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+  <!-- put logo on browser tab -->
+  <link rel="icon" href="images/logoUMPwhite.png">
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
@@ -202,9 +206,6 @@
             
         }
   </style>
-
-  <!-- put logo on browser tab -->
-  <link rel="icon" href="images/logoUMPwhite.png">
 
 </head>
     <body style="background-color:#11ADA4;">

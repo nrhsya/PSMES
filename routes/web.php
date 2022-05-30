@@ -4,6 +4,8 @@ use App\Http\Controllers\PSMCoordinatorController;
 use App\Http\Controllers\StudentController;
 
 use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\Evaluator\EvaluatorController;
 
 
@@ -45,6 +47,12 @@ Route::get('/', function () {
     //Route::get('/PSMCoordinatorHomepage', 'CoordinatorController@index')->name('PSMCoordinator');
 
     //route to PSM Coordinator Homepage
+
+    /*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (MANAGETOP20 MODULE)
+|--------------------------------------------------------------------------
+*/
     Route::get('PSMCoordinatorHomepage', function () {
         return view('manageTop20/PSMCoordinatorHomepage');
     });
@@ -71,6 +79,32 @@ Route::get('/', function () {
         return view('manageTop20/manageEvaluationDate');
     });
 
+  /*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (MANAGE TOP20 MODULE END)
+|--------------------------------------------------------------------------
+*/
+
+
+ /*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (REPORT MODULE)
+|--------------------------------------------------------------------------
+*/
+
+Route::get('reportDashboard', function () {
+    return view('ReportModule/reportDashboard');
+});
+Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
+Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
+
+/*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (REPORT MODULE END)
+|--------------------------------------------------------------------------
+*/
 
    //route to rubric mainpage
     
@@ -92,6 +126,34 @@ Route::get('/', function () {
     Route::get('ViewRubric', function () {
         return view('managerubric/ViewRubric');
     });
+
+
+    //route to FYP mainpage
+    
+    Route::get('FYPMainPage', function () {
+        return view('ManageFYPDetails/FYPMainPage');
+    });
+
+   //route to AddFYPDetails
+     Route::get('AddFYPDetails', function () {
+        return view('ManageFYPDetails/AddFYPDetails');
+    });
+
+      //route to EditFYPDetails
+    Route::get('EditFYPDetails', function () {
+        return view('ManageFYPDetails/EditFYPDetails');
+    });
+
+     //route to ViewDeleteFYPDetails
+    Route::get('ViewDeleteFYPDetails', function () {
+        return view('ManageFYPDetails/ViewDeleteFYPDetails');
+    });
+
+     //route to ViewFYPDetails
+     Route::get('ViewFYPDetails', function () {
+        return view('ManageFYPDetails/ViewFYPDetails');
+    });
+
 
 //});
 
@@ -145,19 +207,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 /*
 |--------------------------------------------------------------------------
-| PSM COORDINATOR
+| PSM COORDINATOR LOGIN
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],function(){
     Route::get('dashboard',[PSMCoordinatorController::class,'homepage'])->name('coordinator.dashboard');
     Route::get('profile',[PSMCoordinatorController::class,'profile'])->name('coordinator.profile');
     Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
-  
+    Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
+   
 }); 
 
 /*
 |--------------------------------------------------------------------------
-| STUDENT
+| STUDENT LOGIN
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
@@ -165,7 +228,12 @@ Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
     Route::get('profile',[StudentController::class,'profile'])->name('student.profile');
     Route::get('settings',[StudentController::class,'settings'])->name('student.settings');
 }); 
-      
+  
+/*
+|--------------------------------------------------------------------------
+| EVALUATOR LOGIN
+|--------------------------------------------------------------------------
+*/
 
 Route::prefix('evaluator')->name('evaluator.')->group(function(){
 
@@ -183,3 +251,18 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
      
     });
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| EVALUATOR 
+|--------------------------------------------------------------------------
+*/
+//Evaluator
+Route::get('Reminder', function () {
+    return view('ManageReminder/Reminder');
+});
+
+
+
+

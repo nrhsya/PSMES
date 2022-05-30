@@ -368,7 +368,7 @@
                             <a class="customFont" href="#">Student FYP Details</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="#">Rubric</a>
+                            <a class="customFont" href="/HomePage">Rubric</a>
                         </li><br>
                         <li>
                             <a class="customFont" href="#">Evaluation Details and Mark</a>
@@ -455,6 +455,16 @@
                         $('#sidebar').toggleClass('active');
                     });
                 });
+
+            //when the Confirm Attendance button is clicked
+            function ConfirmAttendanceBtn() {
+                alert("Your attendance status has been saved !");
+            }
+
+            //when the Confirm Change button is clicked
+            function ConfirmChangeBtn() {
+                alert("The PSM Coordinator has been notified of your slot change request !");
+            }
         </script>
     </body>
 </html>
