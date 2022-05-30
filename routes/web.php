@@ -47,6 +47,12 @@ Route::get('/', function () {
     //Route::get('/PSMCoordinatorHomepage', 'CoordinatorController@index')->name('PSMCoordinator');
 
     //route to PSM Coordinator Homepage
+
+    /*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (MANAGETOP20 MODULE)
+|--------------------------------------------------------------------------
+*/
     Route::get('PSMCoordinatorHomepage', function () {
         return view('manageTop20/PSMCoordinatorHomepage');
     });
@@ -73,6 +79,32 @@ Route::get('/', function () {
         return view('manageTop20/manageEvaluationDate');
     });
 
+  /*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (MANAGE TOP20 MODULE END)
+|--------------------------------------------------------------------------
+*/
+
+
+ /*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (REPORT MODULE)
+|--------------------------------------------------------------------------
+*/
+
+Route::get('reportDashbaord', function () {
+    return view('ReportModule/reportDashboard');
+});
+Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
+Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
+
+/*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (REPORT MODULE END)
+|--------------------------------------------------------------------------
+*/
 
    //route to rubric mainpage
     
@@ -175,7 +207,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 /*
 |--------------------------------------------------------------------------
-| PSM COORDINATOR
+| PSM COORDINATOR LOGIN
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],function(){
@@ -188,7 +220,7 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
 
 /*
 |--------------------------------------------------------------------------
-| STUDENT
+| STUDENT LOGIN
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
@@ -196,7 +228,12 @@ Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
     Route::get('profile',[StudentController::class,'profile'])->name('student.profile');
     Route::get('settings',[StudentController::class,'settings'])->name('student.settings');
 }); 
-      
+  
+/*
+|--------------------------------------------------------------------------
+| EVALUATOR LOGIN
+|--------------------------------------------------------------------------
+*/
 
 Route::prefix('evaluator')->name('evaluator.')->group(function(){
 
@@ -215,14 +252,17 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
     });
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| EVALUATOR 
+|--------------------------------------------------------------------------
+*/
 //Evaluator
 Route::get('Reminder', function () {
     return view('ManageReminder/Reminder');
 });
 
-//Report
 
-Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
-    Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
-    Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
-    Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
+
+
