@@ -29,7 +29,7 @@
                 <input name="endDate" type="date" class="form-control" id="exampleFormControlInput1">
             </div>
 
-            <a href="#" class="btn btn-success btn-lg text-center" id="customButton">Save</a>
+            <a href="#" class="btn btn-success btn-lg text-center" id="customButton" onclick="saveBtn()">Save</a>
         </form>
     </div>
 @endsection
