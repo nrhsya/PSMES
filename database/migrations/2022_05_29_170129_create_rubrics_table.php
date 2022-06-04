@@ -17,15 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('rubric_id');
             $table->string('competency');
-            $table->double('excellent_grade');
-            $table->double('good_grade');
-            $table->double('moderate_grade');
-            $table->double('weak_grade');
-            $table->double('vweak_grade');
-            $table->double('fail_grade');
-            $table->double('weightage');
-            $table->double('mark_given');
-            $table->double('final_percent');
+            $table->string('excellent_grade');
+            $table->string('good_grade');
+            $table->string('moderate_grade');
+            $table->string('weak_grade');
+            $table->string('vweak_grade');
+            $table->string('fail_grade');
+            $table->string('weightage');
+            $table->string('mark_given');
+            $table->string('final_percent');
             $table->timestamps();
         });
     }

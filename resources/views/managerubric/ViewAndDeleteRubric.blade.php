@@ -2,7 +2,7 @@
 @extends('layouts.PSMCoordinatorHomepageStyle')
 
 <head>
-    <title> Edit OR Delete Rubric Homepage | PSMES</title>
+    <title> View Rubric  | PSMES</title>
 </head>
 <!-- call function -->
 @section('content') 
@@ -28,6 +28,7 @@
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
                     <table class="table table-hover table-success table-striped" width="100%">
                         <tr>
+                            <th> ID</th>
                             <th>Rubric ID</th>
                             <th>Competency</th>
                             <th>Excellent Grade</th>
@@ -41,22 +42,24 @@
                             <th>Final Percent</th>
                             <th colspan="2">Update / Delete</th>
                         </tr>
-                        
-                          <tr> 
-                            <td>PSM1</td>
-                            <td>sTORYBOARD</td>
-                            <td>5</td>
-                            <td>4</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>5</td>
-                            <td>2</td>
-                            <td>2</td>
+                        @foreach($data_rubric as $rubric)
+                        <tr>
+                            <td>{{$rubric->id}}</td>
+                            <td>{{$rubric->rubric_id}}</td>
+                            <td>{{$rubric->competency}}</td>
+                            <td>{{$rubric->excellent_grade}}</td>
+                            <td>{{$rubric->good_grade}}</td>
+                            <td>{{$rubric->moderate_grade}}</td>
+                            <td>{{$rubric->weak_grade}}</td>
+                            <td>{{$rubric->vweak_grade}}</td>
+                            <td>{{$rubric->fail_grade}}</td>
+                            <td>{{$rubric->weightage}}</td>
+                            <td>{{$rubric->mark_given}}</td>
+                            <td>{{$rubric->final_percent}}</td>
                             <td><a href="" class="btn btn-success">Update</a></td>
                             <td><a href="" class="btn btn-danger" >Delete</a></td>
                     </tr> 
+                    @endforeach
                     </table>
                 </div><br>
 
