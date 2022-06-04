@@ -506,6 +506,11 @@
             function publishBtn() {
                 alert("The Evaluation Schedule is successfully published !");
             }
+
+            //when the generate top 20 students button is clicked
+            function generateTop20() {
+                alert("The Top 20 Students are successfully generated !");
+            }
         </script>
     </body>
 </html>
