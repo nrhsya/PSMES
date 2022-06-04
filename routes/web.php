@@ -62,6 +62,9 @@ Route::get('/', function () {
         return view('manageTop20/viewMarks');
     });*/
     Route::get('viewMarks','App\Http\Controllers\EvaluationMarksController@viewMarks');
+
+    //route to generate top 20 students
+    Route::get('generateTop','App\Http\Controllers\Top20Controller@generateTop');
     
     //route to industry evaluation mainpage
     Route::get('industryEvaluationMainpage', function () {
