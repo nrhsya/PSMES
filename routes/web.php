@@ -82,6 +82,9 @@ Route::get('/', function () {
         return view('manageTop20/manageEvaluationDate');
     });
 
+    //add evaluation date into database (create)
+    Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
+
   /*
 |--------------------------------------------------------------------------
 | PSM COORDINATOR (MANAGE TOP20 MODULE END)

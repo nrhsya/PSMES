@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Schedule;
+use \App\Models\ScheduleDateHistory;
 
 class ScheduleController extends Controller
 {
@@ -16,9 +17,9 @@ class ScheduleController extends Controller
 
     //function to add new industry evaluation date
     public function addEvDate(Request $request){
-        \App\Models\Schedule::create($request->all());
+        \App\Models\ScheduleDateHistory::create($request->all());
 
-        return redirect('evaluationSchedule')->with('success','Industry Evaluation Date Successfully Added');
+        return redirect('/manageEvaluationDate')->with('success','Industry Evaluation Date Successfully Added');
     }
 
     //function to edit existing industry evaluation date (fill in form)
