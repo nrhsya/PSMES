@@ -142,7 +142,7 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
     });
 /*
 |--------------------------------------------------------------------------
-| PSM COORDINATOR (Rubric MODULE )
+| END PSM COORDINATOR (Rubric MODULE )
 |--------------------------------------------------------------------------
 */
 

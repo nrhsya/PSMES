@@ -11,7 +11,7 @@ class RubricController extends Controller
     
     public function viewRubric(){
         $data_rubric = \App\Models\Rubric::all();
-        return view('/ViewAndDeleteRubric', ['data_rubric'=> $data_rubric]);
+        return view('managerubric/ViewRubric', ['data_rubric'=> $data_rubric]);
 }
     
     public function createRubric(Request $request ){
