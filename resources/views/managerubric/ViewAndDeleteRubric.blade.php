@@ -13,6 +13,7 @@
              {{session('success')}}
         </div>
         @endif
+        
 
 <div class="container rounded bg-white">
         <div class="row">
@@ -62,10 +63,11 @@
                             <td>{{$rubric->weightage}}</td>
                             <td>{{$rubric->mark_given}}</td>
                             <td>{{$rubric->final_percent}}</td>
-                            <td><a href="rubricdata/{{rubric->id}}/EditRubric">Update</a></td>
-                            @endforeach
+                            
+                            <td><a href="rubricdata/{{$rubric->id}}/edit" class="btn btn-success">Update</a></td>
+                            <td><a href="rubricdata/{{$rubric->id}}/delete" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a></td>
                     </tr> 
-                  
+                    @endforeach 
                     </table>
                 </div><br>
 

@@ -116,6 +116,8 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 
    //route to rubric mainpage
    Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
+
+
   
     Route::get('HomePage', function () {
         return view('managerubric/HomePage');
@@ -128,18 +130,17 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 
    
     Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
-    Route::get('/rubricdata/{id}/EditRubric','App\Http\Controllers\RubricController@EditRubric');
     //read
    
-      //route to EditDeleteRubric
-    Route::get('EditRubric', function () {
-        return view('managerubric/EditRubric');
-    });
 
-     //route to ViewRubric
-    Route::get('ViewAndDeleteRubric', function () {
-        return view('managerubric/ViewAndDeleteRubric');
-    });
+     //edit form
+Route::get('/rubricdata/{id}/edit','App\Http\Controllers\RubricController@EditRubric');
+
+//update
+Route::post('/rubricdata/{id}/update','App\Http\Controllers\RubricController@update');
+
+//delete
+Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@delete');
 /*
 |--------------------------------------------------------------------------
 | END PSM COORDINATOR (Rubric MODULE )
