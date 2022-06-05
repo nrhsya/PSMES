@@ -6,7 +6,13 @@
 </head>
 <!-- call function -->
 @section('content') 
-
+ </style>
+    
+        @if(session('success'))
+        <div class="alert alert-primary" role="alert">
+             {{session('success')}}
+        </div>
+        @endif
 
 <div class="container rounded bg-white">
         <div class="row">
@@ -42,7 +48,7 @@
                             <th>Final Percent</th>
                             <th colspan="2">Update / Delete</th>
                         </tr>
-                        @foreach($data_rubric as $rubric)
+                    
                         <tr>
                             <td>{{$rubric->id}}</td>
                             <td>{{$rubric->rubric_id}}</td>
@@ -56,10 +62,10 @@
                             <td>{{$rubric->weightage}}</td>
                             <td>{{$rubric->mark_given}}</td>
                             <td>{{$rubric->final_percent}}</td>
-                            <td><a href="" class="btn btn-success">Update</a></td>
-                            <td><a href="" class="btn btn-danger" >Delete</a></td>
+                            <td><a href="rubricdata/{{rubric->id}}/EditRubric">Update</a></td>
+                           
                     </tr> 
-                    @endforeach
+                  
                     </table>
                 </div><br>
 

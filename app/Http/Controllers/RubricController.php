@@ -10,9 +10,9 @@ class RubricController extends Controller
 { 
     
     public function viewRubric(){
-    $data_parcel = \App\Models\Rubric::all();
+        $data_rubric =\App\Models\Rubric::all();
 
-    return view('ViewAndDeleteRubric', ['data_rubric'=> $data_rubric]);
+      return view('managerubric/ViewAndDeleteRubric',['data_rubric'=> $data_rubric]);
 }
     
     public function createRubric(Request $request ){
@@ -20,4 +20,11 @@ class RubricController extends Controller
 
         return redirect('/HomePage')->with('success','New Data Successfully Inserted');
     } 
+
+    
+    public function EditRubric($id ){
+        $data_rubric = \App\Models\Rubric::find($id);
+        return view('managerubric/EditRubric',['data_rubric'=>$data_rubric]);
+    }
 }
+
