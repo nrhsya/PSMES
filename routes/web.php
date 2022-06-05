@@ -115,7 +115,8 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 */
 
    //route to rubric mainpage
-    
+   Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
+  
     Route::get('HomePage', function () {
         return view('managerubric/HomePage');
     });
@@ -125,14 +126,11 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
         return view('managerubric/AddRubric');
     });
 
-    Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
+   
     Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
     Route::get('/rubricdata/{id}/EditRubric','App\Http\Controllers\RubricController@EditRubric');
     //read
    
-
-
-
       //route to EditDeleteRubric
     Route::get('EditRubric', function () {
         return view('managerubric/EditRubric');

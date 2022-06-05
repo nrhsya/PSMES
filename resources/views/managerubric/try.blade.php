@@ -13,7 +13,6 @@
              {{session('success')}}
         </div>
         @endif
-        
 
 <div class="container rounded bg-white">
         <div class="row">
@@ -63,10 +62,10 @@
                             <td>{{$rubric->weightage}}</td>
                             <td>{{$rubric->mark_given}}</td>
                             <td>{{$rubric->final_percent}}</td>
-                            
-                           
+                            <td><a href="rubricdata/{{rubric->id}}/EditRubric">Update</a></td>
+                            @endforeach
                     </tr> 
-                    @endforeach 
+                  
                     </table>
                 </div><br>
 
