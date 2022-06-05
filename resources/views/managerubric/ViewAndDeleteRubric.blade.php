@@ -48,7 +48,7 @@
                             <th>Final Percent</th>
                             <th colspan="2">Update / Delete</th>
                         </tr>
-                    
+                        @foreach($data_rubric as $rubric)
                         <tr>
                             <td>{{$rubric->id}}</td>
                             <td>{{$rubric->rubric_id}}</td>
@@ -63,7 +63,7 @@
                             <td>{{$rubric->mark_given}}</td>
                             <td>{{$rubric->final_percent}}</td>
                             <td><a href="rubricdata/{{rubric->id}}/EditRubric">Update</a></td>
-                           
+                            @endforeach
                     </tr> 
                   
                     </table>
