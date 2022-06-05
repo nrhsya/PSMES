@@ -37,6 +37,26 @@ class ScheduleController extends Controller
         return redirect('evaluationSchedule')->with('success','Industry Evaluation Date Successfully Updated');
     }
 
+    //function for top 20 students to view evaluation schedule
+    public function viewStudSchedule() {
+        $data_schedule = \App\Models\Schedule::all();
+
+        return view('manageTop20/studentEvaluationSchedule', ['data_schedule'=> $data_schedule]);
+    }
+
+
+    //function for students to confirm their evaluation date details
+    function viewEvaluationDateDetails($id) {
+        $data_schedule = \App\Models\Schedule::find($id);
+
+        return view('manageTop20/confirmAttendance',['data_schedule'=>$data_schedule]);
+    }
+
+    //function to update evaluation date details
+    function updateEvaDateDetails() {
+        
+    }
+
     //function to assign industry evaluation dates/slots to top 20 students (randomly)
     public function assignSlot(){
 

@@ -22,30 +22,15 @@
                         <th>Evaluation Date</th>
                         <th>Attendance Status</th>
                     </tr>
-                    
+                    @foreach($data_schedule as $schedule)
                     <tr style="background-color:white;color:#0958A3;">
-                        <td>1</td>
-                        <td>CB19079</td>
-                        <td>NUR HASYA BINTI MOHD NORDIN</td>
-                        <td>null</td>
-                        <td><a href="/confirmAttendance" id="customButton"> Confirm Attendance</a></td>
+                        <td>{{$schedule->schedule_id}}</td>
+                        <td>{{$schedule->std_id}}</td>
+                        <td>{{$schedule->std_name}}</td>
+                        <td>{{$schedule->eva_date}}</td>
+                        <td><a href="scheduleData/{{$schedule->schedule_id}}/viewEvaluationDateDetails" id="customButton"> Confirm Attendance</a></td>
                     </tr>
-
-                    <tr style="background-color:white;color:#0958A3;">
-                        <td>2</td>
-                        <td>CB19000</td>
-                        <td>MUHAMMAD ALI</td>
-                        <td>null</td>
-                        <td><a href="/confirmAttendance" id="customButton"> Confirm Attendance</a></td>
-                    </tr>
-
-                    <tr style="background-color:white;color:#0958A3;">
-                        <td>3</td>
-                        <td>CD19000</td>
-                        <td>NURUL FATIHAH BINTI MUHAMAD</td>
-                        <td>null</td>
-                        <td><a href="/confirmAttendance" id="customButton"> Confirm Attendance</a></td>
-                    </tr>
+                    @endforeach
                 </table>
             </div>
         </div>

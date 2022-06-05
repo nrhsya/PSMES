@@ -201,14 +201,16 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
     });
 
     //route to student evaluation schedule page
-    Route::get('studentEvaluationSchedule', function () {
-        return view('manageTop20/studentEvaluationSchedule');
-    });
+    Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
+    // Route::get('studentEvaluationSchedule', function () {
+    //     return view('manageTop20/studentEvaluationSchedule');
+    // });
 
     //route to confirm attendance page
-    Route::get('confirmAttendance', function () {
-        return view('manageTop20/confirmAttendance');
-    });
+    Route::get('/scheduleData/{id}/viewEvaluationDateDetails','App\Http\Controllers\ScheduleController@viewEvaluationDateDetails');
+    // Route::get('confirmAttendance', function () {
+    //     return view('manageTop20/confirmAttendance');
+    // });
 
     //route to slot change page
     Route::get('slotChange', function () {

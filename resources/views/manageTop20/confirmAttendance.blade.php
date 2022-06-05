@@ -13,33 +13,33 @@
             <h1><b>Confirm Attendance Page</b></h1>
         </div>
         <!-- form to insert data -->
-        <form action="" method="POST">
-
+        <form action="/scheduleData/{{$data_schedule->schedule_id}}/updateEvaDateDetails" method="POST">
+        {{csrf_field()}}
             <h1 class="p-3">Please make sure you can attend the assigned slots before you click the "Confirm Attendance" button</h1>
 
             <div class="p-5" style="background-color:white;border-radius:10px;text-align:left;">
                 <!-- Student ID -->
                 <div class="form-group row">
-                <label for="exampleFormControlInput1" class="form-label"><b>Student ID</b></label>
-                <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Student ID</b></label>
+                    <input name="std_id" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->std_id}}" disabled>
                 </div><br><br>
                 
                 <!-- Student Name -->
                 <div class="form-group row">
                     <label for="exampleFormControlInput1" class="form-label"><b>Student Name</b></label>
-                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1">
+                    <input name="std_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->std_name}}" disabled>
                 </div><br><br>
 
                 <!-- FYP Title -->
                 <div class="form-group row">
                     <label for="exampleFormControlInput1" class="form-label"><b>FYP Title</b></label>
-                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1">
+                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1" disabled>
                 </div><br><br>
                 
                 <!-- Evaluation Date -->
                 <div class="form-group row">
                     <label for="exampleFormControlInput1" class="form-label"><b>Evaluation Date</b></label>
-                    <input name="endDate" type="date" class="form-control" id="exampleFormControlInput1">
+                    <input name="eva_date" type="date" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->eva_date}}" disabled>
                 </div>
             </div><br><br>
 
