@@ -12,13 +12,13 @@
         <div class="text-center mb-5" style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
             <h1><b>Rubric Homepage</b></h1>
         </div>
-
+<center>
         <div style="padding:10px;">
             <a id="customButton" href="/AddRubric"><b>Add Rubric</b></a>
             <a id="customButton" href="/EditDeleteRubric"><b>Edit Rubric/Delete Rubric</b></a>
-            <a id="customButton" href="/viewRubric"><b>View Rubric</b></a>
+            <a id="customButton" href="/ViewAndDeleteRubric"><b>View Rubric</b></a>
         </div>
-
+</center>
         
     </div>
 @endsection

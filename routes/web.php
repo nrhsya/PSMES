@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\Evaluator\EvaluatorController;
-
+use App\Http\Controllers\RubricController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,9 +111,15 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 | PSM COORDINATOR (REPORT MODULE END)
 |--------------------------------------------------------------------------
 */
+/*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (Rubric MODULE )
+|--------------------------------------------------------------------------
+*/
 
    //route to rubric mainpage
-    
+   Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
+  
     Route::get('HomePage', function () {
         return view('managerubric/HomePage');
     });
@@ -123,15 +129,25 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
         return view('managerubric/AddRubric');
     });
 
+   
+    Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
+    Route::get('/rubricdata/{id}/EditRubric','App\Http\Controllers\RubricController@EditRubric');
+    //read
+   
       //route to EditDeleteRubric
-    Route::get('EditDeleteRubric', function () {
-        return view('managerubric/EditDeleteRubric');
+    Route::get('EditRubric', function () {
+        return view('managerubric/EditRubric');
     });
 
      //route to ViewRubric
-    Route::get('ViewRubric', function () {
-        return view('managerubric/ViewRubric');
+    Route::get('ViewAndDeleteRubric', function () {
+        return view('managerubric/ViewAndDeleteRubric');
     });
+/*
+|--------------------------------------------------------------------------
+| END PSM COORDINATOR (Rubric MODULE )
+|--------------------------------------------------------------------------
+*/
 
 
     //route to FYP mainpage
