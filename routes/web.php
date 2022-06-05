@@ -115,7 +115,7 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 */
 
    //route to rubric mainpage
-   Route::resource('rubrics', RubricController::class);
+    
     Route::get('HomePage', function () {
         return view('managerubric/HomePage');
     });
