@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('std_name');
             $table->date('eva_date');
             $table->string('attendance_status');
+            $table->timestamps();
         });
     }
 

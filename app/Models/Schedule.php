@@ -10,4 +10,6 @@ class Schedule extends Model
     use HasFactory;
 
     protected $primaryKey = 'schedule_id';
+
+    protected $fillable = ['eva_date'];
 }

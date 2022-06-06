@@ -220,7 +220,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     /*
     |--------------------------------------------------------------------------
-    | STUDENT (MANAGETOP20 MODULE)
+    | STUDENT (MANAGETOP20 MODULE START)
     |--------------------------------------------------------------------------
     */
 
@@ -235,6 +235,9 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     // Route::get('confirmAttendance', function () {
     //     return view('manageTop20/confirmAttendance');
     // });
+
+    //route to update evaluation date 
+    Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
 
     //route to slot change page
     Route::get('slotChange', function () {

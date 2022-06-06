@@ -84,15 +84,19 @@ class ScheduleController extends Controller
     }
 
     //function for students to confirm their evaluation date details
-    function viewEvaluationDateDetails($id) {
+    public function viewEvaluationDateDetails($id) {
         $data_schedule = \App\Models\Schedule::find($id);
 
         return view('manageTop20/confirmAttendance',['data_schedule'=>$data_schedule]);
     }
 
     //function to update evaluation date details
-    function updateEvaDateDetails() {
-        
+    public function updateEvaDateDetails(Request $request,$id) {
+        $data_schedule = \App\Models\Schedule::find($id);
+        $data_schedule->update($request->all());
+
+        // return view('manageTop20/studentEvaluationSchedule', ['data_schedule'=> $data_schedule])->with('success','Evaluation Date Successfully Updated');
+        return redirect('studentEvaluationSchedule')->with('success','Evaluation Date Successfully Updated');
     }
 
     //function to update students' attendance status into the database
