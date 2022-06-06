@@ -30,11 +30,11 @@
     
         <br>
 		<h1 style="text-align:center ; position:left;background-color:#11ADA4; padding:20px; color:white" ><b>Generate Report</b></h1><br>
-		<hr><br>
+		<br>
 		
 		<center>
         
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-success btn-lg" id="mycustomButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
                  Add 
         </button><br><br>
         
@@ -52,7 +52,7 @@
 
             @foreach($data_report as $report)
             <tr>
-                <td>{{$report->id}}</td>
+                <td>{{$report->report_id}}</td>
                 <td>{{$report->coord_name}}</td>
                 <td>{{$report->description}}</td>
                 <td>{{$report->report_date}}</td>
@@ -66,7 +66,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog"><br><br><br>
                     <div class="modal-content">
                         <div class="modal-header">
                              <h5 class="modal-title" id="exampleModalLabel">Add Report Details</h5>
@@ -77,10 +77,12 @@
 
                         <form action="/reportdata/create" method="POST">
                         {{csrf_field()}}    
-                        <div class="mb-3">
-                             <label for="exampleFormControlInput1" class="form-label">Coordinator Name</label>
-                             <input name="coord_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Input Name">
-                         </div>
+                    
+                         <div class="mb-3">
+                            <select name="coord_name" class="form-select" aria-label="coord_name">
+                                <option selected>Coordinator Name</option>
+                                <option value="Dr.Danakorn Nincarean">Dr.Danakorn Nincarean</option>                                                 
+                           </select><br>
 
                     
                         <div class="mb-3">
