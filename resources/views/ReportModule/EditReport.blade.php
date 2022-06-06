@@ -18,7 +18,7 @@
 
 <div class="row jsutify-content-md-right ">
 <div class="col-lg-6">
-   <form action="/reportdata/{{$data_report->id}}/update" method="POST">
+   <form action="/reportdata/{{$data_report->report_id}}/update" method="POST">
        {{csrf_field()}}
        <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Coordinator Name</label>

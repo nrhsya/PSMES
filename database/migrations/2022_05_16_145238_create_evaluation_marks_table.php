@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('std_id');
             $table->string('std_name');
             $table->double('eva_mark', 8, 2);
+            $table->string('eva_comment');
             $table->timestamps();
         });
     }
