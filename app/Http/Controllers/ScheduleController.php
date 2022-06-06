@@ -15,18 +15,25 @@ class ScheduleController extends Controller
         return view('manageTop20/evaluationSchedule', ['data_schedule'=> $data_schedule]);
     }
 
+    //function to view existing evaluation dates
+    public function viewEvDate() {
+        $data_schedulehistory = \App\Models\ScheduleDateHistory::all();
+
+        return view('manageTop20/manageEvaluationDate', ['data_schedulehistory'=> $data_schedulehistory]);
+    }
+
     //function to add new industry evaluation date
     public function addEvDate(Request $request){
         \App\Models\ScheduleDateHistory::create($request->all());
 
-        return redirect('/manageEvaluationDate')->with('success','Industry Evaluation Date Successfully Added');
+        return redirect('manageEvaluationDate')->with('success','Industry Evaluation Date Successfully Added');
     }
 
     //function to edit existing industry evaluation date (fill in form)
     public function editEvDate($id){
-        $data_schedule = \App\Models\Schedule::find($id);
+        $data_schedule = \App\Models\ScheduleDateHistory::find($id);
 
-        return view('manageEvaluationDate',['data_schedule'=>$data_schedule]);
+        return view('manageEvaluationDate',['data_schedulehistory'=>$data_schedulehistory]);
     }
 
     //function to update industry evaluation date into database

@@ -82,6 +82,9 @@ Route::get('/', function () {
         return view('manageTop20/manageEvaluationDate');
     });
 
+    //view existing evaluation dates
+    Route::get('manageEvaluationDate','App\Http\Controllers\ScheduleController@viewEvDate');
+
     //add evaluation date into database (create)
     Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
 
@@ -200,6 +203,12 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
         return view('manageTop20/studentHomepage');
     });
 
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE)
+    |--------------------------------------------------------------------------
+    */
+
     //route to student evaluation schedule page
     Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
     // Route::get('studentEvaluationSchedule', function () {
@@ -216,6 +225,12 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
     Route::get('slotChange', function () {
         return view('manageTop20/slotChange');
     });
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE END)
+    |--------------------------------------------------------------------------
+    */
 //});
 
 //home
