@@ -34,7 +34,7 @@
                 <!-- FYP Title -->
                 <div class="form-group row">
                     <label for="exampleFormControlInput1" class="form-label"><b>FYP Title</b></label>
-                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1" disabled>
+                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->fyp_title}}" disabled>
                 </div><br><br>
                 
                 <!-- Evaluation Date -->
@@ -44,7 +44,9 @@
                 </div>
             </div><br><br>
 
-            <input name="attendance_status" type="text" id="customButton" value="Confirm Attendance" onclick="ConfirmAttendanceBtn()" readonly>
+            <a id="customButton" onclick="ConfirmAttendanceBtn()" href="attendanceStats">Confirm Attendance</a>
+
+            <!-- <button id="customButton"><input name="attendance_status" type="text" value="Confirm Attendance" onclick="ConfirmAttendanceBtn()"></button> -->
             <button type="submit" class="btn btn-success btn-lg" id="customButton">Request Slot Change</button>
         </form>
     </div>
