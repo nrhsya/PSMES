@@ -383,7 +383,7 @@
                             <a class="customFont" href="#">Student FYP Details</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="/HomePage">Rubric</a>
+                            <a class="customFont" href="/StsvView">Rubric</a>
                         </li><br>
                         <li>
                             <a class="customFont" href="#">Evaluation Details and Mark</a>

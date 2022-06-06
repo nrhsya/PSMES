@@ -123,6 +123,8 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 |--------------------------------------------------------------------------
 */
 
+Route::get('StsvView','App\Http\Controllers\RubricController@StdviewRubric');
+
    //route to rubric mainpage
    Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
 
@@ -208,7 +210,14 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     Route::get('studentHomepage', function () {
         return view('manageTop20/studentHomepage');
     });
-
+/*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGE RUBRIC)
+    |--------------------------------------------------------------------------
+    */
+ Route::get('sfilterPSM1','App\Http\Controllers\RubricController@sfilterPSM1');
+ Route::get('sviewPSM2','App\Http\Controllers\RubricController@sviewPSM2');
+ Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
     /*
     |--------------------------------------------------------------------------
     | STUDENT (MANAGETOP20 MODULE)
