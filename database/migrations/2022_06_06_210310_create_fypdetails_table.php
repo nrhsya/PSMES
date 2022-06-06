@@ -13,8 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fyp_details', function (Blueprint $table) {
-            $table->id();
+        Schema::create('fypdetails', function (Blueprint $table) {
             $table->string('std_id');
             $table->string('std_name');
             $table->string('sv_name');
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fyp_details');
+        Schema::dropIfExists('fypdetails');
     }
 };
