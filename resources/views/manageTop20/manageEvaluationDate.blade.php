@@ -23,7 +23,7 @@
         </div>
         
         <!-- form to insert data -->
-        <form action="/manageEvaluationDate/addEvDate" method="POST">
+        <form action="/scheduleData/addEvDate" method="POST">
         {{csrf_field()}}
             <h1 class="text-center">Please provide the dates for the Industry Evaluation</h1><br><br>
 
@@ -41,5 +41,30 @@
 
             <button type="submit" class="btn btn-success btn-lg text-center" id="customButton" onclick="saveBtn()">Save</button>
         </form>
+    </div>
+
+    <!-- List of existing evaluation dates -->
+    <div class="row" style="padding:20px;background-color:#e2e9e9">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">     
+            <table class="table table-hover" style="LINE-HEIGHT:35px;" width="100%">
+                <tr style="background-color:#0958A3;color:white;">
+                    <th>No.</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Created At</th>
+                    <th colspan="2">ACTIONS</th>
+                </tr>
+                @foreach($data_schedulehistory as $schedulehistory)
+                <tr style="background-color:white;color:#0958A3;">
+                    <td>{{$schedulehistory->schedulehistory_id}}</td>
+                    <td>{{$schedulehistory->start_date}}</td>
+                    <td>{{$schedulehistory->end_date}}</td>
+                    <td>{{$schedulehistory->created_at}}</td>
+                    <td><a href="scheduleDateData/{{$schedulehistory->schedulehistory_id}}/editEvDate" id="customButton">Edit</a></td>
+                    <td><a href="evaluationSchedule" id="customButton">Assign Slots</a></td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
     </div>
 @endsection

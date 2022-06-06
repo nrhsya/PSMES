@@ -82,8 +82,14 @@ Route::get('/', function () {
         return view('manageTop20/manageEvaluationDate');
     });
 
+    //view existing evaluation dates
+    Route::get('manageEvaluationDate','App\Http\Controllers\ScheduleController@viewEvDate');
+
     //add evaluation date into database (create)
     Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
+
+    //randomly assign evalution dates to top 20 students
+    Route::post('/scheduleData/assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
 
   /*
 |--------------------------------------------------------------------------
@@ -119,6 +125,8 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 
    //route to rubric mainpage
    Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
+
+
   
     Route::get('HomePage', function () {
         return view('managerubric/HomePage');
@@ -130,19 +138,20 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
     });
 
    
-    Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
-    Route::get('/rubricdata/{id}/EditRubric','App\Http\Controllers\RubricController@EditRubric');
+ Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
     //read
    
-      //route to EditDeleteRubric
-    Route::get('EditRubric', function () {
-        return view('managerubric/EditRubric');
-    });
+ Route::get('filterPSM1','App\Http\Controllers\RubricController@filterPSM1');
+ Route::get('viewPSM2','App\Http\Controllers\RubricController@viewPSM2');
+ Route::get('viewPTA','App\Http\Controllers\RubricController@viewPTA');
+     //edit form
+Route::get('/rubricdata/{id}/edit','App\Http\Controllers\RubricController@EditRubric');
 
-     //route to ViewRubric
-    Route::get('ViewAndDeleteRubric', function () {
-        return view('managerubric/ViewAndDeleteRubric');
-    });
+//update
+Route::post('/rubricdata/{id}/update','App\Http\Controllers\RubricController@update');
+
+//delete
+Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@delete');
 /*
 |--------------------------------------------------------------------------
 | END PSM COORDINATOR (Rubric MODULE )
@@ -209,6 +218,12 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
         return view('manageTop20/studentHomepage');
     });
 
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE)
+    |--------------------------------------------------------------------------
+    */
+
     //route to student evaluation schedule page
     Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
     // Route::get('studentEvaluationSchedule', function () {
@@ -225,6 +240,12 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
     Route::get('slotChange', function () {
         return view('manageTop20/slotChange');
     });
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE END)
+    |--------------------------------------------------------------------------
+    */
 //});
 
 //home
