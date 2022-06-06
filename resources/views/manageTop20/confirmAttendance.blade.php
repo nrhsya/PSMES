@@ -44,7 +44,9 @@
                 </div>
             </div><br><br>
 
-            <input name="attendance_status" type="text" id="customButton" value="Confirm Attendance" onclick="ConfirmAttendanceBtn()" readonly>
+            <a id="customButton" onclick="ConfirmAttendanceBtn()" href="attendanceStats">Confirm Attendance</a>
+
+            <!-- <button id="customButton"><input name="attendance_status" type="text" value="Confirm Attendance" onclick="ConfirmAttendanceBtn()"></button> -->
             <button type="submit" class="btn btn-success btn-lg" id="customButton">Request Slot Change</button>
         </form>
     </div>

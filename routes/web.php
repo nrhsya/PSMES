@@ -249,9 +249,12 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
 
     //route to slot change page
-    Route::get('slotChange', function () {
-        return view('manageTop20/slotChange');
-    });
+    // Route::get('slotChange', function () {
+    //     return view('manageTop20/slotChange');
+    // });
+
+    //route to confirm attendance status
+    Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');
 
     /*
     |--------------------------------------------------------------------------
