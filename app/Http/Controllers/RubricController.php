@@ -41,4 +41,27 @@ public function delete($id){
     return redirect('/rubricdata')->with('success','Data Successfully Deleted');
 }
 
+//filter PSM1
+public function filterPSM1(){
+    $data_rubric = \App\Models\Rubric::all()
+    ->where('rubric_id', '=', 'PSM1');
+
+    return view('managerubric/ViewAndDeleteRubric', ['data_rubric'=> $data_rubric]);
+}
+
+//filter PSM2
+public function viewPSM2(){
+    $data_rubric = \App\Models\Rubric::all()
+    ->where('rubric_id', '=', 'PSM2');
+
+    return view('managerubric/ViewAndDeleteRubric', ['data_rubric'=> $data_rubric]);
+}
+//filter PSM1
+public function viewPTA(){
+    $data_rubric = \App\Models\Rubric::all()
+    ->where('rubric_id', '=', 'PTA');
+
+    return view('managerubric/ViewAndDeleteRubric', ['data_rubric'=> $data_rubric]);
+}
+
 }

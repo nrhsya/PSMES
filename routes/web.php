@@ -138,10 +138,12 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
     });
 
    
-    Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
+ Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
     //read
    
-
+ Route::get('filterPSM1','App\Http\Controllers\RubricController@filterPSM1');
+ Route::get('viewPSM2','App\Http\Controllers\RubricController@viewPSM2');
+ Route::get('viewPTA','App\Http\Controllers\RubricController@viewPTA');
      //edit form
 Route::get('/rubricdata/{id}/edit','App\Http\Controllers\RubricController@EditRubric');
 
