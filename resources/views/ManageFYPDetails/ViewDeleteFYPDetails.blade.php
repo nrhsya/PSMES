@@ -16,7 +16,6 @@
           <div class="table-wrapper-scroll-y my-custom-scrollbar">
                     <table class="table table-hover table-success table-striped" width="100%">
                         <tr>
-                            <th> ID</th>
                             <th>Student ID</th>
                             <th>Student Name</th>
                             <th>Supervisor Name</th>
@@ -24,17 +23,16 @@
                             <th>FYP Title</th>
                             <th colspan="2">Update / Delete</th>
                         </tr>
-                        @foreach($fyp_data as $fyp)
+
                         <tr>
-                            <td>{{$fyp->id}}</td>
-                            <td>{{$fyp->std_id}}</td>
+                            <td>{{$std_id->std_id}}</td>
                             <td>{{$fyp->std_name}}</td>
                             <td>{{$fyp->sv_name}}</td>
                             <td>{{$fyp->eva_name}}</td>
                             <td>{{$fyp->fyp_title}}</td>
                         
-                            <td><a href="fypdata/{{$fyp->id}}/edit" class="btn btn-success">Update</a></td>
-                            <td><a href="fypdata/{{$fyp->id}}/delete" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a></td>
+                            <td><a href="fypdata/{{$fyp->std_id}}/edit" class="btn btn-success">Update</a></td>
+                            <td><a href="fypdata/{{$fyp->std_id}}/delete" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a></td>
                     </tr> 
                     @endforeach 
                     </table>

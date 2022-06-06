@@ -8,17 +8,15 @@ use \App\Models\FYPDetails;
 
 class FYPDetailsController extends Controller
 {
-    public function viewFYPDetails(){
-        $fyp_data = \App\Models\FYPDetails::all();
-        return view('ManageFYPDetails/ViewAndDeleteFYPDetails', ['fyp_data'=> $fyp_data]);
-}
-
     public function createFYPDetails(Request $request ){
         \App\Models\FYPDetails::create($request->all());
 
         return redirect('/FYPMainPage')->with('success','New Data Successfully Inserted');
     } 
-
+    public function viewFYPDetails(){
+        $fyp_data = \App\Models\FYPDetails::all();
+        return view('ManageFYPDetails/ViewAndDeleteFYPDetails', ['fyp_data'=> $fyp_data]);
+    }
     
     public function EditFYPDetails($id ){
         $fyp_data = \App\Models\FYPDetails::find($id);
