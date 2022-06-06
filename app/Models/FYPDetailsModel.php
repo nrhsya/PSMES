@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Report extends Model
+class FYPDetailsModel extends Model
 {
     use HasFactory;
-    protected $fillable = ['coord_name','description','report_date'];
+    protected $fillable = ['std_id','std_name','sv_name','eva_name','fyp_title'];
 }

@@ -89,7 +89,7 @@ Route::get('/', function () {
     Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
 
     //randomly assign evalution dates to top 20 students
-    Route::post('/scheduleData/assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
+    // Route::post('/scheduleData/{id}/assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
 
   /*
 |--------------------------------------------------------------------------
@@ -160,9 +160,16 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 |--------------------------------------------------------------------------
 */
 
-
-    //route to FYP mainpage
+/*
+|--------------------------------------------------------------------------
+| START PSM COORDINATOR (FYPDetails MODULE )
+|--------------------------------------------------------------------------
+*/
     
+    Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views
+
+    
+    //route to FYP mainpage
     Route::get('FYPMainPage', function () {
         return view('ManageFYPDetails/FYPMainPage');
     });
@@ -177,18 +184,20 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageFYPDetails/EditFYPDetails');
     });
 
-     //route to ViewDeleteFYPDetails
-    Route::get('ViewDeleteFYPDetails', function () {
-        return view('ManageFYPDetails/ViewDeleteFYPDetails');
-    });
-
      //route to ViewFYPDetails
-     Route::get('ViewFYPDetails', function () {
+    Route::get('ViewFYPDetails', function () {
         return view('ManageFYPDetails/ViewFYPDetails');
     });
-
-
-//});
+     //route to ViewDeleteFYPDetails
+     Route::get('ViewDeleteFYPDetails', function () {
+        return view('ManageFYPDetails/ViewDeleteFYPDetails');
+    });
+/*
+/*
+|--------------------------------------------------------------------------
+| END PSM COORDINATOR (FYPDetails MODULE )
+|--------------------------------------------------------------------------
+*/
 
 /*
 |--------------------------------------------------------------------------
@@ -220,7 +229,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
  Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
     /*
     |--------------------------------------------------------------------------
-    | STUDENT (MANAGETOP20 MODULE)
+    | STUDENT (MANAGETOP20 MODULE START)
     |--------------------------------------------------------------------------
     */
 
@@ -235,6 +244,9 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     // Route::get('confirmAttendance', function () {
     //     return view('manageTop20/confirmAttendance');
     // });
+
+    //route to update evaluation date 
+    Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
 
     //route to slot change page
     Route::get('slotChange', function () {

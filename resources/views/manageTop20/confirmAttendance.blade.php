@@ -13,10 +13,11 @@
             <h1><b>Confirm Attendance Page</b></h1>
         </div>
         <!-- form to insert data -->
-        <form action="/scheduleData/{{$data_schedule->schedule_id}}/attendanceStats" method="POST">
-        {{csrf_field()}}
+        <form action="/scheduleData/{{$data_schedule->schedule_id}}/updateEvaDateDetails" method="POST">
             <h1 class="p-3">Please make sure you can attend the assigned slots before you click the "Confirm Attendance" button</h1>
-
+            <p class="p-3" style="color:red;">P/S: Request for <b>Slot Change</b> if you cannot attend the assigned slot !</p>
+        
+        {{csrf_field()}}
             <div class="p-5" style="background-color:white;border-radius:10px;text-align:left;">
                 <!-- Student ID -->
                 <div class="form-group row">
@@ -39,12 +40,12 @@
                 <!-- Evaluation Date -->
                 <div class="form-group row">
                     <label for="exampleFormControlInput1" class="form-label"><b>Evaluation Date</b></label>
-                    <input name="eva_date" type="date" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->eva_date}}" disabled>
+                    <input name="eva_date" type="date" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->eva_date}}">
                 </div>
             </div><br><br>
 
             <input name="attendance_status" type="text" id="customButton" value="Confirm Attendance" onclick="ConfirmAttendanceBtn()" readonly>
-            <a href="/slotChange" class="btn btn-success btn-lg" id="customButton">Request Slot Change</a>
+            <button type="submit" class="btn btn-success btn-lg" id="customButton">Request Slot Change</button>
         </form>
     </div>
 @endsection

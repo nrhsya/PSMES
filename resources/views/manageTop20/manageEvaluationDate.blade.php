@@ -13,7 +13,7 @@
             <h1><b>Manage Industry Evaluation Schedule</b></h1>
         </div>
 
-        <div class = "container">
+        <div class="container text-center font-weight-bold">
             <!-- to alert the users -->
             @if(session('success'))
             <div class="alert alert-success" role="alert">
@@ -61,7 +61,7 @@
                     <td>{{$schedulehistory->end_date}}</td>
                     <td>{{$schedulehistory->created_at}}</td>
                     <td><a href="scheduleDateData/{{$schedulehistory->schedulehistory_id}}/editEvDate" id="customButton">Edit</a></td>
-                    <td><a href="evaluationSchedule" id="customButton">Assign Slots</a></td>
+                    <td><a href="/evaluationSchedule" id="customButton">Assign Slots</a></td>
                 </tr>
                 @endforeach
             </table>
