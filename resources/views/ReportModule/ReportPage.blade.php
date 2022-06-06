@@ -56,7 +56,7 @@
                 <td>{{$report->coord_name}}</td>
                 <td>{{$report->description}}</td>
                 <td>{{$report->report_date}}</td>
-                <td><a href="reportdata/{{$report->id}}/EditReport">Edit</a></td>
+                <td><a href="reportdata/{{$report->report_id}}/EditReport">Edit</a></td>
             </tr>
             @endforeach
         </table>
