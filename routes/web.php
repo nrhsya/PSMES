@@ -82,6 +82,15 @@ Route::get('/', function () {
         return view('manageTop20/manageEvaluationDate');
     });
 
+    //view existing evaluation dates
+    Route::get('manageEvaluationDate','App\Http\Controllers\ScheduleController@viewEvDate');
+
+    //add evaluation date into database (create)
+    Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
+
+    //randomly assign evalution dates to top 20 students
+    Route::post('/scheduleData/assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
+
   /*
 |--------------------------------------------------------------------------
 | PSM COORDINATOR (MANAGE TOP20 MODULE END)
@@ -198,20 +207,34 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('manageTop20/studentHomepage');
     });
 
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE)
+    |--------------------------------------------------------------------------
+    */
+
     //route to student evaluation schedule page
-    Route::get('studentEvaluationSchedule', function () {
-        return view('manageTop20/studentEvaluationSchedule');
-    });
+    Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
+    // Route::get('studentEvaluationSchedule', function () {
+    //     return view('manageTop20/studentEvaluationSchedule');
+    // });
 
     //route to confirm attendance page
-    Route::get('confirmAttendance', function () {
-        return view('manageTop20/confirmAttendance');
-    });
+    Route::get('/scheduleData/{id}/viewEvaluationDateDetails','App\Http\Controllers\ScheduleController@viewEvaluationDateDetails');
+    // Route::get('confirmAttendance', function () {
+    //     return view('manageTop20/confirmAttendance');
+    // });
 
     //route to slot change page
     Route::get('slotChange', function () {
         return view('manageTop20/slotChange');
     });
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE END)
+    |--------------------------------------------------------------------------
+    */
 //});
 
 //home

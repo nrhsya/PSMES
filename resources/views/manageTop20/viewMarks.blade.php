@@ -38,6 +38,7 @@
             </div>
 
             <a class="mt-5" id="customButton" href="generateTop" onclick="generateTop20()"><b>Generate Top 20 Students</b></a>
+            <a class="mt-5" id="customButton" href="/manageEvaluationDate"><b>Assign Slots</b></a>
         </div>
     </div>
 @endsection

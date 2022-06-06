@@ -529,6 +529,7 @@ class ComposerStaticInit587b3cc7f8bf0c3f4b90ad0fba2070b5
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PSMCoordinatorController' => __DIR__ . '/../..' . '/app/Http/Controllers/PSMCoordinatorController.php',
         'App\\Http\\Controllers\\ReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReportController.php',
+        'App\\Http\\Controllers\\RubricController' => __DIR__ . '/../..' . '/app/Http/Controllers/RubricController.php',
         'App\\Http\\Controllers\\ScheduleController' => __DIR__ . '/../..' . '/app/Http/Controllers/ScheduleController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
         'App\\Http\\Controllers\\Top20Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Top20Controller.php',

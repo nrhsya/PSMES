@@ -20,20 +20,20 @@
             <div class="p-5" style="background-color:white;border-radius:10px;text-align: left;">
                 <!-- Student ID -->
                 <div class="form-group row">
-                <label for="exampleFormControlInput1" class="form-label"><b>Student ID</b></label>
-                <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Student ID</b></label>
+                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1" disabled>
                 </div><br><br>
                 
                 <!-- Student Name -->
                 <div class="form-group row">
                     <label for="exampleFormControlInput1" class="form-label"><b>Student Name</b></label>
-                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1">
+                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1" disabled>
                 </div><br><br>
 
                 <!-- FYP Title -->
                 <div class="form-group row">
                     <label for="exampleFormControlInput1" class="form-label"><b>FYP Title</b></label>
-                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1">
+                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1" disabled>
                 </div><br><br>
                 
                 <!-- Evaluation Date -->
