@@ -19,14 +19,15 @@ class ScheduleSeeders extends Seeder
     {
         //function to generate random data
         $faker = Faker::create();
-        foreach(range(1,20) as $value) //range 1,10 means that there are 5 datas
+        foreach(range(1,30) as $value) //range 1,10 means that there are 5 datas
         {
             DB::table('schedules') -> insert([
                 //'eva_id' => $faker->randomDigitNotNull,
                 //'mark_id' => $faker->randomDigitNotNull,
                 'std_id' => $faker->randomElement(['CB19XXX','CA19XXX','CD19XXX']),
                 'std_name' => $faker->name,
-                'eva_date' => $faker->date($format = 'Y-m-d', $max = 'now')
+                'eva_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'attendance_status' => $faker->randomElement(['WAITING FOR CONFIRMATION','CONFIRMED']),
             ]);
         }
     }

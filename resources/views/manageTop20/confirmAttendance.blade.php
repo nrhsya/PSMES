@@ -13,7 +13,7 @@
             <h1><b>Confirm Attendance Page</b></h1>
         </div>
         <!-- form to insert data -->
-        <form action="/scheduleData/{{$data_schedule->schedule_id}}/updateEvaDateDetails" method="POST">
+        <form action="/scheduleData/{{$data_schedule->schedule_id}}/attendanceStats" method="POST">
         {{csrf_field()}}
             <h1 class="p-3">Please make sure you can attend the assigned slots before you click the "Confirm Attendance" button</h1>
 
@@ -43,8 +43,8 @@
                 </div>
             </div><br><br>
 
-            <a href="#" class="btn btn-success btn-lg" id="customButton" onclick="ConfirmAttendanceBtn()">Confirm Attendance</a>
-            <a href="slotChange" class="btn btn-success btn-lg" id="customButton">Request Slot Change</a>
+            <input name="attendance_status" type="text" id="customButton" value="Confirm Attendance" onclick="ConfirmAttendanceBtn()" readonly>
+            <a href="/slotChange" class="btn btn-success btn-lg" id="customButton">Request Slot Change</a>
         </form>
     </div>
 @endsection
