@@ -149,9 +149,16 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 |--------------------------------------------------------------------------
 */
 
-
-    //route to FYP mainpage
+/*
+|--------------------------------------------------------------------------
+| START PSM COORDINATOR (FYPDetails MODULE )
+|--------------------------------------------------------------------------
+*/
     
+    Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views
+
+    
+    //route to FYP mainpage
     Route::get('FYPMainPage', function () {
         return view('ManageFYPDetails/FYPMainPage');
     });
@@ -166,18 +173,20 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
         return view('ManageFYPDetails/EditFYPDetails');
     });
 
-     //route to ViewDeleteFYPDetails
-    Route::get('ViewDeleteFYPDetails', function () {
-        return view('ManageFYPDetails/ViewDeleteFYPDetails');
-    });
-
      //route to ViewFYPDetails
-     Route::get('ViewFYPDetails', function () {
+    Route::get('ViewFYPDetails', function () {
         return view('ManageFYPDetails/ViewFYPDetails');
     });
-
-
-//});
+     //route to ViewDeleteFYPDetails
+     Route::get('ViewDeleteFYPDetails', function () {
+        return view('ManageFYPDetails/ViewDeleteFYPDetails');
+    });
+/*
+/*
+|--------------------------------------------------------------------------
+| END PSM COORDINATOR (FYPDetails MODULE )
+|--------------------------------------------------------------------------
+*/
 
 /*
 |--------------------------------------------------------------------------
