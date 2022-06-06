@@ -50,7 +50,9 @@ class ScheduleController extends Controller
 
     //function to assign industry evaluation dates/slots to top 20 students (randomly)
     public function assignSlot($start_date, $end_date){
-        $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
+        // $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
+        $data_schedule = \App\Models\Schedule::find($id);
+        $data_schedule -> update($request->all());
 
         // Convert to timetamps
         $min = strtotime($start_date);
@@ -60,7 +62,9 @@ class ScheduleController extends Controller
         $eva_date = rand($min, $max);
 
         // Convert back to desired date format
-        return date('Y-m-d H:i:s', $eva_date);
+        // return date('Y-m-d H:i:s', $eva_date)->with('success','Evaluation Slots have been assigned');
+
+        return redirect('/scheduleData')->with('success','Evaluation Slots have been assigned');
     }
 
     //function to approve students' request for slot change
