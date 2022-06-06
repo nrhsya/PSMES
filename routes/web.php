@@ -88,6 +88,9 @@ Route::get('/', function () {
     //add evaluation date into database (create)
     Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
 
+    //randomly assign evalution dates to top 20 students
+    Route::post('/scheduleData/assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
+
   /*
 |--------------------------------------------------------------------------
 | PSM COORDINATOR (MANAGE TOP20 MODULE END)
