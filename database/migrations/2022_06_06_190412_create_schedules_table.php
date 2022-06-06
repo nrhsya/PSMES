@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('std_id');
             $table->string('std_name');
             $table->date('eva_date');
+            $table->string('fyp_title');
             $table->string('attendance_status');
+            $table->double('eva_mark', 8, 2);
             $table->timestamps();
         });
     }

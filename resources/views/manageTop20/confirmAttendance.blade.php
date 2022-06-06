@@ -34,7 +34,7 @@
                 <!-- FYP Title -->
                 <div class="form-group row">
                     <label for="exampleFormControlInput1" class="form-label"><b>FYP Title</b></label>
-                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1" disabled>
+                    <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->fyp_title}}" disabled>
                 </div><br><br>
                 
                 <!-- Evaluation Date -->

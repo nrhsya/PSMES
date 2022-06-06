@@ -548,6 +548,7 @@ class ComposerStaticInit587b3cc7f8bf0c3f4b90ad0fba2070b5
         'App\\Models\\EvaluationMark' => __DIR__ . '/../..' . '/app/Models/EvaluationMark.php',
         'App\\Models\\Evaluator' => __DIR__ . '/../..' . '/app/Models/Evaluator.php',
         'App\\Models\\FYPDetailsModel' => __DIR__ . '/../..' . '/app/Models/FYPDetailsModel.php',
+        'App\\Models\\Report' => __DIR__ . '/../..' . '/app/Models/Report.php',
         'App\\Models\\Rubric' => __DIR__ . '/../..' . '/app/Models/Rubric.php',
         'App\\Models\\Schedule' => __DIR__ . '/../..' . '/app/Models/Schedule.php',
         'App\\Models\\ScheduleDateHistory' => __DIR__ . '/../..' . '/app/Models/ScheduleDateHistory.php',

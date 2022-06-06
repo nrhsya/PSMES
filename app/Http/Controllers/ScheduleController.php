@@ -14,7 +14,9 @@ class ScheduleController extends Controller
 
     //function to display evaluation schedule
     public function viewSchedule(){
-        $data_schedule = \App\Models\Schedule::all();
+        // $data_schedule = \App\Models\Schedule::all();
+        $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
+		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark']);
 
         return view('manageTop20/evaluationSchedule', ['data_schedule'=> $data_schedule]);
     }
@@ -78,14 +80,22 @@ class ScheduleController extends Controller
 
     //function for top 20 students to view evaluation schedule
     public function viewStudSchedule() {
-        $data_schedule = \App\Models\Schedule::all();
+        // $data_schedule = \App\Models\Schedule::all();
+
+        $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
+		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
+                                                ->sortByDesc('eva_mark');
 
         return view('manageTop20/studentEvaluationSchedule', ['data_schedule'=> $data_schedule]);
     }
 
     //function for students to confirm their evaluation date details
     public function viewEvaluationDateDetails($id) {
-        $data_schedule = \App\Models\Schedule::find($id);
+        $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
+		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
+                                                ->find($id);
+
+        // $data_schedule = \App\Models\Schedule::find($id);
 
         return view('manageTop20/confirmAttendance',['data_schedule'=>$data_schedule]);
     }

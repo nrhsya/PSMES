@@ -39,6 +39,7 @@ return array(
     'App\\Models\\EvaluationMark' => $baseDir . '/app/Models/EvaluationMark.php',
     'App\\Models\\Evaluator' => $baseDir . '/app/Models/Evaluator.php',
     'App\\Models\\FYPDetailsModel' => $baseDir . '/app/Models/FYPDetailsModel.php',
+    'App\\Models\\Report' => $baseDir . '/app/Models/Report.php',
     'App\\Models\\Rubric' => $baseDir . '/app/Models/Rubric.php',
     'App\\Models\\Schedule' => $baseDir . '/app/Models/Schedule.php',
     'App\\Models\\ScheduleDateHistory' => $baseDir . '/app/Models/ScheduleDateHistory.php',
