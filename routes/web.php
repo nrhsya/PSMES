@@ -164,18 +164,22 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 |--------------------------------------------------------------------------
 */
     
-    Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views
-
+    //Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views//route to rubric mainpage
+    Route::get('/fypdata','App\Http\Controllers\FYPDetailsController@viewFYPDetails');
     
     //route to FYP mainpage
     Route::get('FYPMainPage', function () {
         return view('ManageFYPDetails/FYPMainPage');
     });
 
+
    //route to AddFYPDetails
      Route::get('AddFYPDetails', function () {
         return view('ManageFYPDetails/AddFYPDetails');
     });
+
+    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
+    //read
 
       //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {

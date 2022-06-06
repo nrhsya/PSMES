@@ -2,84 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use \App\Models\FYPDetails;
+
 
 class FYPDetailsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function viewFYPDetails(){
+        $fyp_data = \App\Models\FYPDetails::all();
+        return view('ManageFYPDetails/ViewAndDeleteFYPDetails', ['fyp_data'=> $fyp_data]);
+}
+
+    public function createFYPDetails(Request $request ){
+        \App\Models\FYPDetails::create($request->all());
+
+        return redirect('/FYPMainPage')->with('success','New Data Successfully Inserted');
+    } 
+
+    
+    public function EditFYPDetails($id ){
+        $fyp_data = \App\Models\FYPDetails::find($id);
+        return view('ManageFYPDetails/EditFYPDetails',['fyp_data'=>$fyp_data]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('FYPDetails.create');
-    }
+    public function update(Request $request,$id){
+        $fyp_data = \App\Models\FYPDetails::find($id);
+        $fyp_data -> update($request->all());
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        return redirect('/fypdata')->with('success','Data Successfully Updated');
+}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+public function delete($id){
+    $fyp_data = \App\Models\FYPDetails::find($id);
+    $fyp_data -> delete($fypdata);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+    return redirect('/fypdata')->with('success','Data Successfully Deleted');
+}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

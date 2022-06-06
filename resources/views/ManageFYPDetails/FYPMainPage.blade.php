@@ -13,8 +13,7 @@
           
           <h2 style="border: 2px solid black; color: #FFFFFF; font-size: 18px; padding: 5px 0px; background-color:#11ADA4; text-align: center;">Add New FYP Details</h2>
 
-        <div> <a style="margin: 40px 45% 80px; padding-right:90px; padding-left:90px;" id="customButton" href="/AddFYPDetails"><b>Add</b></a></div>
-
+        <div> <a style="margin: 40px 45% 80px; padding-right:90px; padding-left:90px;" id="customButton" href="/AddFYPDetails"><b>Add</b></a></div> !-->
 
            <h2 style="border: 2px solid black; color: #FFFFFF; font-size: 18px; padding: 5px 0px; background-color:#11ADA4; text-align: center;">Update FYP Details</h2>
            <div class="row text-center">

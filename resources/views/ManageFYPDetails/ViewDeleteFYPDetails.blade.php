@@ -13,32 +13,31 @@
           
           <h2 style="border: 2px solid black; color: #FFFFFF; font-size: 18px; padding: 5px 0px; background-color:#11ADA4; text-align: center;">Add New Student FYP Details</h2>
 
-    <form style="width:100%;" action="">
-    <table style="margin-left: 300px; margin-top: 50px">
-    <tr style="height: 60px;">
-        <td style="width: 10%;"><label for="exampleFormControlInput1" class="form-label">Student ID</label></td>
-        <td style="width: 85%"><input style="width:70%" name="student_id" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Student ID"></td>
-    </tr>
-    <tr style="height: 60px;">
-        <td style="width:10%"><label for="exampleFormControlInput1" class="form-label">Student Name</label></td>
-        <td style="width:85%"><input style="width:70%" name="std_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Student Name"></td>
-    </tr>
-    <tr style="height: 60px;">
-        <td style="width:10%"><label for="exampleFormControlInput1" class="form-label">Supervisor Name</label></td>
-        <td style="width:85%"><input style="width:70%" name="sv_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Supervisor Name"></td>
-    </tr>
-    <tr style="height: 60px;">
-        <td style="width:10%"><label for="exampleFormControlInput1" class="form-label">Evaluator Name</label></td>
-        <td style="width:85%"><input style="width:70%" name="eva_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Evaluator Name"></td>
-    </tr>
-    <tr style="height: 60px;">
-        <td style="width:10%"><label for="exampleFormControlInput1" class="form-label">FYP Title</label></td>
-        <td style="width:85%"><input style="width:70%" name="fyp_title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter FYP Title"></td>
-    </tr>
-    </table> 
-    <button style="margin: 40px 45% 80px; padding: 15px 20px;" id="customButton" type="submit">Save</button>   
-    </form>
-
+          <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-hover table-success table-striped" width="100%">
+                        <tr>
+                            <th> ID</th>
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>Supervisor Name</th>
+                            <th>Evaluator Name</th>
+                            <th>FYP Title</th>
+                            <th colspan="2">Update / Delete</th>
+                        </tr>
+                        @foreach($fyp_data as $fyp)
+                        <tr>
+                            <td>{{$fyp->id}}</td>
+                            <td>{{$fyp->std_id}}</td>
+                            <td>{{$fyp->std_name}}</td>
+                            <td>{{$fyp->sv_name}}</td>
+                            <td>{{$fyp->eva_name}}</td>
+                            <td>{{$fyp->fyp_title}}</td>
+                        
+                            <td><a href="fypdata/{{$fyp->id}}/edit" class="btn btn-success">Update</a></td>
+                            <td><a href="fypdata/{{$fyp->id}}/delete" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a></td>
+                    </tr> 
+                    @endforeach 
+                    </table>
 
           
 @endsection
