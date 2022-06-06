@@ -15,10 +15,10 @@
 <center>
         <div style="padding:10px;">
             <a id="customButton" href="/AddRubric"><b>Add Rubric</b></a>
-            <a id="customButton" href="/EditDeleteRubric"><b>Edit Rubric/Delete Rubric</b></a>
-            <a id="customButton" href="/ViewAndDeleteRubric"><b>View Rubric</b></a>
+            <a id="customButton" href="/rubricdata"><b>View Rubric</b></a>
         </div>
 </center>
+
         
     </div>
 @endsection

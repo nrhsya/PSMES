@@ -125,6 +125,8 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 
    //route to rubric mainpage
    Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
+
+
   
     Route::get('HomePage', function () {
         return view('managerubric/HomePage');
@@ -136,28 +138,36 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
     });
 
    
-    Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
-    Route::get('/rubricdata/{id}/EditRubric','App\Http\Controllers\RubricController@EditRubric');
+ Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
     //read
    
-      //route to EditDeleteRubric
-    Route::get('EditRubric', function () {
-        return view('managerubric/EditRubric');
-    });
+ Route::get('filterPSM1','App\Http\Controllers\RubricController@filterPSM1');
+ Route::get('viewPSM2','App\Http\Controllers\RubricController@viewPSM2');
+ Route::get('viewPTA','App\Http\Controllers\RubricController@viewPTA');
+     //edit form
+Route::get('/rubricdata/{id}/edit','App\Http\Controllers\RubricController@EditRubric');
 
-     //route to ViewRubric
-    Route::get('ViewAndDeleteRubric', function () {
-        return view('managerubric/ViewAndDeleteRubric');
-    });
+//update
+Route::post('/rubricdata/{id}/update','App\Http\Controllers\RubricController@update');
+
+//delete
+Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@delete');
 /*
 |--------------------------------------------------------------------------
 | END PSM COORDINATOR (Rubric MODULE )
 |--------------------------------------------------------------------------
 */
 
-
-    //route to FYP mainpage
+/*
+|--------------------------------------------------------------------------
+| START PSM COORDINATOR (FYPDetails MODULE )
+|--------------------------------------------------------------------------
+*/
     
+    Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views
+
+    
+    //route to FYP mainpage
     Route::get('FYPMainPage', function () {
         return view('ManageFYPDetails/FYPMainPage');
     });
@@ -172,18 +182,20 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
         return view('ManageFYPDetails/EditFYPDetails');
     });
 
-     //route to ViewDeleteFYPDetails
-    Route::get('ViewDeleteFYPDetails', function () {
-        return view('ManageFYPDetails/ViewDeleteFYPDetails');
-    });
-
      //route to ViewFYPDetails
-     Route::get('ViewFYPDetails', function () {
+    Route::get('ViewFYPDetails', function () {
         return view('ManageFYPDetails/ViewFYPDetails');
     });
-
-
-//});
+     //route to ViewDeleteFYPDetails
+     Route::get('ViewDeleteFYPDetails', function () {
+        return view('ManageFYPDetails/ViewDeleteFYPDetails');
+    });
+/*
+/*
+|--------------------------------------------------------------------------
+| END PSM COORDINATOR (FYPDetails MODULE )
+|--------------------------------------------------------------------------
+*/
 
 /*
 |--------------------------------------------------------------------------

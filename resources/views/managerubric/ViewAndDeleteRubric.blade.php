@@ -13,6 +13,7 @@
              {{session('success')}}
         </div>
         @endif
+        
 
 <div class="container rounded bg-white">
         <div class="row">
@@ -20,9 +21,9 @@
             <div class="col-12"style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
 
             <div style="padding:2px; background-color:#e2e9e9">
-            <a id="customButton" href="/AddRubric"><b>PSM 1</b></a>
-            <a id="customButton" href="/EditDeleteRubric"><b>PSM 2</b></a>
-            <a id="customButton" href="/viewRubric"><b>PTA</b></a>
+            <a id="customButton" href="filterPSM1"><b>PSM 1</b></a>
+            <a id="customButton" href="viewPSM2"><b>PSM 2</b></a>
+            <a id="customButton" href="viewPTA"><b>PTA</b></a>
 
         </div>
 
@@ -62,10 +63,11 @@
                             <td>{{$rubric->weightage}}</td>
                             <td>{{$rubric->mark_given}}</td>
                             <td>{{$rubric->final_percent}}</td>
-                            <td><a href="rubricdata/{{rubric->id}}/EditRubric">Update</a></td>
-                            @endforeach
+                            
+                            <td><a href="rubricdata/{{$rubric->id}}/edit" class="btn btn-success">Update</a></td>
+                            <td><a href="rubricdata/{{$rubric->id}}/delete" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a></td>
                     </tr> 
-                  
+                    @endforeach 
                     </table>
                 </div><br>
 
