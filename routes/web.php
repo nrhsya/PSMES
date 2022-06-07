@@ -180,8 +180,12 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageFYPDetails/AddFYPDetails');
     });
 
-    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
+    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');//add
     //read
+
+    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
+
+    Route::get('/fypdata/delete', 'App\Http\Controllers\FYPDetailsController@deleteFYPDetails');//delete
 
       //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
