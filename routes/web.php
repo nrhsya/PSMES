@@ -123,7 +123,7 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 |--------------------------------------------------------------------------
 */
 
-Route::get('StsvView','App\Http\Controllers\RubricController@StdviewRubric');
+
 
    //route to rubric mainpage
    Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
@@ -224,6 +224,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     | STUDENT (MANAGE RUBRIC)
     |--------------------------------------------------------------------------
     */
+ Route::get('StsvView','App\Http\Controllers\RubricController@StdviewRubric');
  Route::get('sfilterPSM1','App\Http\Controllers\RubricController@sfilterPSM1');
  Route::get('sviewPSM2','App\Http\Controllers\RubricController@sviewPSM2');
  Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
@@ -330,5 +331,13 @@ Route::get('Reminder', function () {
 });
 
 
+/*
 
-
+|--------------------------------------------------------------------------
+| Evaluator (MANAGE RUBRIC)
+|--------------------------------------------------------------------------
+*/
+Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
+Route::get('efilterPSM1','App\Http\Controllers\RubricController@efilterPSM1');
+Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
+Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');

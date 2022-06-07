@@ -91,6 +91,36 @@ public function sviewPTA(){
     ->where('rubric_id', '=', 'PTA');
 
     return view('managerubric/StsvView', ['data_rubric'=> $data_rubric]);
+
+}
+   //function to display rubric for evaluator
+public function EvaviewRubric(){
+    $data_rubric = \App\Models\Rubric::all();
+
+    return view('managerubric/EvalView', ['data_rubric'=> $data_rubric]);
+}
+//filter PSM1
+public function efilterPSM1(){
+    $data_rubric = \App\Models\Rubric::all()
+    ->where('rubric_id', '=', 'PSM1');
+
+    return view('managerubric/EvalView', ['data_rubric'=> $data_rubric]);
+}
+
+//filter PSM2
+public function eviewPSM2(){
+    $data_rubric = \App\Models\Rubric::all()
+    ->where('rubric_id', '=', 'PSM2');
+
+    return view('managerubric/EvalView', ['data_rubric'=> $data_rubric]);
+}
+//filter PSM1
+public function eviewPTA(){
+    $data_rubric = \App\Models\Rubric::all()
+    ->where('rubric_id', '=', 'PTA');
+
+    return view('managerubric/EvalView', ['data_rubric'=> $data_rubric]); 
+
 }
 
 }

@@ -371,7 +371,7 @@
                             <a class="customFont" href="#">Student FYP Details</a>s
                         </li><br>
                         <li>
-                            <a class="customFont" href="#">Rubric</a>
+                            <a class="customFont" href="/EvalView">Rubric</a>
                         </li><br>
                         <li>
                             <a class="customFont" href="#">Evaluation Details and Mark</a>

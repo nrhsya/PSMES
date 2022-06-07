@@ -1,5 +1,7 @@
 <!-- to be called inside the master.blade.php -->
-@extends('layouts.studentHomepageStyle')
+@extends('evaluator.dashboard')
+
+
 
 <head>
     <title>Evaluation Schedule | PSMES</title>
