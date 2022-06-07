@@ -173,6 +173,39 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
 /*
 |--------------------------------------------------------------------------
+| PSM COORDINATOR (Evaluation details and marks MODULE )
+|--------------------------------------------------------------------------
+*/
+
+   //route to Evaluation details and marks main page
+    Route::get('EvaluationMainPage', function () {
+        return view('ManageEvaluationDetailsAndMarks/EvaluationMainPage');
+    });
+
+   //route to AddEvaluation
+     Route::get('AddEvaluation', function () {
+        return view('ManageEvaluationDetailsAndMarks/AddEvaluation');
+    });
+
+    //route to SubmitMarks
+    Route::get('DeleteEvaluation', function () {
+        return view('ManageEvaluationDetailsAndMarks/DeleteEvaluation');
+        });
+
+     //route to SubmitMarks
+     Route::get('SubmitMarks', function () {
+        return view('ManageEvaluationDetailsAndMarks/SubmitMarks');
+    });
+
+/*
+|--------------------------------------------------------------------------
+| END PSM COORDINATOR (Evaluation details and Marks MODULE )
+|--------------------------------------------------------------------------
+*/
+
+
+/*
+|--------------------------------------------------------------------------
 | START PSM COORDINATOR (FYPDetails MODULE )
 |--------------------------------------------------------------------------
 */
