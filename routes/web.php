@@ -107,6 +107,11 @@ Route::get('/', function () {
 Route::get('reportDashboard', function () {
     return view('ReportModule/reportDashboard');
 });
+
+Route::get('AddReport', function () {
+    return view('ReportModule/AddReport');
+});
+
 Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
 Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
 Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
