@@ -120,8 +120,8 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
 
 Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
-Route::get('/markdata/male','App\Http\Controllers\ReportController@male');
-Route::get('/custdata/female','App\Http\Controllers\ReportController@female');
+Route::get('/passdata/FilterGradePass','App\Http\Controllers\ReportController@FilterGradePass');
+Route::get('/faildata/FilterGradeFail','App\Http\Controllers\ReportController@FilterGradeFail');
 
 /*
 |--------------------------------------------------------------------------

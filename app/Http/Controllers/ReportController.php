@@ -46,14 +46,16 @@ class ReportController extends Controller
         return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
     }
 
-    public function male(){
-        $data_cust = \App\Models\customer::all()->where('Gender','=','Male');
-        return view('Admindashboards\CustomerDetails',['data_cust'=> $data_cust]);
+    public function FilterGradePass(){
+        $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [10, 40]);
+
+        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
     }
 
-    public function female(){
-        $data_cust= \App\Models\customer::all()->where('Gender','=','Female');
-        return view('Admindashboards\CustomerDetails',['data_cust'=> $data_cust]);
+    public function FilterGradeFail(){
+        $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [60, 90]);
+
+        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
     }
 
     

@@ -40,11 +40,11 @@
             
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                 Filter by :<i class="fa fa-caret-down"></i>
+                 Filter by <i class="fa fa-caret-down"></i>
             </button>
              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                 <li><a class="dropdown-item" href="/gradedata/male">Grade A</a></li>
-                 <li><a class="dropdown-item" href="/gradedata/female">Grade B</a></li>
+                 <li><a class="dropdown-item" href="/passdata/FilterGradePass">Pass</a></li>
+                 <li><a class="dropdown-item" href="/faildata/FilterGradeFail">Fail</a></li>
              </ul>
         </div><br><br>
     
