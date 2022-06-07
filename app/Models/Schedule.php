@@ -11,5 +11,5 @@ class Schedule extends Model
 
     protected $primaryKey = 'schedule_id';
 
-    protected $fillable = ['eva_date'];
+    protected $fillable = ['eva_date', 'attendance_status'];
 }

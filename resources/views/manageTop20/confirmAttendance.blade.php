@@ -44,10 +44,11 @@
                 </div>
             </div><br><br>
 
-            <a id="customButton" href="/scheduleData/{{$data_schedule->schedule_id}}/attendanceStats" value="{{$data_schedule->attendance_status}}">Confirm Attendance</a>
+            <!-- <a id="customButton" href="/scheduleData/{{$data_schedule->schedule_id}}/attendanceStats"><input name="attendance_status" type="text">Confirm Attendance</a> -->
+            <button type="submit" class="btn btn-success btn-lg" id="customButton" value="submitAttendance">Confirm Attendance</button>
 
             <!-- <button id="customButton"><input name="attendance_status" type="text" value="Confirm Attendance" onclick="ConfirmAttendanceBtn()"></button> -->
-            <button type="submit" class="btn btn-success btn-lg" id="customButton">Request Slot Change</button>
+            <button type="submit" class="btn btn-success btn-lg" id="customButton" value="requestChange">Request Slot Change</button>
         </form>
     </div>
 @endsection
