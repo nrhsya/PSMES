@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use \App\Models\EvaluationMark;
+
 class ReportController extends Controller
 {
     public function ReportPage(){
@@ -31,5 +33,28 @@ class ReportController extends Controller
 
         return redirect('/reportdata')->with('success','Report Successfully updated');
     }
+
+    public function ExcellentStudent(){
+        $data_excellent =\App\Models\EvaluationMark::all();
+
+        return view('ReportModule/ExcellentStudent',['data_excellent'=> $data_excellent]);
+    }
+
+    public function StudentProgress(){
+        $data_progress =\App\Models\EvaluationMark::all();
+
+        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+    }
+
+    public function male(){
+        $data_cust = \App\Models\customer::all()->where('Gender','=','Male');
+        return view('Admindashboards\CustomerDetails',['data_cust'=> $data_cust]);
+    }
+
+    public function female(){
+        $data_cust= \App\Models\customer::all()->where('Gender','=','Female');
+        return view('Admindashboards\CustomerDetails',['data_cust'=> $data_cust]);
+    }
+
     
 }

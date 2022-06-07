@@ -37,8 +37,8 @@
 		<center>
 
     <a class="btn btn-success btn-lg" style="border: 3px solid black; margin-right:30px; margin-top:90px;" id="mycustomButton" href="/reportdata"><b>Report Form</b></a> 
-    <a class="btn btn-success btn-lg" style="border: 3px solid black; margin-right:30px; margin-top:90px;" id="mycustomButton" href="/reportdata"><b>Excellent Students</b></a>
-    <a class="btn btn-success btn-lg" style="border: 3px solid black; margin-right:30px; margin-top:90px;" id="mycustomButton" href="/reportdata"><b>Student Progress</b></a>
+    <a class="btn btn-success btn-lg" style="border: 3px solid black; margin-right:30px; margin-top:90px;" id="mycustomButton" href="ExcellentStudent"><b>Excellent Students</b></a>
+    <a class="btn btn-success btn-lg" style="border: 3px solid black; margin-right:30px; margin-top:90px;" id="mycustomButton" href="StudentProgress"><b>Student Progress</b></a>
 
                          
                      </div>
@@ -46,7 +46,7 @@
             </div>
     </div>    
        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+       
     </body>
 </html>
 

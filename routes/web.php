@@ -117,6 +117,12 @@ Route::post('reportdata/create','App\Http\Controllers\ReportController@createRep
 Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
 Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
 
+Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
+
+Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
+Route::get('/markdata/male','App\Http\Controllers\ReportController@male');
+Route::get('/custdata/female','App\Http\Controllers\ReportController@female');
+
 /*
 |--------------------------------------------------------------------------
 | PSM COORDINATOR (REPORT MODULE END)
