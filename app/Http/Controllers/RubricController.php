@@ -16,9 +16,22 @@ class RubricController extends Controller
 }
     
     public function createRubric(Request $request ){
-        \App\Models\Rubric::create($request->all());
 
-        return redirect('/HomePage')->with('success','New Data Successfully Inserted');
+        $request->validate([
+            'rubric_id' => 'required',
+            'competency' => 'required',
+            'excellent_grade' => 'required',
+            'good_grade' => 'required',
+            'moderate_grade' => 'required',
+            'weak_grade' => 'required',
+            'vweak_grade' => 'required',
+            'fail_grade' => 'required',
+            'weightage' => 'required',
+            'mark_given' => 'required',
+            'final_percent' => 'required',
+        ]);
+        \App\Models\Rubric::create($request->all());
+        return redirect('/rubricdata')->with('success','New Data Successfully Inserted');
     } 
 
     

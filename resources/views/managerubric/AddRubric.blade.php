@@ -7,6 +7,14 @@
 <!-- call function -->
 @section('content') 
 
+@if ($errors->any())
+    <div class="alert alert-primary" role="alert">
+     
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+    </div>
+@endif
 
     <!-- Page Content  -->
     <div class="row" style="padding:20px;background-color:#e2e9e9">
