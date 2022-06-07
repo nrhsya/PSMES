@@ -14,6 +14,8 @@
 <html>
   
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <style>
        .section-1 {
@@ -29,43 +31,47 @@
         @endif
     
         <div >
-        <div style="margin-top: 15px; padding:10px 16px; height: 700px; background-color: #F5F5F5;">
+        <div style="margin-top: 15px; padding:10px 16px; height: 800px; background-color: #F5F5F5;">
           
-       <h2 style="border: 2px solid black; color: #FFFFFF; font-size: 18px; padding: 12px 0px; background-color:#11ADA4; text-align: center;">Generate Report</h2><br><br>
+       <h2 style="border: 2px solid black; color: #FFFFFF; font-size: 18px; padding: 12px 0px; background-color:#11ADA4; text-align: center;">Generate Report</h2><br>
 
-		
+		<h3 style="text-align:center;" ><b>Excellent Students</b></h3><br>
 		<center>
-        
-        <a class="btn btn-success" id="mycustomButton" href="/AddReport"><b>Add</b></a> <br><br>
-        
-        
-        
-            <div class="container">
+            
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table table-hover" id="myTable" class="center">
         
             <tr>
-                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">ID</th>
-                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Coordinator Name</th>
-                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Description</th>
-                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Report Date</th>
-                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Modification</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Student ID</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Student Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Mark</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Comment</th>
             </tr>
 
-            @foreach($data_report as $report)
+            @foreach($data_excellent as $excellent)
             <tr>
-                <td>{{$report->id}}</td>
-                <td>{{$report->coord_name}}</td>
-                <td>{{$report->description}}</td>
-                <td>{{$report->report_date}}</td>
-                <td><a href="reportdata/{{$report->id}}/EditReport">Edit</a></td>
+                <td>{{$excellent->std_id}}</td>
+                <td>{{$excellent->std_name}}</td>
+                <td>{{$excellent->eva_mark}}</td>
+                <td>{{$excellent->eva_comment}}</td>
             </tr>
             @endforeach
         </table>
           
         </div>
-    </div></div>
+        
+    </div><br> 
+    <button class="btn btn-success " style="border: 3px solid black; margin-left:35%; margin-right:30px; margin-top:40px;" id="mycustomButton" onclick="window.print()">Print </button>
+    <a class="btn btn-success " style="border: 3px solid black; margin-right:30px; margin-top:40px;" id="mycustomButton" href="reportDashboard"><b>Back</b></a>
+         
+</div>
 
+    
+   
     </body>
 </html>
 
 @endsection('content')
+
+
+
