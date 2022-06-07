@@ -121,6 +121,17 @@ class ScheduleController extends Controller
         return view('manageTop20/confirmAttendance',['data_schedule'=>$data_schedule]);
     }
 
+    //function to choose submit button
+    // public function postAuth()
+    // {
+    //     if (Input::get('submit') == 'send') {
+
+    //         return redirect(url('/Admin/channel'));
+    //     } elseif (Input::get('submit') == 'pay') {
+
+    //         return redirect(url('/pay'));
+    //     }
+
     //function to update evaluation date details (slot change)
     public function updateEvaDateDetails(Request $request,$id) {
         $data_schedule = \App\Models\Schedule::find($id);
@@ -135,7 +146,9 @@ class ScheduleController extends Controller
         $data_schedule = \App\Models\Schedule::find($id);
         $data_schedule->update($request->all());
 
+        return redirect('studentEvaluationSchedule', ['data_schedule'=>$data_schedule])->with('success','Attendance Confirmed !');
+
         // return view('manageTop20/studentEvaluationSchedule', ['data_schedule'=> $data_schedule])->with('success','Evaluation Date Successfully Updated');
-        return redirect('studentEvaluationSchedule', ['attendance_status' => 'CONFIRMED'])->with('success','Attendance Confirmed !');
+        // return redirect('studentEvaluationSchedule', ['attendance_status' => 'CONFIRMED'])->with('success','Attendance Confirmed !');
     }
 }

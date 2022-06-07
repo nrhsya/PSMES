@@ -30,6 +30,7 @@
                         <th>Student ID</th>
                         <th>Student Name</th>
                         <th>Evaluation Date</th>
+                        <th>Attendance</th>
                     </tr>
                     @foreach($data_schedule as $schedule)
                     <tr style="background-color:white;color:#0958A3;">
@@ -37,6 +38,7 @@
                         <td>{{$schedule->std_id}}</td>
                         <td>{{$schedule->std_name}}</td>
                         <td>{{$schedule->eva_date}}</td>
+                        <td>{{$schedule->attendance_status}}</td>
                     </tr>
                     @endforeach
                 </table>

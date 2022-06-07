@@ -31,6 +31,7 @@
                         <th>Student Name</th>
                         <th>Evaluation Date</th>
                         <th>Attendance Status</th>
+                        <th>ACTIONS</th>
                     </tr>
                     @foreach($data_schedule as $schedule)
                     <tr style="background-color:white;color:#0958A3;">
@@ -38,7 +39,8 @@
                         <td>{{$schedule->std_id}}</td>
                         <td>{{$schedule->std_name}}</td>
                         <td>{{$schedule->eva_date}}</td>
-                        <td><a href="scheduleData/{{$schedule->schedule_id}}/viewEvaluationDateDetails" id="customButton"> Confirm Attendance</a></td>
+                        <td>{{$schedule->attendance_status}}</td>
+                        <td><a href="scheduleData/{{$schedule->schedule_id}}/viewEvaluationDateDetails" class="btn btn-warning"> Confirm Attendance</a></td>
                     </tr>
                     @endforeach
                 </table>
