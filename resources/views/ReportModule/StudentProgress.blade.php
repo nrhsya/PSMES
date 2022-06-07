@@ -49,7 +49,6 @@
                  <li><a class="dropdown-item" href="/50data/Above50">50-59</a></li>
                  <li><a class="dropdown-item" href="/40data/Above40">40-49</a></li>
                  <li><a class="dropdown-item" href="/0data/Below40">0-39</a></li>
-                 <li><a class="dropdown-item" href="StudentProgress">0-39</a></li>
              </ul>
         </div><br><br>
     
@@ -57,14 +56,16 @@
             <table class="table table-hover" id="myTable" class="center">
         
             <tr>
-                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Student ID</th>
-                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Student Name</th>
-                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Evaluation Mark</th>
-                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Evaluation Comment</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">No</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Student ID</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Student Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Mark</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Comment</th>
             </tr>
 
             @foreach($data_progress as $progress)
             <tr>
+                <td>{{$progress->eva_id}}</td>
                 <td>{{$progress->std_id}}</td>
                 <td>{{$progress->std_name}}</td>
                 <td>{{$progress->eva_mark}}</td>

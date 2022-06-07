@@ -35,7 +35,8 @@ class ReportController extends Controller
     }
 
     public function ExcellentStudent(){
-        $data_excellent =\App\Models\EvaluationMark::all();
+        $data_excellent =\App\Models\EvaluationMark::paginate(20)
+        ->sortByDesc('eva_mark');
 
         return view('ReportModule/ExcellentStudent',['data_excellent'=> $data_excellent]);
     }
