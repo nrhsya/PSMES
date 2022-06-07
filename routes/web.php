@@ -185,9 +185,11 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
 
-    Route::get('/fypdata/delete', 'App\Http\Controllers\FYPDetailsController@deleteFYPDetails');//delete
+    Route::get('/fypdata/{id}/edit', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
 
-      //route to EditFYPDetails
+    Route::get('/fypdata/{id}/update', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    
+    //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
         return view('ManageFYPDetails/EditFYPDetails');
     });

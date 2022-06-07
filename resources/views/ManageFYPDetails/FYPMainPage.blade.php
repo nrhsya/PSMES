@@ -20,9 +20,7 @@
             <form type="get" action="{{url('/fypdata/search')}}">
                 <input class="form-control mr-sm-2 my-lg-0" name="query" style="border: 5px solid #11ADA4; text-align: center; margin-top: 40px; margin-bottom: 40px;" type="search" placeholder="Enter student ID" size="100" >
                 <table style="margin-left:38%;"><tr><div class="row text-center">
-                    <td><button style="margin: 40px 45% 80px; padding: 15px 20px;" id="customButton" type="submit" class="btn btn-primary"><b>Edit</b></button></td>
-                    <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>
-                    <td><button style="margin: 40px 45% 80px; padding: 15px 20px;" id="customButton" type="submit" class="btn btn-primary"><b>View/Delete</b></button></td>
+                    <td><button style="margin: 40px 45% 80px; padding: 15px 20px;" id="customButton" type="submit" class="btn btn-primary"><b>Search</b></button></td>
                 </div></tr>
                 </table>
             
