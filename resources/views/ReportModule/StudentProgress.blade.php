@@ -33,9 +33,9 @@
         <div >
         <div style="margin-top: 15px; padding:10px 16px; height: 800px; background-color: #F5F5F5;">
           
-       <h2 style="border: 2px solid black; color: #FFFFFF; font-size: 18px; padding: 12px 0px; background-color:#11ADA4; text-align: center;">Generate Report</h2><br><br>
+       <h2 style="border: 2px solid black; color: #FFFFFF; font-size: 18px; padding: 12px 0px; background-color:#11ADA4; text-align: center;">Generate Report</h2><br>
 
-		<h3 style="text-align:center;" ><b>Student Progress</b></h3>
+		<h3 style="text-align:center;" ><b>Student Progress</b></h3><br>
 		<center>
             
         <div class="dropdown">
@@ -43,8 +43,13 @@
                  Filter by <i class="fa fa-caret-down"></i>
             </button>
              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                 <li><a class="dropdown-item" href="/passdata/FilterGradePass">Pass</a></li>
-                 <li><a class="dropdown-item" href="/faildata/FilterGradeFail">Fail</a></li>
+                 <li><a class="dropdown-item" href="/80data/Above80">80-100</a></li>
+                 <li><a class="dropdown-item" href="/70data/Above70">70-79</a></li>
+                 <li><a class="dropdown-item" href="/60data/Above60">60-69</a></li>
+                 <li><a class="dropdown-item" href="/50data/Above50">50-59</a></li>
+                 <li><a class="dropdown-item" href="/40data/Above40">40-49</a></li>
+                 <li><a class="dropdown-item" href="/0data/Below40">0-39</a></li>
+                 <li><a class="dropdown-item" href="StudentProgress">0-39</a></li>
              </ul>
         </div><br><br>
     

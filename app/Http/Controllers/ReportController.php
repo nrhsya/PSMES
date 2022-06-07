@@ -46,17 +46,44 @@ class ReportController extends Controller
         return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
     }
 
-    public function FilterGradePass(){
-        $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [10, 40]);
+//Filter function//
+
+    public function Above80(){
+        $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [79,101]);
 
         return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
     }
 
-    public function FilterGradeFail(){
-        $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [60, 90]);
+    public function Above70(){
+        $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [69,80]);
 
         return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
     }
+
+    public function Above60(){
+        $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [59,70]);
+
+        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+    }
+
+    public function Above50(){
+        $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [49,60]);
+
+        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+    }
+
+    public function Above40(){
+        $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [39,50]);
+
+        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+    }
+
+    public function Below40(){
+        $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [0,40]);
+
+        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+    }
+
 
     
 }
