@@ -44,7 +44,7 @@
                 </div>
             </div><br><br>
 
-            <a id="customButton" onclick="ConfirmAttendanceBtn()" href="attendanceStats">Confirm Attendance</a>
+            <a id="customButton" href="/scheduleData/{{$data_schedule->schedule_id}}/attendanceStats" value="{{$data_schedule->attendance_status}}">Confirm Attendance</a>
 
             <!-- <button id="customButton"><input name="attendance_status" type="text" value="Confirm Attendance" onclick="ConfirmAttendanceBtn()"></button> -->
             <button type="submit" class="btn btn-success btn-lg" id="customButton">Request Slot Change</button>

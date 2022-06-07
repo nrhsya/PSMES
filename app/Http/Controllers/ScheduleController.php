@@ -16,7 +16,8 @@ class ScheduleController extends Controller
     public function viewSchedule(){
         // $data_schedule = \App\Models\Schedule::all();
         $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
-		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark']);
+		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
+                                                ->sortByDesc('eva_mark');
 
         return view('manageTop20/evaluationSchedule', ['data_schedule'=> $data_schedule]);
     }
@@ -36,11 +37,11 @@ class ScheduleController extends Controller
     }
 
     //function to edit existing industry evaluation date (fill in form)
-    public function editEvDate($id){
-        $data_schedule = \App\Models\ScheduleDateHistory::find($id);
+    // public function editEvDate($id){
+    //     $data_schedule = \App\Models\ScheduleDateHistory::find($id);
 
-        return view('manageEvaluationDate',['data_schedulehistory'=>$data_schedulehistory]);
-    }
+    //     return view('manageEvaluationDate',['data_schedulehistory'=>$data_schedulehistory]);
+    // }
 
     //function to update industry evaluation date into database
     public function updateEvDate(Request $request,$id){
@@ -50,11 +51,23 @@ class ScheduleController extends Controller
         return redirect('evaluationSchedule')->with('success','Industry Evaluation Date Successfully Updated');
     }
 
+    public function deleteEvDate($id) {
+        $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
+        $data_schedulehistory -> delete($data_schedulehistory);
+
+        return redirect('manageEvaluationDate')->with('success','Industry Evaluation Date Successfully Deleted');
+    }
+
     //function to assign industry evaluation dates/slots to top 20 students (randomly)
-    public function assignSlot($start_date, $end_date){
-        // $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
-        $data_schedule = \App\Models\Schedule::find($id);
-        $data_schedule -> update($request->all());
+    public function assignSlot($start_date, $end_date, $eva_date){
+        $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
+		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
+                                                ->sortByDesc('eva_mark');
+
+        // $data_schedulehistory = \App\Models\Schedule::find($id);
+        // $data_schedule = \App\Models\ScheduleDateHistory::find($id);
+        // $data_schedule -> update($request->all());
+        // $data_schedule = \App\Models\Schedule::find($id);
 
         // Convert to timetamps
         $min = strtotime($start_date);
@@ -66,7 +79,14 @@ class ScheduleController extends Controller
         // Convert back to desired date format
         // return date('Y-m-d H:i:s', $eva_date)->with('success','Evaluation Slots have been assigned');
 
-        return redirect('/scheduleData')->with('success','Evaluation Slots have been assigned');
+        // $data_schedule = \App\Models\Schedule::find($id);
+        // $data_schedule -> update($eva_date->all());
+
+        // return redirect('evaluationSchedule')->with('success','Evaluation Slots have been assigned');
+
+        // return view('evaluationSchedule', ['data_schedule'=> $data_schedule], $eva_date, $start_date, $end_date)->with('success','Evaluation Slots have been assigned');
+
+        return view('evaluationSchedule', ['data_schedule'=> $eva_date])->with('success','Evaluation Slots have been assigned');
     }
 
     //function to approve students' request for slot change
@@ -111,13 +131,11 @@ class ScheduleController extends Controller
     }
 
     //function to update students' attendance status into the database
-    public function attendanceStats(){
+    public function attendanceStats(Request $request, $id){
         $data_schedule = \App\Models\Schedule::find($id);
-        // $data_schedule->update($request->all());
-        $data_schedule = $request->all();
-        $data_schedule['attendance_status'] = $attendance_status;
+        $data_schedule->update($request->all());
 
         // return view('manageTop20/studentEvaluationSchedule', ['data_schedule'=> $data_schedule])->with('success','Evaluation Date Successfully Updated');
-        return redirect('studentEvaluationSchedule')->with('success','Evaluation Date Successfully Updated');
+        return redirect('studentEvaluationSchedule', ['attendance_status' => 'CONFIRMED'])->with('success','Attendance Confirmed !');
     }
 }

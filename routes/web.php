@@ -89,7 +89,7 @@ Route::get('/', function () {
     Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
 
     //randomly assign evalution dates to top 20 students
-    // Route::post('/scheduleData/{id}/assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
+    Route::get('assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
 
   /*
 |--------------------------------------------------------------------------
@@ -231,6 +231,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
  Route::get('sfilterPSM1','App\Http\Controllers\RubricController@sfilterPSM1');
  Route::get('sviewPSM2','App\Http\Controllers\RubricController@sviewPSM2');
  Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
+
     /*
     |--------------------------------------------------------------------------
     | STUDENT (MANAGETOP20 MODULE START)
@@ -251,6 +252,9 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     //route to update evaluation date 
     Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
+
+    //route to delete evaluation date
+    Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
 
     //route to slot change page
     // Route::get('slotChange', function () {
