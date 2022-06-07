@@ -123,7 +123,7 @@ Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@upd
 |--------------------------------------------------------------------------
 */
 
-Route::get('StsvView','App\Http\Controllers\RubricController@StdviewRubric');
+
 
    //route to rubric mainpage
    Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
@@ -180,10 +180,16 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageFYPDetails/AddFYPDetails');
     });
 
-    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
+    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');//add
     //read
 
-      //route to EditFYPDetails
+    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
+
+    Route::get('/fypdata/{id}/edit', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
+
+    Route::get('/fypdata/{id}/update', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    
+    //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
         return view('ManageFYPDetails/EditFYPDetails');
     });
@@ -228,6 +234,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     | STUDENT (MANAGE RUBRIC)
     |--------------------------------------------------------------------------
     */
+ Route::get('StsvView','App\Http\Controllers\RubricController@StdviewRubric');
  Route::get('sfilterPSM1','App\Http\Controllers\RubricController@sfilterPSM1');
  Route::get('sviewPSM2','App\Http\Controllers\RubricController@sviewPSM2');
  Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
@@ -341,5 +348,13 @@ Route::get('Reminder', function () {
 });
 
 
+/*
 
-
+|--------------------------------------------------------------------------
+| Evaluator (MANAGE RUBRIC)
+|--------------------------------------------------------------------------
+*/
+Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
+Route::get('efilterPSM1','App\Http\Controllers\RubricController@efilterPSM1');
+Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
+Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');

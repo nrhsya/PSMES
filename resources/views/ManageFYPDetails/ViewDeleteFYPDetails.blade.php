@@ -23,15 +23,16 @@
                             <th>FYP Title</th>
                             <th colspan="2">Update / Delete</th>
                         </tr>
-
+                        @foreach($data_rubric as $rubric)
+                        <tr>
                         <tr>
                             <td>{{$std_id->std_id}}</td>
-                            <td>{{$fyp->std_name}}</td>
-                            <td>{{$fyp->sv_name}}</td>
+                            <td>{{$std_name->std_name}}</td>
+                            <td>{{$sv_name->sv_name}}</td>
                             <td>{{$fyp->eva_name}}</td>
                             <td>{{$fyp->fyp_title}}</td>
                         
-                            <td><a href="fypdata/{{$fyp->std_id}}/edit" class="btn btn-success">Update</a></td>
+                            <td><a href="fypdata/{{$fyp->std_id, }}/edit" class="btn btn-success">Update</a></td>
                             <td><a href="fypdata/{{$fyp->std_id}}/delete" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a></td>
                     </tr> 
                     @endforeach 
