@@ -201,6 +201,9 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageEvaluationDetailsAndMarks/SubmitMarks');
     });
 
+    Route::post('markdata/create','App\Http\Controllers\MarksController@SubmitMarks');//add
+
+
 /*
 |--------------------------------------------------------------------------
 | END PSM COORDINATOR (Evaluation details and Marks MODULE )

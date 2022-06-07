@@ -19,7 +19,7 @@
     <div class="row" style="padding:20px;background-color:#e2e9e9">
         <div class=" mb-5" style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
             <h1><b>Add Evaluation Details Form</b></h1>
-            <form action="" method="POST">
+            <form action="/markdata/create" method="POST">
                         {{csrf_field()}}    
                         <b>Add Marks Form:</b>
                         
