@@ -166,20 +166,30 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 |--------------------------------------------------------------------------
 */
     
-    Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views
-
+    //Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views//route to rubric mainpage
+    Route::get('/fypdata','App\Http\Controllers\FYPDetailsController@viewFYPDetails');
     
     //route to FYP mainpage
     Route::get('FYPMainPage', function () {
         return view('ManageFYPDetails/FYPMainPage');
     });
 
+
    //route to AddFYPDetails
      Route::get('AddFYPDetails', function () {
         return view('ManageFYPDetails/AddFYPDetails');
     });
 
-      //route to EditFYPDetails
+    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');//add
+    //read
+
+    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
+
+    Route::get('/fypdata/{id}/edit', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
+
+    Route::get('/fypdata/{id}/update', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    
+    //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
         return view('ManageFYPDetails/EditFYPDetails');
     });
@@ -250,9 +260,12 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
 
     //route to slot change page
-    Route::get('slotChange', function () {
-        return view('manageTop20/slotChange');
-    });
+    // Route::get('slotChange', function () {
+    //     return view('manageTop20/slotChange');
+    // });
+
+    //route to confirm attendance status
+    Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');
 
     /*
     |--------------------------------------------------------------------------

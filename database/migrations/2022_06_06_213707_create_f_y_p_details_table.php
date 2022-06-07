@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('schedules', function (Blueprint $table) {
-            $table->id('schedule_id');
+        Schema::create('f_y_p_details', function (Blueprint $table) {
             $table->string('std_id');
             $table->string('std_name');
-            $table->date('eva_date');
-            $table->string('attendance_status');
+            $table->string('sv_name');
+            $table->string('eva_name');
+            $table->string('fyp_title');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schedules');
+        Schema::dropIfExists('f_y_p_details');
     }
 };
