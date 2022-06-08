@@ -2,7 +2,7 @@
 @extends('layouts.studentHomepageStyle')
 
 <head>
-    <title>Evaluation Schedule | PSMES</title>
+    <title>View Rubric | PSMES</title>
 </head>
 
 @section('content')
