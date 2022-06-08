@@ -48,11 +48,7 @@
             </tr>
             </table> 
         </div>
-        <div>
-            <a href="{{ url('edit/'.$fypdata->id)}}" class="btn btn-primary">Edit</a>
-            <a href="{{ url('delete/'.$fypdata->id)}}" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
-            </center>
-        </div>    
+            </center>    
             @endforeach
     </div>
 

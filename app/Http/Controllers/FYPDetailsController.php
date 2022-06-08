@@ -18,11 +18,13 @@ class FYPDetailsController extends Controller
         $fyp_data = \App\Models\FYPDetails::where('std_id',$std_id)->first();
         return view('ManageFYPDetails/ViewAndDeleteFYPDetails', ['fyp_data'=> $fyp_data]);
     }
+
     public function searchFYPDetails()
     {
         $search_text = $_GET['query'];
-        $fyp_data = FYPDetails::where('std_id', 'LIKE', '%'.$search_text.'%')->get();
-        return view('ManageFYPDetails.ViewFYPDetails', compact('fyp_data'));
+        $fyp_data = FYPDetails::where('std_id', 'LIKE', $search_text)->get();
+        
+            return view('ManageFYPDetails.ViewFYPDetails', compact('fyp_data'));
 
     }
 
@@ -41,7 +43,7 @@ class FYPDetailsController extends Controller
         $fyp_data->fyp_title = $request->input('fyp_title');
         $fyp_data->update();
 
-        return redirect('/fypdata/search?query=cb19033')->with('success','Data Successfully Updated');
+        return redirect('/FYPMainPage')->with('success','Data Successfully Updated');
     }
 
     public function deleteFYPDetails(Request $request, $id){
@@ -55,7 +57,11 @@ class FYPDetailsController extends Controller
     
         return redirect('/FYPMainPage')->with('success','Data Successfully Deleted');
     }
-
+    
+    public function viewFYPDetailsStudent(){
+        $fyp_data = \App\Models\FYPDetails::where('std_id',$std_id)->first();
+        return view('ManageFYPDetails/ViewFYPDetailsStudent', ['fyp_data'=> $fyp_data]);
+    }
 
 
 
