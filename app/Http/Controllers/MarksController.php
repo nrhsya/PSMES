@@ -10,10 +10,8 @@ use \App\Models\Mark;
 class MarksController extends Controller
 {
     public function SubmitMarks(Request $request ){
-        \App\Models\Marks::create($request->all());
-        // \App\Models\Mark::create($request->all());
+         \App\Models\Mark::create($request->all());
 
-        // return redirect('/markdata')->with('success','New Data Successfully Inserted');
-        return redirect('/EvaluationMainPage')->with('success','New Data Successfully Inserted');
+         return redirect('/markdata')->with('success','New Data Successfully Inserted');
     } 
 }

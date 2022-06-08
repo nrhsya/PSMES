@@ -2,7 +2,7 @@
 @extends('layouts.PSMCoordinatorHomepageStyle')
 
 <head>
-    <title> Add Rubric Homepage | PSMES</title>
+    <title> Edit Rubric Homepage | PSMES</title>
 </head>
 <!-- call function -->
 @section('content') 

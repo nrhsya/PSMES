@@ -81,14 +81,14 @@ public function viewPTA(){
 public function StdviewRubric(){
     $data_rubric = \App\Models\Rubric::all();
 
-    return view('managerubric/StsvView', ['data_rubric'=> $data_rubric]);
+    return view('managerubric/ViewRubric', ['data_rubric'=> $data_rubric]);
 }
 //filter PSM1
 public function sfilterPSM1(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PSM1');
 
-    return view('managerubric/StsvView', ['data_rubric'=> $data_rubric]);
+    return view('managerubric/ViewRubric', ['data_rubric'=> $data_rubric]);
 }
 
 //filter PSM2
@@ -96,14 +96,14 @@ public function sviewPSM2(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PSM2');
 
-    return view('managerubric/StsvView', ['data_rubric'=> $data_rubric]);
+    return view('managerubric/ViewRubric', ['data_rubric'=> $data_rubric]);
 }
 //filter PSM1
 public function sviewPTA(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PTA');
 
-    return view('managerubric/StsvView', ['data_rubric'=> $data_rubric]);
+    return view('managerubric/ViewRubric', ['data_rubric'=> $data_rubric]);
 
 }
    //function to display rubric for evaluator

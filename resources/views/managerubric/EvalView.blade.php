@@ -4,7 +4,7 @@
 
 
 <head>
-    <title>Evaluation Schedule | PSMES</title>
+    <title>Rubric View | PSMES</title>
 </head>
 
 @section('content')

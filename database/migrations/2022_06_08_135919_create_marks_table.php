@@ -13,16 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('evaluation_marks', function (Blueprint $table) {
-            $table->id('eva_id');
-            /*$table->foreign('std_id')
-                  ->references('std_id')->on('students')*/
-            $table->string('mark_id');
+        Schema::create('marks', function (Blueprint $table) {
+            $table->id();
             $table->string('std_id');
             $table->string('std_name');
-            $table->string('sv_name');
-            $table->string('eva_name');
-            $table->double('eva_mark', 8, 2);
+            $table->double('eva_mark');
             $table->string('eva_comment');
             $table->timestamps();
         });
@@ -35,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('evaluation_marks');
+        Schema::dropIfExists('marks');
     }
 };
