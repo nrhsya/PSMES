@@ -14,7 +14,6 @@ class ScheduleController extends Controller
 
     //function to display evaluation schedule
     public function viewSchedule(){
-        // $data_schedule = \App\Models\Schedule::all();
         $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
 		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
                                                 ->sortByDesc('eva_mark');
@@ -70,8 +69,6 @@ class ScheduleController extends Controller
 
     //function for top 20 students to view evaluation schedule
     public function viewStudSchedule() {
-        // $data_schedule = \App\Models\Schedule::all();
-
         $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
 		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
                                                 // ->paginate(20)
