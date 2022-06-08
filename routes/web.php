@@ -305,6 +305,12 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
 
 Route::group(['middleware'=>['Coordinator','auth']],function(){
 
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE REPORT MODULE)
+    |--------------------------------------------------------------------------
+    */
+
     Route::get('reportDashboard', function () {
         return view('ReportModule/reportDashboard');
     });
@@ -330,45 +336,52 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
 
     Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
 
-        /*
-        |--------------------------------------------------------------------------
-        | PSM COORDINATOR (MANAGETOP20 MODULE)
-        |--------------------------------------------------------------------------
-        */
-            //route to PSM Coordinator Homepage
-            Route::get('PSMCoordinatorHomepage', function () {
-                return view('manageTop20/PSMCoordinatorHomepage');
-            });
-            
-            //route to view evaluation marks page
-            Route::get('viewMarks','App\Http\Controllers\EvaluationMarksController@viewMarks');
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE REPORT MODULE END)
+    |--------------------------------------------------------------------------
+    */
 
-            //route to generate top 20 students
-            Route::get('generateTop','App\Http\Controllers\Top20Controller@generateTop');
-            
-            //route to industry evaluation mainpage
-            Route::get('industryEvaluationMainpage', function () {
-                return view('manageTop20/industryEvaluationMainpage');
-            });
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE TOP20 MODULE)
+    |--------------------------------------------------------------------------
+    */
 
-            //route to evaluation schedule page
-            Route::get('evaluationSchedule','App\Http\Controllers\ScheduleController@viewSchedule');
+    //route to PSM Coordinator Homepage
+    Route::get('PSMCoordinatorHomepage', function () {
+        return view('manageTop20/PSMCoordinatorHomepage');
+    });
+    
+    //route to view evaluation marks page
+    Route::get('viewMarks','App\Http\Controllers\EvaluationMarksController@viewMarks');
 
-            //route to manage evaluation date page
-            //view existing evaluation dates
-            Route::get('manageEvaluationDate','App\Http\Controllers\ScheduleController@viewEvDate');
+    //route to generate top 20 students
+    Route::get('generateTop','App\Http\Controllers\Top20Controller@generateTop');
+    
+    //route to industry evaluation mainpage
+    Route::get('industryEvaluationMainpage', function () {
+        return view('manageTop20/industryEvaluationMainpage');
+    });
 
-            //add evaluation date into database (create)
-            Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
+    //route to evaluation schedule page
+    Route::get('evaluationSchedule','App\Http\Controllers\ScheduleController@viewSchedule');
 
-            //randomly assign evalution dates to top 20 students
-            Route::get('assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
+    //route to manage evaluation date page
+    //view existing evaluation dates
+    Route::get('manageEvaluationDate','App\Http\Controllers\ScheduleController@viewEvDate');
 
-        /*
-        |--------------------------------------------------------------------------
-        | PSM COORDINATOR (MANAGE TOP20 MODULE END)
-        |--------------------------------------------------------------------------
-        */
+    //add evaluation date into database (create)
+    Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
+
+    //randomly assign evalution dates to top 20 students
+    Route::get('assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
+
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE TOP20 MODULE END)
+    |--------------------------------------------------------------------------
+    */
        
     
    
