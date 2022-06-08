@@ -19,7 +19,7 @@
     <div class="row" style="padding:20px;background-color:#e2e9e9">
         <div class=" mb-5" style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
 
-            <form action="" method="POST">
+            <form action="submit" method="post">
                         {{csrf_field()}}    
                         
                         <div class="mb-3">

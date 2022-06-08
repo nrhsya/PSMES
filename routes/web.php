@@ -404,10 +404,10 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
 |--------------------------------------------------------------------------
 */
 Route::get('Reminder', function () {
-    return view('ManageReminder/viewReminder');
+    return view('ManageReminder/AddReminder');
 });
 
-
+Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
 /*
 
 |--------------------------------------------------------------------------
