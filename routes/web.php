@@ -401,6 +401,11 @@ Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
     Route::get('settings',[StudentController::class,'settings'])->name('student.settings');
 }); 
 
+Route::group(['middleware'=>['Student','auth']],function(){
+
+    //PLEASE DO PUT ALL YOUR ROUTES UNDER THIS COMMAND IF YOU ARE LOGGING IN AS STUDENT.TQ
+
+});
 
 
 
