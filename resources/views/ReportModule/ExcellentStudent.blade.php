@@ -44,6 +44,8 @@
             <tr>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Student ID</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Student Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Supervisor Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluator Name</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Mark</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Comment</th>
             </tr>
@@ -52,6 +54,8 @@
             <tr>
                 <td>{{$excellent->std_id}}</td>
                 <td>{{$excellent->std_name}}</td>
+                <td>{{$excellent->sv_name}}</td>
+                <td>{{$excellent->eva_name}}</td>
                 <td>{{$excellent->eva_mark}}</td>
                 <td>{{$excellent->eva_comment}}</td>
             </tr>
