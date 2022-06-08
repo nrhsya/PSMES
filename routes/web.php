@@ -197,6 +197,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     });
 
     Route::post('markdata/create','App\Http\Controllers\MarksController@SubmitMarks');//add
+    // Route::post('markdata/SubmitMarks','App\Http\Controllers\MarksController@SubmitMarks');
 
 
 /*
