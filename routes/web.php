@@ -286,7 +286,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     | STUDENT (MANAGE RUBRIC)
     |--------------------------------------------------------------------------
     */
- Route::get('StsvView','App\Http\Controllers\RubricController@StdviewRubric');
+ Route::get('ViewRubric','App\Http\Controllers\RubricController@StdviewRubric');
  Route::get('sfilterPSM1','App\Http\Controllers\RubricController@sfilterPSM1');
  Route::get('sviewPSM2','App\Http\Controllers\RubricController@sviewPSM2');
  Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
