@@ -393,7 +393,12 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
 | EVALUATOR 
 |--------------------------------------------------------------------------
 */
-//Evaluator
+
+/*
+|--------------------------------------------------------------------------
+| Evaluator (MANAGE REMINDER)
+|--------------------------------------------------------------------------
+*/
 Route::get('Reminder', function () {
     return view('ManageReminder/viewReminder');
 });

@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reminder', function (Blueprint $table) {
-            $table->string('reminder_id');
+            $table->increments('reminder_id');
             $table->string('reminder_title');
             $table->string('reminder_description');
-            $table->string('reminder_date');
+            $table->date('reminder_date');
             $table->timestamps();
         });
     }

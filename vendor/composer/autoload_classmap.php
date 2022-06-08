@@ -20,6 +20,7 @@ return array(
     'App\\Http\\Controllers\\Evaluator\\EvaluatorController' => $baseDir . '/app/Http/Controllers/Evaluator/EvaluatorController.php',
     'App\\Http\\Controllers\\FYPDetailsController' => $baseDir . '/app/Http/Controllers/FYPDetailsController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\MarksController' => $baseDir . '/app/Http/Controllers/MarksController.php',
     'App\\Http\\Controllers\\PSMCoordinatorController' => $baseDir . '/app/Http/Controllers/PSMCoordinatorController.php',
     'App\\Http\\Controllers\\ReportController' => $baseDir . '/app/Http/Controllers/ReportController.php',
     'App\\Http\\Controllers\\RubricController' => $baseDir . '/app/Http/Controllers/RubricController.php',

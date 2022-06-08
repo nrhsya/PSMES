@@ -1,5 +1,5 @@
 <!-- to be called inside the master.blade.php -->
-@extends('layouts.PSMCoordinatorHomepageStyle')
+@extends('evaluator.dashboard')
 
 <head>
     <title> Add Reminder | PSMES</title>
