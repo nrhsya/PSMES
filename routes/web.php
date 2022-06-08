@@ -131,6 +131,8 @@ Route::get('/50data/Above50','App\Http\Controllers\ReportController@Above50');
 Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
 Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
 
+Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
+
 /*
 |--------------------------------------------------------------------------
 | PSM COORDINATOR (REPORT MODULE END)

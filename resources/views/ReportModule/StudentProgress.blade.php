@@ -74,11 +74,12 @@
             @endforeach
         </table>
           
-        </div>
-        
-    </div><br> 
-    <button class="btn btn-success " style="border: 3px solid black; margin-left:35%; margin-right:30px; margin-top:40px;" id="myButton" onclick="window.print()">Print </button>
-    <a class="btn btn-success " style="border: 3px solid black; margin-right:30px; margin-top:40px;" id="myButton" href="reportDashboard"><b>Back</b></a>
+        </div> 
+    </div><br><br>
+
+    <p style="color:black;margin-top:30px;"><b>Total number of students: {{$post}}</b></p> 
+    <button class="btn btn-success " style="border: 3px solid black; margin-left:35%; margin-right:30px; margin-top:25px;" id="myButton" onclick="window.print()">Print </button>
+    <a class="btn btn-success " style="border: 3px solid black; margin-right:30px; margin-top:25px;" id="myButton" href="reportDashboard"><b>Back</b></a>
          
 </div>
 
