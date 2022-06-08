@@ -46,7 +46,7 @@
 
             <div class="mt-5">
                 <a id="customButton" href="/manageEvaluationDate"><b>Manage Schedule</b></a>
-                <a id="customButton" href="#" onclick="publishBtn()"><b>Publish Schedule</b></a><br><br>
+                <!-- <a id="customButton" href="#" onclick="publishBtn()"><b>Publish Schedule</b></a><br><br> -->
             </div>
         </div>
     </div>
