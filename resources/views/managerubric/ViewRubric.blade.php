@@ -2,7 +2,7 @@
 @extends('layouts.studentHomepageStyle')
 
 <head>
-    <title>Evaluation Schedule | PSMES</title>
+    <title>View Rubric | PSMES</title>
 </head>
 
 @section('content')
@@ -14,9 +14,9 @@
             <div class="col-12"style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
 
             <div style="padding:2px; background-color:#e2e9e9">
-            <a id="customButton" href="efilterPSM1"><b>PSM 1</b></a>
-            <a id="customButton" href="eviewPSM2"><b>PSM 2</b></a>
-            <a id="customButton" href="eviewPTA"><b>PTA</b></a>
+            <a id="customButton" href="sfilterPSM1"><b>PSM 1</b></a>
+            <a id="customButton" href="sviewPSM2"><b>PSM 2</b></a>
+            <a id="customButton" href="sviewPTA"><b>PTA</b></a>
 
         </div>
 

@@ -59,6 +59,8 @@
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">No</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Student ID</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Student Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Supervisor Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluator Name</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Mark</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Comment</th>
             </tr>
@@ -68,6 +70,8 @@
                 <td>{{$progress->eva_id}}</td>
                 <td>{{$progress->std_id}}</td>
                 <td>{{$progress->std_name}}</td>
+                <td>{{$progress->sv_name}}</td>
+                <td>{{$progress->eva_name}}</td>
                 <td>{{$progress->eva_mark}}</td>
                 <td>{{$progress->eva_comment}}</td>
             </tr>
