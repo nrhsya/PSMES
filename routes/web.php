@@ -278,43 +278,37 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
 //restrict access to only coordinator
 Route::group(['middleware'=>['Coordinator','auth']],function(){
 
-     /*
-        |--------------------------------------------------------------------------
-        | PSM COORDINATOR (MANAGE REPORT MODULE)
-        |--------------------------------------------------------------------------
-        */
-       
-            Route::get('reportDashboard', function () {
-                return view('ReportModule/reportDashboard');
-            });
-    
-            Route::get('AddReport', function () {
-                return view('ReportModule/AddReport');
-            });
-    
-            Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
-            Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
-            Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
-            Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
-
-            Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
-
-            Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
-            Route::get('/80data/Above80','App\Http\Controllers\ReportController@Above80');
-            Route::get('/70data/Above70','App\Http\Controllers\ReportController@Above70');
-            Route::get('/60data/Above60','App\Http\Controllers\ReportController@Above60');
-            Route::get('/50data/Above50','App\Http\Controllers\ReportController@Above50');
-            Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
-            Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
-
-            Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
-
     /*
-        |--------------------------------------------------------------------------
-        | PSM COORDINATOR (MANAGE REPORT MODULE END)
-        |--------------------------------------------------------------------------
-        */
-       
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE REPORT MODULE)
+    |--------------------------------------------------------------------------
+    */
+      
+    Route::get('reportDashboard', function () {
+        return view('ReportModule/reportDashboard');
+    });
+    
+    Route::get('AddReport', function () {
+        return view('ReportModule/AddReport');
+    });
+    
+    Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+    Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+    Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
+    Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
+
+    Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
+
+    Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
+    Route::get('/80data/Above80','App\Http\Controllers\ReportController@Above80');
+    Route::get('/70data/Above70','App\Http\Controllers\ReportController@Above70');
+    Route::get('/60data/Above60','App\Http\Controllers\ReportController@Above60');
+    Route::get('/50data/Above50','App\Http\Controllers\ReportController@Above50');
+    Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
+    Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
+
+    Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
+
 
     /*
     |--------------------------------------------------------------------------
@@ -367,6 +361,8 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
    
 }); 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | STUDENT LOGIN
@@ -378,41 +374,13 @@ Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
     Route::get('settings',[StudentController::class,'settings'])->name('student.settings');
 }); 
 
-//restrict access to only students
 Route::group(['middleware'=>['Student','auth']],function(){
 
-    /*
-    |--------------------------------------------------------------------------
-    | STUDENT (MANAGETOP20 MODULE START)
-    |--------------------------------------------------------------------------
-    */
-
-    //route to student evaluation schedule page
-    Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
-
-    //route to confirm attendance page
-    Route::get('/scheduleData/{id}/viewEvaluationDateDetails','App\Http\Controllers\ScheduleController@viewEvaluationDateDetails');
-
-    //route to update evaluation date 
-    Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
-
-    //route to delete evaluation date
-    Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
-
-    //route to view evaluation start and end date
-    Route::get('confirmAttendance','App\Http\Controllers\ScheduleController@viewDate');
-
-    //route to confirm attendance status
-    Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');
-
-    /*
-    |--------------------------------------------------------------------------
-    | STUDENT (MANAGETOP20 MODULE END)
-    |--------------------------------------------------------------------------
-    */
-
+    //PLEASE DO PUT ALL YOUR ROUTES UNDER THIS COMMAND IF YOU ARE LOGGING IN AS STUDENT.TQ
 
 });
+
+
 
   
 /*
