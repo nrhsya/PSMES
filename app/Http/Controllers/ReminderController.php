@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Http\Controller;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Reminder;
+use App\Models\reminder;
 
 class ReminderController extends Controller
 {
-    function insertReminder (Request $remind)
-    {
-        //print_r($remind->input());
 
-        $remind = new Reminder;
-        $remind->reminder_title = $remind->reminder_title;
-        $remind->reminder_description = $remind->reminder_description;
-        $remind->reminder_date = $remind->reminder_date;
-        $remind->save();
+    public function insertReminder(Request $req ){
+        
+        $var = new reminder;
+        $var->reminder_title = $req->inreminder_title;
+        $var->reminder_description = $req->inreminder_description;
+        $var->reminder_date = $req->inreminder_date;
+        $var->save();
+
+        return redirect('/viewReminder')->with('success','New Data Inserted Into The Sytem');
     }
 }
