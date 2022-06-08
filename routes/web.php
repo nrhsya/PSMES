@@ -236,14 +236,13 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
 
-    Route::get('/fypdata/{id}/edit', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
+    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
 
-    Route::post('/fypdata/{id}/update', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
 
+    Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
     
-    Route::get('/fypdata/{id}/delete','App\Http\Controllers\RubricController@deleteFYPDetails');
-    
-    //route to EditFYPDetails
+    /* //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
         return view('ManageFYPDetails/EditFYPDetails');
     });
@@ -255,7 +254,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
      //route to ViewDeleteFYPDetails
      Route::get('ViewDeleteFYPDetails', function () {
         return view('ManageFYPDetails/ViewDeleteFYPDetails');
-    });
+    }); */
 
 /*
 /*

@@ -25,6 +25,10 @@
 
     <table style="background-color: #11ADA4; border: 5px solid blue; margin-left: 10px; margin-right: 10px; margin-top: 50px; padding-left:300px"> 
     <tr style="height: 60px;">
+        <td style="width: 20%; border: 10px solid #11ADA4;"><label>No</label></td>
+        <td style="width: 85%; margin-left: 300px;border: 10px solid #11ADA4; padding-left: 50px">{{$fypdata->id}}</td>
+    </tr>
+    <tr style="height: 60px;">
         <td style="width: 20%; border: 10px solid #11ADA4;"><label>Student ID</label></td>
         <td style="width: 85%; margin-left: 300px;border: 10px solid #11ADA4; padding-left: 50px">{{$fypdata->std_id}}</td>
     </tr>
@@ -50,8 +54,8 @@
     </table> 
     
     <div>
-    <a href="fypdata/{{$fypdata->std_id}}/edit" class="btn btn-primary">Edit</a>
-    <a href="fypdata/{{$fypdata->std_id}}/delete" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
+    <a href="{{ url('edit/'.$fypdata->id)}}" class="btn btn-primary">Edit</a>
+    <a href="/fypdata/{{$fypdata->id}}/delete" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
 </div>
 @endforeach
 </center>

@@ -12,11 +12,11 @@
     <div style="margin: 0px 0px; padding:0px 0px;height:100%; background-color: white;">
             <div style="margin-top: 15px; padding:10px 16px; height:100%;background-color: #F5F5F5;">
           
-          <h2 style="border: 2px solid black; color: #FFFFFF; font-size: 18px; padding: 5px 0px; background-color:#11ADA4; text-align: center;">Add New Student FYP Details</h2>
+          <h2 style="height: 50px;  color: #FFFFFF; font-size: 18px; padding: 5px 0px; background-color:#11ADA4; text-align: center;">Edit Student FYP Details</h2>
 
-    <form style="width:100%;" action="/fypdata/{{$fyp_data->std_id}}/update" method="POST">
-                        {{csrf_field()}}  
-
+    <form style="width:100%;" action="{{url('update/'.$fyp_data->id)}}" method="POST">
+    @csrf
+    @method('PUT')
     <table style="margin-left: 300px; margin-top: 50px">
     <tr style="height: 60px;">
         <td style="width:10%"><label for="exampleFormControlInput2" class="form-label">Student ID</label></td>
@@ -40,7 +40,7 @@
     </tr>
     </table> 
     
-    <button style="margin: 40px 45% 80px; padding: 15px 20px;" id="customButton" type="submit" class="btn btn-primary">Submit</button>   
+    <button style="margin: 40px 45% 80px; padding: 15px 20px;" id="customButton" type="submit" class="btn btn-primary">Edit</button>   
     </form>
 </div>
 </div>
