@@ -20,27 +20,37 @@
         {{csrf_field()}}
             <div class="p-5" style="background-color:white;border-radius:10px;text-align:left;">
                 <!-- Student ID -->
-                <div class="form-group row">
+                <div class="form-group row mb-5">
                     <label for="exampleFormControlInput1" class="form-label"><b>Student ID</b></label>
                     <input name="std_id" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->std_id}}" disabled>
-                </div><br><br>
+                </div>
                 
                 <!-- Student Name -->
-                <div class="form-group row">
+                <div class="form-group row mb-5">
                     <label for="exampleFormControlInput1" class="form-label"><b>Student Name</b></label>
                     <input name="std_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->std_name}}" disabled>
-                </div><br><br>
+                </div>
 
                 <!-- FYP Title -->
-                <div class="form-group row">
+                <div class="form-group row mb-5">
                     <label for="exampleFormControlInput1" class="form-label"><b>FYP Title</b></label>
                     <input name="startDate" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->fyp_title}}" disabled>
-                </div><br><br>
+                </div>
                 
                 <!-- Evaluation Date -->
-                <div class="form-group row">
+                <div class="form-group row mb-5">
                     <label for="exampleFormControlInput1" class="form-label"><b>Evaluation Date</b></label>
                     <input name="eva_date" type="date" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->eva_date}}">
+                </div>
+
+                <!-- Attendance Status -->
+                <div class="form-group row mb-2">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Attendance Status</b></label>
+                    <select name="attendance_status" class="form-select" aria-label="Gender">
+                        <option selected>Choose Attendance Status</option>
+                        <option value="WAITING FOR CONFIRMATION" @if($data_schedule->attendance_status=='WAITING FOR CONFIRMATION') selected @endif>WAITING FOR CONFIRMATION</option>
+                        <option value="CONFIRMED" @if($data_schedule->attendance_status=='CONFIRMED') selected @endif>CONFIRMED</option>
+                    </select>
                 </div>
             </div><br><br>
 
