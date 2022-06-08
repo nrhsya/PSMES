@@ -278,6 +278,8 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
 //restrict access to only coordinator
 Route::group(['middleware'=>['Coordinator','auth']],function(){
 
+    //PLEASE DO PUT ALL YOUR ROUTES UNDER THIS COMMAND IF YOU ARE LOGGING IN AS COORDINATOR.TQ
+
     /*
     |--------------------------------------------------------------------------
     | PSM COORDINATOR (MANAGE REPORT MODULE)
@@ -357,11 +359,7 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
     |--------------------------------------------------------------------------
     */
        
-    
-   
 }); 
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -412,8 +410,6 @@ Route::group(['middleware'=>['Student','auth']],function(){
 });
 
 
-
-  
 /*
 |--------------------------------------------------------------------------
 | EVALUATOR LOGIN
