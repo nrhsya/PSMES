@@ -36,7 +36,7 @@
 		
 		<center>
         
-        <a class="btn btn-success" id="myButton" href="/AddReport"><b>Add</b></a> <br><br>
+        <a class="btn btn-success" id="mycustomButton" href="/AddReport"><b>Add</b></a> <br><br>
         
         
         
@@ -44,19 +44,19 @@
             <table class="table table-hover" id="myTable" class="center">
         
             <tr>
-                <th style="background-color:#404040; color: white ; border: 3px solid black;">ID</th>
-                <th style="background-color:#404040; color: white ; border: 3px solid black;">Coordinator Name</th>
-                <th style="background-color:#404040; color: white ; border: 3px solid black;">Description</th>
-                <th style="background-color:#404040; color: white ; border: 3px solid black;">Report Date</th>
-                <th style="background-color:#404040; color: white ; border: 3px solid black;">Modification</th>
+                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">ID</th>
+                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Coordinator Name</th>
+                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Description</th>
+                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Report Date</th>
+                <th style="background-color:#7a0099; color: white ; border: 3px solid black;">Modification</th>
             </tr>
 
-            @foreach($data_report as $report)
+            @foreach($data_result as $result)
             <tr>
-                <td>{{$report->id}}</td>
-                <td>{{$report->coord_name}}</td>
-                <td>{{$report->description}}</td>
-                <td>{{$report->report_date}}</td>
+                <td>{{$result->rubric_id}}</td>
+                <td>{{$result->coord_name}}</td>
+                <td>{{$result->description}}</td>
+                <td>{{$result->report_date}}</td>
                 <td><a href="reportdata/{{$report->id}}/EditReport">Edit</a></td>
             </tr>
             @endforeach

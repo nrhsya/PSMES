@@ -43,7 +43,7 @@
 
     </table> 
     
-    <button style="margin: 40px 45% 80px; padding: 15px 20px;" id="mycustomButton" type="submit" class="btn btn-primary">Submit</button>   
+    <button style="margin: 40px 45% 80px; padding: 15px 20px;" id="myButton" type="submit" class="btn btn-primary">Submit</button>   
     </form>
 
 </div>

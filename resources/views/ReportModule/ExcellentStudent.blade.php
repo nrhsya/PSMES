@@ -61,8 +61,8 @@
         </div>
         
     </div><br> 
-    <button class="btn btn-success " style="border: 3px solid black; margin-left:35%; margin-right:30px; margin-top:40px;" id="mycustomButton" onclick="window.print()">Print </button>
-    <a class="btn btn-success " style="border: 3px solid black; margin-right:30px; margin-top:40px;" id="mycustomButton" href="reportDashboard"><b>Back</b></a>
+    <button class="btn btn-success " style="border: 3px solid black; margin-left:35%; margin-right:30px; margin-top:40px;" id="myButton" onclick="window.print()">Print </button>
+    <a class="btn btn-success " style="border: 3px solid black; margin-right:30px; margin-top:40px;" id="myButton" href="reportDashboard"><b>Back</b></a>
          
 </div>
 
