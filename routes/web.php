@@ -305,7 +305,6 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
 
 Route::group(['middleware'=>['Coordinator','auth']],function(){
 
-//Report Module
     Route::get('reportDashboard', function () {
         return view('ReportModule/reportDashboard');
     });
@@ -331,12 +330,6 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
 
     Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-//End Report Module
-=======
->>>>>>> Stashed changes
         /*
         |--------------------------------------------------------------------------
         | PSM COORDINATOR (MANAGETOP20 MODULE)
@@ -376,10 +369,6 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
         | PSM COORDINATOR (MANAGE TOP20 MODULE END)
         |--------------------------------------------------------------------------
         */
-<<<<<<< Updated upstream
-=======
->>>>>>> d4b466fb76cce78b5154b4ed9a0579879eae9956
->>>>>>> Stashed changes
        
     
    
