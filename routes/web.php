@@ -187,7 +187,10 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     Route::get('/fypdata/{id}/edit', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
 
-    Route::get('/fypdata/{id}/update', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    Route::post('/fypdata/{id}/update', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+
+    
+    Route::get('/fypdata/{id}/delete','App\Http\Controllers\RubricController@deleteFYPDetails');
     
     //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
@@ -202,6 +205,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
      Route::get('ViewDeleteFYPDetails', function () {
         return view('ManageFYPDetails/ViewDeleteFYPDetails');
     });
+
 /*
 /*
 |--------------------------------------------------------------------------

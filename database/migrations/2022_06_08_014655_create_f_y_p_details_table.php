@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('f_y_p_details', function (Blueprint $table) {
+            $table->id();
             $table->string('std_id');
             $table->string('std_name');
             $table->string('sv_name');
