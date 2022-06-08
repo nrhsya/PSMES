@@ -107,8 +107,8 @@ Route::get('tryindex', function () {
     return view('ReportModule/tryindex');
 });
 
-Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
-Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+//Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+//Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
 Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
 Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
 
@@ -342,7 +342,14 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
     Route::get('dashboard',[PSMCoordinatorController::class,'homepage'])->name('coordinator.dashboard');
     Route::get('profile',[PSMCoordinatorController::class,'profile'])->name('coordinator.profile');
     Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
-    Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
+});   
+    Route::group(['middleware'=>['Coordinator','auth']],function(){
+        Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+        Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+
+
+       
+    
    
 }); 
 
@@ -356,6 +363,7 @@ Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
     Route::get('profile',[StudentController::class,'profile'])->name('student.profile');
     Route::get('settings',[StudentController::class,'settings'])->name('student.settings');
 }); 
+
   
 /*
 |--------------------------------------------------------------------------
