@@ -36,13 +36,6 @@ class ScheduleController extends Controller
         return redirect('manageEvaluationDate')->with('success','Industry Evaluation Date Successfully Added');
     }
 
-    //function to edit existing industry evaluation date (fill in form)
-    // public function editEvDate($id){
-    //     $data_schedule = \App\Models\ScheduleDateHistory::find($id);
-
-    //     return view('manageEvaluationDate',['data_schedulehistory'=>$data_schedulehistory]);
-    // }
-
     //function to update industry evaluation date into database
     public function updateEvDate(Request $request,$id){
         $data_schedule = \App\Models\Schedule::find($id);
@@ -110,6 +103,13 @@ class ScheduleController extends Controller
         return view('manageTop20/studentEvaluationSchedule', ['data_schedule'=> $data_schedule]);
     }
 
+    //function to view start and end date for industry evaluation
+    public function viewDate() {
+        $data_schedulehistory = \App\Models\ScheduleDateHistory::all();
+
+        return view('manageTop20/confirmAttendance', ['data_schedulehistory'=> $data_schedulehistory]);
+    }
+
     //function for students to confirm their evaluation date details
     public function viewEvaluationDateDetails($id) {
         $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
@@ -120,17 +120,6 @@ class ScheduleController extends Controller
 
         return view('manageTop20/confirmAttendance',['data_schedule'=>$data_schedule]);
     }
-
-    //function to choose submit button
-    // public function postAuth()
-    // {
-    //     if (Input::get('submit') == 'send') {
-
-    //         return redirect(url('/Admin/channel'));
-    //     } elseif (Input::get('submit') == 'pay') {
-
-    //         return redirect(url('/pay'));
-    //     }
 
     //function to update evaluation date details (slot change)
     public function updateEvaDateDetails(Request $request,$id) {
@@ -146,9 +135,6 @@ class ScheduleController extends Controller
         $data_schedule = \App\Models\Schedule::find($id);
         $data_schedule->update($request->all());
 
-        return redirect('studentEvaluationSchedule', ['data_schedule'=>$data_schedule])->with('success','Attendance Confirmed !');
-
-        // return view('manageTop20/studentEvaluationSchedule', ['data_schedule'=> $data_schedule])->with('success','Evaluation Date Successfully Updated');
-        // return redirect('studentEvaluationSchedule', ['attendance_status' => 'CONFIRMED'])->with('success','Attendance Confirmed !');
+        return redirect('studentEvaluationSchedule')->with('success','Attendance Confirmed !');
     }
 }

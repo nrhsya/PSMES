@@ -305,15 +305,9 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     //route to student evaluation schedule page
     Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
-    // Route::get('studentEvaluationSchedule', function () {
-    //     return view('manageTop20/studentEvaluationSchedule');
-    // });
 
     //route to confirm attendance page
     Route::get('/scheduleData/{id}/viewEvaluationDateDetails','App\Http\Controllers\ScheduleController@viewEvaluationDateDetails');
-    // Route::get('confirmAttendance', function () {
-    //     return view('manageTop20/confirmAttendance');
-    // });
 
     //route to update evaluation date 
     Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
@@ -325,6 +319,9 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     // Route::get('slotChange', function () {
     //     return view('manageTop20/slotChange');
     // });
+
+    //route to view evaluation start and end date
+    Route::get('confirmAttendance','App\Http\Controllers\ScheduleController@viewDate');
 
     //route to confirm attendance status
     Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');

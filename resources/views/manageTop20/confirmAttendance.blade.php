@@ -14,8 +14,12 @@
         </div>
         <!-- form to insert data -->
         <form action="/scheduleData/{{$data_schedule->schedule_id}}/updateEvaDateDetails" method="POST">
-            <h1 class="p-3">Please make sure you can attend the assigned slots before you click the "Confirm Attendance" button</h1>
-            <p class="p-3" style="color:red;">P/S: Request for <b>Slot Change</b> if you cannot attend the assigned slot !</p>
+            <h1 class="p-2">- Please make sure you can attend the assigned slots before you click the "Confirm Attendance" button -</h1>
+
+            <div class="p-2 mb-2" style="background-color:white;border-radius:10px;">
+                <h1 class="p-2">For Slot Change, only choose dates from <b>{{$data_schedule->start_date}}</b> until <b>{{$data_schedule->end_date}}</b></h1>
+                <p class="p-2" style="color:red;">P/S: Request for <b>Slot Change</b> if you cannot attend the assigned slot !</p>
+            </div>
         
         {{csrf_field()}}
             <div class="p-5" style="background-color:white;border-radius:10px;text-align:left;">
