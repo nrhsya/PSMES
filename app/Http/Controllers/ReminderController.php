@@ -18,4 +18,12 @@ class ReminderController extends Controller
 
         return redirect('/viewReminder')->with('success','New Data Inserted Into The Sytem');
     }
+
+    public function viewReminder() 
+    {
+        $data_reminder = \App\Models\Reminder::all();
+        
+
+        return view('ManageReminder/viewReminder',['data_reminder'=>$data_reminder]);
+    }
 }

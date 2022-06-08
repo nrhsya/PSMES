@@ -30,20 +30,20 @@
                         <th>Description</th>
                         <th>Date</th>
                     </tr>
-                    @foreach($ as $)
+                    @foreach($data_reminder as $reminder)
                     <tr style="background-color:white;color:#0958A3;">
                         
 
-                        <td>{{$->reminder_id}}</td>
-                        <td>{{$->reminder_title}}</td>
-                        <td>{{$->reminder_description}}</td>
-                        <td>{{$->reminder_date}}</td>
+                        <td>{{$reminder->reminder_id}}</td>
+                        <td>{{$reminder->reminder_title}}</td>
+                        <td>{{$reminder->reminder_description}}</td>
+                        <td>{{$reminder->reminder_date}}</td>
                     </tr>
                     @endforeach
                 </table><br><br>
             </div>
 
-            <a class="mt-5" class="customButton" href="generateTop" onclick="generateTop20()"><b>Generate Top 20 Students</b></a>
+        
         </div>
     </div>
    

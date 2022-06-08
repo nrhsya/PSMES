@@ -397,6 +397,7 @@ Route::get('Reminder', function () {
 });
 
 Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
+Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
 /*
 
 |--------------------------------------------------------------------------
