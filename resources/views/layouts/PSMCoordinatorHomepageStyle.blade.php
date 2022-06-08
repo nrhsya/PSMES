@@ -410,7 +410,7 @@
                             <a class="customFont" href="/HomePage">Rubric</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="#">Evaluation Details and Mark</a>
+                            <a class="customFont" href="/EvaluationMainPage">Evaluation Details and Mark</a>
                         </li><br>
                         <li>
                             <a class="customFont" href="/industryEvaluationMainpage">Industry Evaluation</a>

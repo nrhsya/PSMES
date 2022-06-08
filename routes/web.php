@@ -112,6 +112,10 @@ Route::get('AddReport', function () {
     return view('ReportModule/AddReport');
 });
 
+Route::get('tryindex', function () {
+    return view('ReportModule/tryindex');
+});
+
 Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
 Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
 Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
@@ -177,6 +181,42 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
 /*
 |--------------------------------------------------------------------------
+| PSM COORDINATOR (Evaluation details and marks MODULE )
+|--------------------------------------------------------------------------
+*/
+
+   //route to Evaluation details and marks main page
+    Route::get('EvaluationMainPage', function () {
+        return view('ManageEvaluationDetailsAndMarks/EvaluationMainPage');
+    });
+
+   //route to AddEvaluation
+     Route::get('AddEvaluation', function () {
+        return view('ManageEvaluationDetailsAndMarks/AddEvaluation');
+    });
+
+    //route to SubmitMarks
+    Route::get('DeleteEvaluation', function () {
+        return view('ManageEvaluationDetailsAndMarks/DeleteEvaluation');
+        });
+
+     //route to SubmitMarks
+     Route::get('SubmitMarks', function () {
+        return view('ManageEvaluationDetailsAndMarks/SubmitMarks');
+    });
+
+    Route::post('markdata/create','App\Http\Controllers\MarksController@SubmitMarks');//add
+
+
+/*
+|--------------------------------------------------------------------------
+| END PSM COORDINATOR (Evaluation details and Marks MODULE )
+|--------------------------------------------------------------------------
+*/
+
+
+/*
+|--------------------------------------------------------------------------
 | START PSM COORDINATOR (FYPDetails MODULE )
 |--------------------------------------------------------------------------
 */
@@ -200,11 +240,13 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
 
-    Route::get('/fypdata/{id}/edit', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
+    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
 
-    Route::get('/fypdata/{id}/update', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+
+    Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
     
-    //route to EditFYPDetails
+    /* //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
         return view('ManageFYPDetails/EditFYPDetails');
     });
@@ -216,7 +258,8 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
      //route to ViewDeleteFYPDetails
      Route::get('ViewDeleteFYPDetails', function () {
         return view('ManageFYPDetails/ViewDeleteFYPDetails');
-    });
+    }); */
+
 /*
 /*
 |--------------------------------------------------------------------------
@@ -359,7 +402,7 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
 */
 //Evaluator
 Route::get('Reminder', function () {
-    return view('ManageReminder/Reminder');
+    return view('ManageReminder/viewReminder');
 });
 
 

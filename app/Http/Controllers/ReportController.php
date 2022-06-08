@@ -84,7 +84,15 @@ class ReportController extends Controller
 
         return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
     }
+//End Filter
 
+public function tryindex()
+{
+    $data_result = Rubric::leftJoin('rubrics', 'rubrics.id', '=', 'report.id')
+            ->select('rubrics.*')
+            ->get();
+            return view('ReportModule/StudentProgress',['data_result'=> $data_result]);
+}
 
     
 }
