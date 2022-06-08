@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('mark_id');
             $table->string('std_id');
             $table->string('std_name');
+            $table->string('sv_name');
+            $table->string('eva_name');
             $table->double('eva_mark', 8, 2);
             $table->string('eva_comment');
             $table->timestamps();
