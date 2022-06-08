@@ -112,6 +112,10 @@ Route::get('AddReport', function () {
     return view('ReportModule/AddReport');
 });
 
+Route::get('tryindex', function () {
+    return view('ReportModule/tryindex');
+});
+
 Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
 Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
 Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
@@ -236,11 +240,13 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
 
-    Route::get('/fypdata/{id}/edit', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
+    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
 
-    Route::get('/fypdata/{id}/update', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+
+    Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
     
-    //route to EditFYPDetails
+    /* //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
         return view('ManageFYPDetails/EditFYPDetails');
     });
@@ -252,7 +258,8 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
      //route to ViewDeleteFYPDetails
      Route::get('ViewDeleteFYPDetails', function () {
         return view('ManageFYPDetails/ViewDeleteFYPDetails');
-    });
+    }); */
+
 /*
 /*
 |--------------------------------------------------------------------------
@@ -298,15 +305,9 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     //route to student evaluation schedule page
     Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
-    // Route::get('studentEvaluationSchedule', function () {
-    //     return view('manageTop20/studentEvaluationSchedule');
-    // });
 
     //route to confirm attendance page
     Route::get('/scheduleData/{id}/viewEvaluationDateDetails','App\Http\Controllers\ScheduleController@viewEvaluationDateDetails');
-    // Route::get('confirmAttendance', function () {
-    //     return view('manageTop20/confirmAttendance');
-    // });
 
     //route to update evaluation date 
     Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
@@ -318,6 +319,9 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     // Route::get('slotChange', function () {
     //     return view('manageTop20/slotChange');
     // });
+
+    //route to view evaluation start and end date
+    Route::get('confirmAttendance','App\Http\Controllers\ScheduleController@viewDate');
 
     //route to confirm attendance status
     Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');
