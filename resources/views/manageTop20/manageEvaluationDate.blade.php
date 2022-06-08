@@ -21,13 +21,13 @@
             <!-- Start Date -->
             <div class="mb-5">
                 <label for="exampleFormControlInput1" class="form-label"><b>Start Date</b></label>
-                <input name="start_date" type="date" class="form-control" id="exampleFormControlInput1">
+                <input name="start_date" type="date" class="form-control" id="startDateInput">
             </div>
             
             <!-- End Date -->
             <div class="mb-5">
                 <label for="exampleFormControlInput1" class="form-label"><b>End Date</b></label>
-                <input name="end_date" type="date" class="form-control" id="exampleFormControlInput1">
+                <input name="end_date" type="date" class="form-control" id="endDateInput">
             </div>
 
             <button type="submit" class="btn btn-success btn-lg text-center" id="customButton">Save</button>
@@ -61,7 +61,7 @@
                     <td>{{$schedulehistory->start_date}}</td>
                     <td>{{$schedulehistory->end_date}}</td>
                     <td>{{$schedulehistory->created_at}}</td>
-                    <td><a href="assignSlot" class="btn btn-success">Assign Slots</a></td>
+                    <td><a href="assignSlot" class="btn btn-success" onclick=assignSlot()>Assign Slots</a></td>
                     <td><a href="scheduleData/{{$schedulehistory->schedulehistory_id}}/deleteEvDate" class="btn btn-danger">Delete</a></td>
                 </tr>
                 @endforeach

@@ -26,6 +26,8 @@ class EvaluationMarkSeeders extends Seeder
                 'mark_id' => $faker->randomDigitNotNull,
                 'std_id' => $faker->randomElement(['CB19XXX','CA19XXX','CD19XXX']),
                 'std_name' => $faker->name,
+                'sv_name' => $faker->name,
+                'eva_name' => $faker->name,
                 'eva_mark' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 100.00),
                 'eva_comment' => $faker->randomElement(['Good Progress','Perfect flow of explanation ','Able to show the progress well','Creative way of presentation and beatiful prototype'])
             ]);
