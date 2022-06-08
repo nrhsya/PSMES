@@ -374,9 +374,40 @@ Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
     Route::get('settings',[StudentController::class,'settings'])->name('student.settings');
 }); 
 
+//restrict access to only students
 Route::group(['middleware'=>['Student','auth']],function(){
 
     //PLEASE DO PUT ALL YOUR ROUTES UNDER THIS COMMAND IF YOU ARE LOGGING IN AS STUDENT.TQ
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE START)
+    |--------------------------------------------------------------------------
+    */
+
+    //route to student evaluation schedule page
+    Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
+
+    //route to confirm attendance page
+    Route::get('/scheduleData/{id}/viewEvaluationDateDetails','App\Http\Controllers\ScheduleController@viewEvaluationDateDetails');
+
+    //route to update evaluation date 
+    Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
+
+    //route to delete evaluation date
+    Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
+
+    //route to view evaluation start and end date
+    Route::get('confirmAttendance','App\Http\Controllers\ScheduleController@viewDate');
+
+    //route to confirm attendance status
+    Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE END)
+    |--------------------------------------------------------------------------
+    */
 
 });
 
