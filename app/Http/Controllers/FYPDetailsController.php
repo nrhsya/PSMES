@@ -58,7 +58,7 @@ class FYPDetailsController extends Controller
         return redirect('/FYPMainPage')->with('success','Data Successfully Deleted');
     }
     
-    public function viewFYPDetailsStudent(){
+    public function viewFYPDetailsStudent($id){
         $fyp_data = \App\Models\FYPDetails::where('std_id',$std_id)->first();
         return view('ManageFYPDetails/ViewFYPDetailsStudent', ['fyp_data'=> $fyp_data]);
     }

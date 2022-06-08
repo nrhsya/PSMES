@@ -431,6 +431,21 @@ Route::group(['middleware'=>['Student','auth']],function(){
     | STUDENT (MANAGETOP20 MODULE END)
     |--------------------------------------------------------------------------
     */
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGE FYP DETAILS START)
+    |--------------------------------------------------------------------------
+    */
+
+    //route to  view fyp details page page
+    Route::get('ViewFYPDetailsStudent','App\Http\Controllers\FYPDetailsController@viewFYPDetailsStudent');
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGE FYP DETAILS END)
+    |--------------------------------------------------------------------------
+    */
 
 
     
