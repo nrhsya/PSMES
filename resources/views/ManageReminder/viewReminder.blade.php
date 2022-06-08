@@ -32,22 +32,18 @@
                     </tr>
                     @foreach($ as $)
                     <tr style="background-color:white;color:#0958A3;">
-                        <!--<td>1</td>
-                        <td>CB19079</td>
-                        <td>NUR HASYA BINTI MOHD NORDIN</td>
-                        <td>null</td>-->
+                        
 
-                        <td>{{$mark->eva_id}}</td>
-                        <td>{{$mark->std_id}}</td>
-                        <td>{{$mark->std_name}}</td>
-                        <td>{{$mark->eva_mark}}</td>
+                        <td>{{$->reminder_id}}</td>
+                        <td>{{$->reminder_title}}</td>
+                        <td>{{$->reminder_description}}</td>
+                        <td>{{$->reminder_date}}</td>
                     </tr>
                     @endforeach
                 </table><br><br>
             </div>
 
-            <a class="mt-5" id="customButton" href="generateTop" onclick="generateTop20()"><b>Generate Top 20 Students</b></a>
-            <a class="mt-5" id="customButton" href="/manageEvaluationDate"><b>Assign Slots</b></a>
+            <a class="mt-5" class="customButton" href="generateTop" onclick="generateTop20()"><b>Generate Top 20 Students</b></a>
         </div>
     </div>
    

@@ -529,6 +529,7 @@ class ComposerStaticInit587b3cc7f8bf0c3f4b90ad0fba2070b5
         'App\\Http\\Controllers\\Evaluator\\EvaluatorController' => __DIR__ . '/../..' . '/app/Http/Controllers/Evaluator/EvaluatorController.php',
         'App\\Http\\Controllers\\FYPDetailsController' => __DIR__ . '/../..' . '/app/Http/Controllers/FYPDetailsController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\MarksController' => __DIR__ . '/../..' . '/app/Http/Controllers/MarksController.php',
         'App\\Http\\Controllers\\PSMCoordinatorController' => __DIR__ . '/../..' . '/app/Http/Controllers/PSMCoordinatorController.php',
         'App\\Http\\Controllers\\ReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReportController.php',
         'App\\Http\\Controllers\\RubricController' => __DIR__ . '/../..' . '/app/Http/Controllers/RubricController.php',
