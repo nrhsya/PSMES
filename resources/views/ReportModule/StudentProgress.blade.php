@@ -70,9 +70,9 @@
                 <td>{{$progress->eva_id}}</td>
                 <td>{{$progress->std_id}}</td>
                 <td>{{$progress->std_name}}</td>
-                <td>{{$excellent->sv_name}}</td>
-                <td>{{$excellent->eva_name}}</td>
-                <td>{{$excellent->eva_mark}}</td>
+                <td>{{$progress->sv_name}}</td>
+                <td>{{$progress->eva_name}}</td>
+                <td>{{$progress->eva_mark}}</td>
                 <td>{{$progress->eva_comment}}</td>
             </tr>
             @endforeach

@@ -387,6 +387,8 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
    
 }); 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | STUDENT LOGIN
@@ -397,6 +399,9 @@ Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
     Route::get('profile',[StudentController::class,'profile'])->name('student.profile');
     Route::get('settings',[StudentController::class,'settings'])->name('student.settings');
 }); 
+
+
+
 
   
 /*
