@@ -36,12 +36,12 @@ class ScheduleController extends Controller
     }
 
     //function to update industry evaluation date into database
-    public function updateEvDate(Request $request,$id){
-        $data_schedule = \App\Models\Schedule::find($id);
-        $data_schedule -> update($request->all());
+    // public function updateEvDate(Request $request,$id){
+    //     $data_schedule = \App\Models\Schedule::find($id);
+    //     $data_schedule -> update($request->all());
 
-        return redirect('evaluationSchedule')->with('success','Industry Evaluation Date Successfully Updated');
-    }
+    //     return redirect('evaluationSchedule')->with('success','Industry Evaluation Date Successfully Updated');
+    // }
 
     public function deleteEvDate($id) {
         $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
@@ -51,17 +51,24 @@ class ScheduleController extends Controller
     }
 
     //function to assign industry evaluation dates/slots to top 20 students (randomly)
-    public function assignSlot(Request $id, $start_date, $end_date){
-        $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
-        
+    public function assignSlot(){
         $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
 		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
                                                 ->sortByDesc('eva_mark');
 
-        $data_schedule->$eva_date = rand($start_date, $end_date);
-
-        return redirect('evaluationSchedule')->with('success','Evaluation Slots have been assigned');
+        return view('manageTop20/evaluationSchedule', ['data_schedule'=> $data_schedule]);
     }
+    // public function assignSlot(Request $id, $start_date, $end_date){
+    //     $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
+        
+    //     $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
+	// 	                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
+    //                                             ->sortByDesc('eva_mark');
+
+    //     $data_schedule->$eva_date = rand($start_date, $end_date);
+
+    //     return redirect('evaluationSchedule')->with('success','Evaluation Slots have been assigned');
+    // }
 
     /* ****************************************************************************************************************** */
     //                                                    STUDENT
