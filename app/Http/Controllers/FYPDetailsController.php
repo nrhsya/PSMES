@@ -44,11 +44,16 @@ class FYPDetailsController extends Controller
         return redirect('/fypdata/search?query=cb19033')->with('success','Data Successfully Updated');
     }
 
-    public function deleteFYPDetails($id){
-        $fyp_data = \App\Models\FYPDetails::find($id);
-        $fyp_data -> delete($fypdata);
+    public function deleteFYPDetails(Request $request, $id){
+        $fyp_data = FYPDetails::find($id);
+        $fyp_data->std_id = $request->input('std_id');
+        $fyp_data->std_name = $request->input('std_name');
+        $fyp_data->sv_name = $request->input('sv_name');
+        $fyp_data->eva_name = $request->input('eva_name');
+        $fyp_data->fyp_title = $request->input('fyp_title');
+        $fyp_data -> delete();
     
-        return redirect('/fypdata')->with('success','Data Successfully Deleted');
+        return redirect('/FYPMainPage')->with('success','Data Successfully Deleted');
     }
 
 
