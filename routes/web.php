@@ -107,10 +107,25 @@ Route::get('/', function () {
 Route::get('reportDashboard', function () {
     return view('ReportModule/reportDashboard');
 });
+
+Route::get('AddReport', function () {
+    return view('ReportModule/AddReport');
+});
+
 Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
 Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
 Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
 Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
+
+Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
+
+Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
+Route::get('/80data/Above80','App\Http\Controllers\ReportController@Above80');
+Route::get('/70data/Above70','App\Http\Controllers\ReportController@Above70');
+Route::get('/60data/Above60','App\Http\Controllers\ReportController@Above60');
+Route::get('/50data/Above50','App\Http\Controllers\ReportController@Above50');
+Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
+Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
 
 /*
 |--------------------------------------------------------------------------
@@ -159,6 +174,42 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 | END PSM COORDINATOR (Rubric MODULE )
 |--------------------------------------------------------------------------
 */
+
+/*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (Evaluation details and marks MODULE )
+|--------------------------------------------------------------------------
+*/
+
+   //route to Evaluation details and marks main page
+    Route::get('EvaluationMainPage', function () {
+        return view('ManageEvaluationDetailsAndMarks/EvaluationMainPage');
+    });
+
+   //route to AddEvaluation
+     Route::get('AddEvaluation', function () {
+        return view('ManageEvaluationDetailsAndMarks/AddEvaluation');
+    });
+
+    //route to SubmitMarks
+    Route::get('DeleteEvaluation', function () {
+        return view('ManageEvaluationDetailsAndMarks/DeleteEvaluation');
+        });
+
+     //route to SubmitMarks
+     Route::get('SubmitMarks', function () {
+        return view('ManageEvaluationDetailsAndMarks/SubmitMarks');
+    });
+
+    Route::post('markdata/create','App\Http\Controllers\MarksController@SubmitMarks');//add
+
+
+/*
+|--------------------------------------------------------------------------
+| END PSM COORDINATOR (Evaluation details and Marks MODULE )
+|--------------------------------------------------------------------------
+*/
+
 
 /*
 |--------------------------------------------------------------------------

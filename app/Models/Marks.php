@@ -5,11 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Schedule extends Model
+class Marks extends Model
 {
     use HasFactory;
-
-    protected $primaryKey = 'schedule_id';
-
-    protected $fillable = ['eva_date', 'attendance_status'];
+    protected $fillable = ['std_id','eva_mark','eva_comment'];
 }

@@ -60,8 +60,8 @@
                     <td>{{$schedulehistory->start_date}}</td>
                     <td>{{$schedulehistory->end_date}}</td>
                     <td>{{$schedulehistory->created_at}}</td>
-                    <td><a href="assignSlot" id="customButton">Assign Slots</a></td>
-                    <td><a href="scheduleData/{{$schedulehistory->schedulehistory_id}}/deleteEvDate" id="customButton">Delete</a></td>
+                    <td><a href="assignSlot" class="btn btn-success">Assign Slots</a></td>
+                    <td><a href="scheduleData/{{$schedulehistory->schedulehistory_id}}/deleteEvDate" class="btn btn-danger">Delete</a></td>
                 </tr>
                 @endforeach
             </table>
