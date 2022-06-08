@@ -8,9 +8,9 @@ use \App\Models\ScheduleDateHistory;
 
 class ScheduleController extends Controller
 {
-    /* ************************************** */
-    // COORDINATOR
-    /* ************************************** */
+    /* ****************************************************************************************************************** */
+    //                                                    COORDINATOR
+    /* ****************************************************************************************************************** */
 
     //function to display evaluation schedule
     public function viewSchedule(){
@@ -52,44 +52,21 @@ class ScheduleController extends Controller
     }
 
     //function to assign industry evaluation dates/slots to top 20 students (randomly)
-    public function assignSlot($start_date, $end_date, $eva_date){
+    public function assignSlot(Request $id, $start_date, $end_date){
+        $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
+        
         $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
 		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
                                                 ->sortByDesc('eva_mark');
 
-        // $data_schedulehistory = \App\Models\Schedule::find($id);
-        // $data_schedule = \App\Models\ScheduleDateHistory::find($id);
-        // $data_schedule -> update($request->all());
-        // $data_schedule = \App\Models\Schedule::find($id);
+        $data_schedule->$eva_date = rand($start_date, $end_date);
 
-        // Convert to timetamps
-        $min = strtotime($start_date);
-        $max = strtotime($end_date);
-
-        // Generate random number using above bounds
-        $eva_date = rand($min, $max);
-
-        // Convert back to desired date format
-        // return date('Y-m-d H:i:s', $eva_date)->with('success','Evaluation Slots have been assigned');
-
-        // $data_schedule = \App\Models\Schedule::find($id);
-        // $data_schedule -> update($eva_date->all());
-
-        // return redirect('evaluationSchedule')->with('success','Evaluation Slots have been assigned');
-
-        // return view('evaluationSchedule', ['data_schedule'=> $data_schedule], $eva_date, $start_date, $end_date)->with('success','Evaluation Slots have been assigned');
-
-        return view('evaluationSchedule', ['data_schedule'=> $eva_date])->with('success','Evaluation Slots have been assigned');
+        return redirect('evaluationSchedule')->with('success','Evaluation Slots have been assigned');
     }
 
-    //function to approve students' request for slot change
-    public function approveSlot(){
-        
-    }
-
-    /* ************************************** */
-    // STUDENT
-    /* ************************************** */
+    /* ****************************************************************************************************************** */
+    //                                                    STUDENT
+    /* ****************************************************************************************************************** */
 
     //function for top 20 students to view evaluation schedule
     public function viewStudSchedule() {
@@ -116,8 +93,6 @@ class ScheduleController extends Controller
 		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
                                                 ->find($id);
 
-        // $data_schedule = \App\Models\Schedule::find($id);
-
         return view('manageTop20/confirmAttendance',['data_schedule'=>$data_schedule]);
     }
 
@@ -131,7 +106,7 @@ class ScheduleController extends Controller
     }
 
     //function to update students' attendance status into the database
-    public function attendanceStats(Request $request, $id){
+    public function attendanceStats(Request $request,$id){
         $data_schedule = \App\Models\Schedule::find($id);
         $data_schedule->update($request->all());
 
