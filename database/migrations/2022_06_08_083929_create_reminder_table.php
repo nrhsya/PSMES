@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('coord_name');
-            $table->string('description');
-            $table->date('report_date');
+        Schema::create('reminder', function (Blueprint $table) {
+            $table->increments('reminder_id');
+            $table->string('reminder_title');
+            $table->string('reminder_description');
+            $table->date('reminder_date');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports');
+        Schema::dropIfExists('reminder');
     }
 };

@@ -386,7 +386,7 @@
                             <a class="customFont" href="/ViewRubric">Rubric</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="#">Evaluation Details and Mark</a>
+                            <a class="customFont" href="/EvaluationMainPage">Evaluation Details and Mark</a>
                         </li><br>
                         <li>
                             <a class="customFont" href="/studentEvaluationSchedule">Industry Evaluation</a>

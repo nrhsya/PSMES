@@ -12,15 +12,6 @@
         <div class="text-center mb-3" style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
             <h1><b>Manage Industry Evaluation Schedule</b></h1>
         </div>
-
-        <div class="container text-center font-weight-bold">
-            <!-- to alert the users -->
-            @if(session('success'))
-            <div class="alert alert-success" role="alert">
-            {{session('success')}}
-            </div>
-            @endif
-        </div>
         
         <!-- form to insert data -->
         <form action="/scheduleData/addEvDate" method="POST">
@@ -39,12 +30,22 @@
                 <input name="end_date" type="date" class="form-control" id="exampleFormControlInput1">
             </div>
 
-            <button type="submit" class="btn btn-success btn-lg text-center" id="customButton" onclick="saveBtn()">Save</button>
+            <button type="submit" class="btn btn-success btn-lg text-center" id="customButton">Save</button>
         </form>
     </div>
 
     <!-- List of existing evaluation dates -->
     <div class="row" style="padding:20px;background-color:#e2e9e9">
+        <!-- Display status -->
+        <div class="container text-center font-weight-bold mt-2 alert-heading">
+            <!-- to alert the users -->
+            @if(session('success'))
+            <div class="alert alert-success" role="alert">
+            {{session('success')}}
+            </div>
+            @endif
+        </div>
+
         <div class="table-wrapper-scroll-y my-custom-scrollbar">     
             <table class="table table-hover" style="LINE-HEIGHT:35px;" width="100%">
                 <tr style="background-color:#0958A3;color:white;">
@@ -60,8 +61,8 @@
                     <td>{{$schedulehistory->start_date}}</td>
                     <td>{{$schedulehistory->end_date}}</td>
                     <td>{{$schedulehistory->created_at}}</td>
-                    <td><a href="assignSlot" id="customButton">Assign Slots</a></td>
-                    <td><a href="scheduleData/{{$schedulehistory->schedulehistory_id}}/deleteEvDate" id="customButton">Delete</a></td>
+                    <td><a href="assignSlot" class="btn btn-success">Assign Slots</a></td>
+                    <td><a href="scheduleData/{{$schedulehistory->schedulehistory_id}}/deleteEvDate" class="btn btn-danger">Delete</a></td>
                 </tr>
                 @endforeach
             </table>

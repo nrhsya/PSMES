@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('coord_name');
-            $table->string('description');
-            $table->date('report_date');
+        Schema::create('f_y_p_details', function (Blueprint $table) {
+            $table->id();
+            $table->string('std_id');
+            $table->string('std_name');
+            $table->string('sv_name');
+            $table->string('eva_name');
+            $table->string('fyp_title');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports');
+        Schema::dropIfExists('f_y_p_details');
     }
 };

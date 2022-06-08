@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('f_y_p_details', function (Blueprint $table) {
+        Schema::create('evaluation_detail', function (Blueprint $table) {
             $table->string('std_id');
             $table->string('std_name');
             $table->string('sv_name');
             $table->string('eva_name');
-            $table->string('fyp_title');
+            $table->date('eva_date');
+            $table->time('eva_time');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('f_y_p_details');
+        Schema::dropIfExists('evaluation_detail');
     }
 };

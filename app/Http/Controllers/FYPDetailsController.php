@@ -23,31 +23,39 @@ class FYPDetailsController extends Controller
         $search_text = $_GET['query'];
         $fyp_data = FYPDetails::where('std_id', 'LIKE', '%'.$search_text.'%')->get();
         return view('ManageFYPDetails.ViewFYPDetails', compact('fyp_data'));
-    }
-    public function editFYPDetails($std_id)
-    {
-        $fyp_data = FYPDetails::find($std_id);
-        return view('ManageFYPDetails.EditFYPDetails', compact('fyp_data'));
+
     }
 
-    public function updateFYPDetails(Request $request, $std_id)
+    public function editFYPDetails($id)
     {
-        $fyp_data = FYPDetails::find($std_id);
+        $fyp_data = FYPDetails::find($id);
+        return view('ManageFYPDetails.EditFYPDetails', compact('fyp_data'));
+    } 
+
+    public function updateFYPDetails(Request $request, $id){
+        $fyp_data = FYPDetails::find($id);
+        $fyp_data->std_id = $request->input('std_id');
         $fyp_data->std_name = $request->input('std_name');
         $fyp_data->sv_name = $request->input('sv_name');
         $fyp_data->eva_name = $request->input('eva_name');
         $fyp_data->fyp_title = $request->input('fyp_title');
         $fyp_data->update();
-        return redirect()->back()->with('status','Student Updated Successfully');
+
+        return redirect('/fypdata/search?query=cb19033')->with('success','Data Successfully Updated');
     }
 
-    public function deleteFYPDetails($std_id){
-        $fyp_data = \App\Models\FYPDetails::find($std_id);
-        $fyp_data -> delete($fypdata);
+    public function deleteFYPDetails(Request $request, $id){
+        $fyp_data = FYPDetails::find($id);
+        $fyp_data->std_id = $request->input('std_id');
+        $fyp_data->std_name = $request->input('std_name');
+        $fyp_data->sv_name = $request->input('sv_name');
+        $fyp_data->eva_name = $request->input('eva_name');
+        $fyp_data->fyp_title = $request->input('fyp_title');
+        $fyp_data -> delete();
     
-        return redirect('/fypdata')->with('success','Data Successfully Deleted');
+        return redirect('/FYPMainPage')->with('success','Data Successfully Deleted');
     }
-    
+
 
 
 
