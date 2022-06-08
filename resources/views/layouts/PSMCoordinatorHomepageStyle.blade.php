@@ -278,6 +278,29 @@
                 color: white;
             }
 
+            #myButton {
+                background-color: #11ADA4;
+                border: black;
+                color: white;
+                padding: 8px 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                ;
+            }
+
+            #myButton:hover {
+                background-color: #FCDA37;
+                color: #0958A3;
+            }
+
+            #myAlert {
+                background-color: #436e70;
+                border: none;
+                color: white;
+            }
+
             
 
 
@@ -491,6 +514,7 @@
         <!-- JS Codes -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
+        <script src="../js/top20.js"></script>
         <script>
             //function to toggle sidebar
             $(document).ready(function () {

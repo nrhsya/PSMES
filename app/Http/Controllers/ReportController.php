@@ -44,7 +44,8 @@ class ReportController extends Controller
     public function StudentProgress(){
         $data_progress =\App\Models\EvaluationMark::all();
 
-        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+        $post = \App\Models\EvaluationMark::count();
+        return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
 //Filter function//
@@ -52,38 +53,45 @@ class ReportController extends Controller
     public function Above80(){
         $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [79,101]);
 
-        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+        $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [79,101])->count();
+        return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Above70(){
         $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [69,80]);
 
-        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+        $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [69,80])->count();
+        return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Above60(){
         $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [59,70]);
 
-        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+        $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [59,70])->count();
+        return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Above50(){
         $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [49,60]);
 
-        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+        $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [49,60])->count();
+        return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Above40(){
         $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [39,50]);
 
-        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+        $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [39,50])->count();
+        return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Below40(){
         $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [0,40]);
 
-        return view('ReportModule/StudentProgress',['data_progress'=> $data_progress]);
+        $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [0,40])->count();
+        return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
+
 //End Filter
 
 public function tryindex()
@@ -93,6 +101,19 @@ public function tryindex()
             ->get();
             return view('ReportModule/StudentProgress',['data_result'=> $data_result]);
 }
+
+//Count
+
+//public function CountStudents(){
+//    $data_progress =\App\Models\EvaluationMark::all();
+//
+  // $post = \App\Models\EvaluationMark::where('eva_mark', '=' ,'10.61')->count();
+ //return view('ReportModule/StudentProgress',compact('data_progress','post'));
+//} 
+
+
+
+//End Count
 
     
 }

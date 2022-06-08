@@ -53,14 +53,12 @@ Route::get('/', function () {
 | PSM COORDINATOR (MANAGETOP20 MODULE)
 |--------------------------------------------------------------------------
 */
+    //route to PSM Coordinator Homepage
     Route::get('PSMCoordinatorHomepage', function () {
         return view('manageTop20/PSMCoordinatorHomepage');
     });
     
     //route to view evaluation marks page
-    /*Route::get('viewMarks', function () {
-        return view('manageTop20/viewMarks');
-    });*/
     Route::get('viewMarks','App\Http\Controllers\EvaluationMarksController@viewMarks');
 
     //route to generate top 20 students
@@ -72,16 +70,9 @@ Route::get('/', function () {
     });
 
     //route to evaluation schedule page
-    /*Route::get('evaluationSchedule', function () {
-        return view('manageTop20/evaluationSchedule');
-    });*/
     Route::get('evaluationSchedule','App\Http\Controllers\ScheduleController@viewSchedule');
 
     //route to manage evaluation date page
-    Route::get('manageEvaluationDate', function () {
-        return view('manageTop20/manageEvaluationDate');
-    });
-
     //view existing evaluation dates
     Route::get('manageEvaluationDate','App\Http\Controllers\ScheduleController@viewEvDate');
 
@@ -130,6 +121,8 @@ Route::get('/60data/Above60','App\Http\Controllers\ReportController@Above60');
 Route::get('/50data/Above50','App\Http\Controllers\ReportController@Above50');
 Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
 Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
+
+Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
 
 /*
 |--------------------------------------------------------------------------
@@ -206,6 +199,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     });
 
     Route::post('markdata/create','App\Http\Controllers\MarksController@SubmitMarks');//add
+    // Route::post('markdata/SubmitMarks','App\Http\Controllers\MarksController@SubmitMarks');
 
 
 /*
@@ -314,11 +308,6 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     //route to delete evaluation date
     Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
-
-    //route to slot change page
-    // Route::get('slotChange', function () {
-    //     return view('manageTop20/slotChange');
-    // });
 
     //route to view evaluation start and end date
     Route::get('confirmAttendance','App\Http\Controllers\ScheduleController@viewDate');
