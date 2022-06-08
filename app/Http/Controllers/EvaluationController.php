@@ -15,7 +15,8 @@ class EvaluationController extends Controller
 
    public function ViewEvaluation(){
     $evaluation_data = \App\Models\Evaluation::all();
-    return view('/ViewEvaluation', ['evaluation_data'=> $evaluation_data]);
+
+    return view('ManageEvaluationDetailsAndMarks/ViewEvaluation', ['evaluation_data'=> $evaluation_data]);
 }
     public function DeleteEvaluation($id){
         $evaluation_data = \App\Models\Evaluation::find($id);

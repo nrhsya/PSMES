@@ -57,8 +57,8 @@
             @endforeach
     </div>
     <div>
-        <a href="{{ url('edit/'.$evaluationdata->id)}}" class="btn btn-primary">Edit</a>
-        <a href="{{ url('delete/'.$evaluationdata->id)}}" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
+        <a href="{{ url('edit/'.$evaluation_data->id)}}" class="btn btn-primary">Edit</a>
+        <a href="{{ url('delete/'.$evaluation_data->id)}}" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
         </center>
     </div> 
 

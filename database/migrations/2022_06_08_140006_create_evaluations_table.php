@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('std_name');
             $table->string('sv_name');
             $table->string('eva_name');
-            $table->date('eva_date');
+            $table->date('eva_date')->primary();
             $table->time('eva_time');
             $table->timestamps();
         });

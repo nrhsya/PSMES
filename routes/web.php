@@ -175,7 +175,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     Route::post('evaluationdata/create','App\Http\Controllers\EvaluationController@AddEvaluation');
     
     //view Evaluation
-    Route::get('/evaluationdata/search', 'App\Http\Controllers\EvaluationController@ViewEvaluation');
+    Route::get('evaluationdata', 'App\Http\Controllers\EvaluationController@ViewEvaluation');
 
     //Edit Evaluation
     Route::post('/evaluationdata/{id}/edit','App\Http\Controllers\EvaluationController@EditEvaluation');
