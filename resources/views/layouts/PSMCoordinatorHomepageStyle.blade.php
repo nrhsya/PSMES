@@ -278,6 +278,29 @@
                 color: white;
             }
 
+            #myButton {
+                background-color: #11ADA4;
+                border: black;
+                color: white;
+                padding: 8px 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                ;
+            }
+
+            #myButton:hover {
+                background-color: #FCDA37;
+                color: #0958A3;
+            }
+
+            #myAlert {
+                background-color: #436e70;
+                border: none;
+                color: white;
+            }
+
             
 
 
