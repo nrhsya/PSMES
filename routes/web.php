@@ -359,7 +359,7 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
 
     //route to PSM Coordinator Homepage
     Route::get('PSMCoordinatorHomepage', function () {
-        return view('manageTop20/PSMCoordinatorHomepage');
+        return view('coordinator/PSMCoordinatorHomepage');
     });
     
     //route to view evaluation marks page
