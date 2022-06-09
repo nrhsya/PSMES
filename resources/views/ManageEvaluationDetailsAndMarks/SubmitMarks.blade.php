@@ -25,6 +25,10 @@
                         <b>Add Marks Form:</b>
                         
                         <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Student name</label>
+                            <input name="std_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Student name">
+                        </div>
+                        <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Student ID</label>
                             <input name="std_id" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Student ID">
                         </div>
