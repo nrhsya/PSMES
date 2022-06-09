@@ -532,11 +532,26 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
          Route::post('logout',[EvaluatorController::class,'logout'])->name('logout');
 
 
+
+
+
+
+
      
     });
 
 
 
+
+    
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| EVALUATOR 
+|--------------------------------------------------------------------------
+*/
 /*
 
 |--------------------------------------------------------------------------
@@ -564,16 +579,3 @@ Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
 Route::get('AddReminder', function () {
     return view('ManageReminder/AddReminder');
 });
-
-
-
-
-    
-});
-
-
-/*
-|--------------------------------------------------------------------------
-| EVALUATOR 
-|--------------------------------------------------------------------------
-*/
