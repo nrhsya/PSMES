@@ -421,9 +421,6 @@ Route::group(['middleware'=>['Student','auth']],function(){
     //route to update evaluation date 
     Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
 
-    //route to view evaluation start and end date
-    Route::get('confirmAttendance','App\Http\Controllers\ScheduleController@viewDate');
-
     //route to confirm attendance status
     Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');
 
