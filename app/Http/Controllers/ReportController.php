@@ -46,8 +46,9 @@ class ReportController extends Controller
     //<!-- Function to display excellentstudent page with the data-->
 
     public function ExcellentStudent(){
-        $data_excellent =\App\Models\EvaluationMark::paginate(20)
-        ->sortByDesc('eva_mark');
+        $data_excellent = \App\Models\FYPDetails::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'f_y_p_details.std_id')
+                                                 ->get(['f_y_p_details.*', 'evaluation_marks.eva_mark', 'evaluation_marks.eva_comment'])
+                                                 ->sortByDesc('eva_mark');
 
         return view('ReportModule/ExcellentStudent',['data_excellent'=> $data_excellent]);
     }  
@@ -57,9 +58,11 @@ class ReportController extends Controller
 //<!-- $post to display the total number of students in the evalaution mark db-->
 
     public function StudentProgress(){
-        $data_progress =\App\Models\EvaluationMark::all();
+        $data_progress = \App\Models\FYPDetails::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'f_y_p_details.std_id')
+		                                        ->get(['f_y_p_details.*', 'evaluation_marks.eva_mark', 'evaluation_marks.eva_comment']);
+                                               
 
-        $post = \App\Models\EvaluationMark::count();
+        $post = \App\Models\FYPDetails::count();
         return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
