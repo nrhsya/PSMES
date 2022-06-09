@@ -479,6 +479,21 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
          Route::post('logout',[EvaluatorController::class,'logout'])->name('logout');
      
     });
+
+    Route::middleware(['auth:evaluator'])->group(function(){
+    Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
+    Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
+    Route::get('AddReminder', function () {
+    return view('ManageReminder/AddReminder');
+    });
+    });
+
+    Route::middleware(['auth:evaluator'])->group(function(){
+    Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
+    Route::get('eviewPSM1','App\Http\Controllers\RubricController@eviewPSM1');
+    Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
+    Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
+    });
 });
 
 
@@ -493,11 +508,7 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
 | Evaluator (MANAGE REMINDER)
 |--------------------------------------------------------------------------
 */
-Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
-Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
-Route::get('AddReminder', function () {
-    return view('ManageReminder/AddReminder');
-});
+
 
 
 /*
@@ -506,10 +517,7 @@ Route::get('AddReminder', function () {
 | Evaluator (MANAGE RUBRIC)
 |--------------------------------------------------------------------------
 */
-Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
-Route::get('eviewPSM1','App\Http\Controllers\RubricController@eviewPSM1');
-Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
-Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
+
 /*
 
 |--------------------------------------------------------------------------
