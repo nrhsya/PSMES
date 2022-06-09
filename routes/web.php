@@ -346,7 +346,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     //route to PSM Coordinator Homepage
     Route::get('PSMCoordinatorHomepage', function () {
-        return view('manageTop20/PSMCoordinatorHomepage');
+        return view('coordinator/PSMCoordinatorHomepage');
     });
     
     //route to view evaluation marks page
@@ -526,10 +526,35 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
          Route::post('/check',[EvaluatorController::class,'check'])->name('check');
     });
 
-
     Route::middleware(['auth:evaluator'])->group(function(){
          Route::view('/dashboard','evaluator.dashboard')->name('dashboard');
          Route::post('logout',[EvaluatorController::class,'logout'])->name('logout');
+     
+    });
+
+    
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| EVALUATOR 
+|--------------------------------------------------------------------------
+*/
+/*
+
+|--------------------------------------------------------------------------
+| Evaluator (MANAGE RUBRIC)
+|--------------------------------------------------------------------------
+*/
+
+
+Route::middleware(['auth:evaluator'])->group(function(){
+Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
+Route::get('eviewPSM1','App\Http\Controllers\RubricController@eviewPSM1');
+Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
+Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -541,37 +566,7 @@ Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
 Route::get('AddReminder', function () {
     return view('ManageReminder/AddReminder');
 });
-
-
-/*
-
-|--------------------------------------------------------------------------
-| Evaluator (MANAGE RUBRIC)
-|--------------------------------------------------------------------------
-*/
-Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
-Route::get('eviewPSM1','App\Http\Controllers\RubricController@eviewPSM1');
-Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
-Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
-/*
-
-|--------------------------------------------------------------------------
-|END  Evaluator (MANAGE RUBRIC)
-|--------------------------------------------------------------------------
-*/
-
-     
-    });
-
-
-
-
-    
 });
 
 
-/*
-|--------------------------------------------------------------------------
-| EVALUATOR 
-|--------------------------------------------------------------------------
-*/
+
