@@ -92,7 +92,7 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 | PSM COORDINATOR (Evaluation details and marks MODULE )
 |--------------------------------------------------------------------------
-*/
+
 
    //route to Evaluation details and marks main page
     Route::get('EvaluationMainPage', function () {
@@ -136,7 +136,7 @@ Route::get('/', function () {
     Route::get('/evaluationdata/{id}/delete','App\Http\Controllers\EvaluationController@DeleteEvaluation');
     
 
-/*
+
 |--------------------------------------------------------------------------
 | END PSM COORDINATOR (Evaluation details and Marks MODULE )
 |--------------------------------------------------------------------------
@@ -381,7 +381,60 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     | PSM COORDINATOR (MANAGE TOP20 MODULE END)
     |--------------------------------------------------------------------------
     */
-       
+ 
+/*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (Evaluation details and marks MODULE )
+|--------------------------------------------------------------------------
+*/
+
+   //route to Evaluation details and marks main page
+   Route::get('EvaluationMainPage', function () {
+    return view('ManageEvaluationDetailsAndMarks/EvaluationMainPage');
+});
+
+//route to AddEvaluation
+ Route::get('AddEvaluation', function () {
+    return view('ManageEvaluationDetailsAndMarks/AddEvaluation');
+});
+
+//route to ViewEvaluation
+Route::get('ViewEvaluation', function () {
+    return view('ManageEvaluationDetailsAndMarks/ViewEvaluation');
+    });
+
+
+ //route to SubmitMarks
+ Route::get('SubmitMarks', function () {
+    return view('ManageEvaluationDetailsAndMarks/SubmitMarks');
+});
+
+
+
+//Submit Marks
+Route::post('markdata/create','App\Http\Controllers\MarksController@SubmitMarks');
+
+//Add Evaluation
+Route::post('evaluationdata/create','App\Http\Controllers\EvaluationController@AddEvaluation');
+
+//view Evaluation
+Route::get('ViewEvaluation', 'App\Http\Controllers\EvaluationController@ViewEvaluation');
+
+//Edit Evaluation
+Route::get('/evaluationdata/{id}/edit','App\Http\Controllers\EvaluationController@EditEvaluation');
+
+//Update Evaluation
+Route::post('/evaluationdata/{id}/Update','App\Http\Controllers\EvaluationController@UpdateEvaluation');
+
+//Delete Evaluation
+Route::get('/evaluationdata/{id}/delete','App\Http\Controllers\EvaluationController@DeleteEvaluation');
+
+
+/*
+|--------------------------------------------------------------------------
+| END PSM COORDINATOR (Evaluation details and Marks MODULE )
+|--------------------------------------------------------------------------
+*/    
 }); 
 
 /*
