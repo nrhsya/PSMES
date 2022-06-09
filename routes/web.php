@@ -483,7 +483,7 @@ Route::group(['middleware'=>['Student','auth']],function(){
     */
 
     //route to  view fyp details page page
-    Route::get('ViewFYPDetailsStudent','App\Http\Controllers\FYPDetailsController@viewFYPDetailsStudent');
+    Route::get('/view/{id}','App\Http\Controllers\FYPDetailsController@viewFYPDetailsStudent');
 
 
     /*
