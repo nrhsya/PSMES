@@ -7,11 +7,6 @@
 
 <!-- For pop up message--> 
 
-@if(session('success'))
-<div class="alert alert-primary" role="alert">
-     {{session('success')}}
-</div>
-@endif
 
 <!-- Edit form retrieve data from db n display it...--> 
 

@@ -17,13 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <!-- For pop up message--> 
-
-        @if(session('success'))
-        <div class="alert alert-primary" role="alert">
-             {{session('success')}}
-        </div>
-        @endif
     
         <div >
         <div style="margin-top: 15px; padding:10px 16px; height: 800px; background-color: #F5F5F5;">

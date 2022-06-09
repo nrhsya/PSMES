@@ -311,23 +311,36 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
     | PSM COORDINATOR (MANAGE REPORT MODULE)
     |--------------------------------------------------------------------------
     */
-      
+    
+    //route to Report Dashbaord to choose button
     Route::get('reportDashboard', function () {
         return view('ReportModule/reportDashboard');
     });
     
+    //route to view Add from page
     Route::get('AddReport', function () {
         return view('ReportModule/AddReport');
     });
     
+    //route to display report data
     Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+
+    //route to enable user to add data and save in db
     Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+
+    //route to view Edit Form
     Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
+
+    //route to enable editing function and update data into db
     Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
 
+    //route to view Excellent Student page
     Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
 
+    //route to view Student Progress page
     Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
+
+    //route to display filter student progress by mark(function)
     Route::get('/80data/Above80','App\Http\Controllers\ReportController@Above80');
     Route::get('/70data/Above70','App\Http\Controllers\ReportController@Above70');
     Route::get('/60data/Above60','App\Http\Controllers\ReportController@Above60');
@@ -335,6 +348,7 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
     Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
     Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
 
+    //route to display count function
     Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
 
 

@@ -34,7 +34,7 @@ class ReportController extends Controller
         return view('ReportModule\EditReport',['data_report'=>$data_report]);
     }
 
-    //<!-- Function to allow user to edit retrieved data in Edit Form--> 
+    //<!-- Function to allow user to edit retrieved data in Edit Form with success message--> 
 
     public function updateReport(Request $request,$id){
         $data_report = \App\Models\Report::find($id);
