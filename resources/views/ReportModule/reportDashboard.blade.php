@@ -14,13 +14,8 @@
 <html>
   
     <head>
-    
-    <style>
-       .section-1 {
-         background-color: #f5ccff;
-       }
-         
-       </style>
+
+    <!-- For pop up message--> 
     
         @if(session('success'))
         <div class="alert alert-primary" role="alert">

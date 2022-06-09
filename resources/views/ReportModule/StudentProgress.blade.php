@@ -16,14 +16,10 @@
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <style>
-       .section-1 {
-         background-color: #f5ccff;
-       }
-         
-       </style>
-    
+
+
+    <!-- For pop up message--> 
+
         @if(session('success'))
         <div class="alert alert-primary" role="alert">
              {{session('success')}}
@@ -65,6 +61,8 @@
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Comment</th>
             </tr>
 
+    <!-- Calling all the data from evaluation_mark db--> 
+
             @foreach($data_progress as $progress)
             <tr>
                 <td>{{$progress->eva_id}}</td>
@@ -80,6 +78,8 @@
           
         </div> 
     </div><br><br>
+
+    <!-- To display total number of students--> 
 
     <p style="color:black;margin-top:30px;"><b>Total number of students: {{$post}}</b></p> 
     <button class="btn btn-success " style="border: 3px solid black; margin-left:35%; margin-right:30px; margin-top:25px;" id="myButton" onclick="window.print()">Print </button>

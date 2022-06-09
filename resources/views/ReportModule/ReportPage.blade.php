@@ -15,12 +15,7 @@
   
     <head>
     
-    <style>
-       .section-1 {
-         background-color: #f5ccff;
-       }
-         
-       </style>
+    <!-- For pop up message-->  
     
         @if(session('success'))
         <div class="alert alert-primary" role="alert">
@@ -50,6 +45,8 @@
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Report Date</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Modification</th>
             </tr>
+
+<!-- Calling all the data from report db-->
 
             @foreach($data_report as $report)
             <tr>
