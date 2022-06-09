@@ -199,9 +199,6 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 |--------------------------------------------------------------------------
 */
     
-    //Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views//route to rubric mainpage
-    Route::get('/fypdata','App\Http\Controllers\FYPDetailsController@viewFYPDetails');
-    
     //route to FYP mainpage
     Route::get('FYPMainPage', function () {
         return view('ManageFYPDetails/FYPMainPage');
@@ -213,15 +210,19 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageFYPDetails/AddFYPDetails');
     });
 
-    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');//add
-    //read
+    //Route for add FYP details 
+    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
 
-    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
+    //Route for search FYP details 
+    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');
 
-    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
+    //Route for edit FYP details
+    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');
 
-    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    //Route for update FYP details
+    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');
 
+    //Route for delete FYP details
     Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
     
     /* //route to EditFYPDetails
