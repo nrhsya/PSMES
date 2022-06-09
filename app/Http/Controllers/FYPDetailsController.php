@@ -60,7 +60,7 @@ class FYPDetailsController extends Controller
     //View FYP details function (student)
     public function viewFYPDetailsStudent($id){
         $fyp_data = \App\Models\FYPDetails::where('std_id',$std_id)->first();
-        return view('ManageFYPDetails/ViewFYPDetailsStudent', ['fyp_data'=> $fyp_data]);
+        return view('ManageFYPDetails.ViewFYPDetailsStudent', compact('fyp_data'));
     }
 
 
