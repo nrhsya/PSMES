@@ -365,11 +365,9 @@
                 <ul class="list-inline components">
                     <center>
                         <li>
-                            <a class="customFont" href="/studentHomepage">Home</a>
+                            <a class="customFont" href="/dashboard">Home</a>
                         </li><br>
-                        <li>
-                            <a class="customFont" href="#">Student FYP Details</a>s
-                        </li><br>
+                       
                         <li>
                             <a class="customFont" href="/EvalView">Rubric</a>
                         </li><br>

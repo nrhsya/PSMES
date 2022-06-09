@@ -531,19 +531,8 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
          Route::view('/dashboard','evaluator.dashboard')->name('dashboard');
          Route::post('logout',[EvaluatorController::class,'logout'])->name('logout');
 
-/*
-|--------------------------------------------------------------------------
-| Evaluator (MANAGE REMINDER)
-|--------------------------------------------------------------------------
-*/
-Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
-Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
-Route::get('AddReminder', function () {
-    return view('ManageReminder/AddReminder');
-});
 
-
-/*
+   /*
 
 |--------------------------------------------------------------------------
 | Evaluator (MANAGE RUBRIC)
@@ -559,6 +548,20 @@ Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
 |END  Evaluator (MANAGE RUBRIC)
 |--------------------------------------------------------------------------
 */
+
+/*
+|--------------------------------------------------------------------------
+| Evaluator (MANAGE REMINDER)
+|--------------------------------------------------------------------------
+*/
+Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
+Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
+Route::get('AddReminder', function () {
+    return view('ManageReminder/AddReminder');
+});
+
+
+
 
      
     });
