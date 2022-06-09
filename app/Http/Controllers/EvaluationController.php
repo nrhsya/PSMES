@@ -22,19 +22,19 @@ class EvaluationController extends Controller
         $evaluation_data = \App\Models\Evaluation::find($id);
         $evaluation_data -> delete($evaluation_data);
 
-    return redirect('/EvaluationMainPage')->with('success','Data Successfully Deleted');
+    return redirect('/evaluationdata')->with('success','Data Successfully Deleted');
 }
 
     public function EditEvaluation(Request $request,$id){
         $evaluation_data = \App\Models\Evaluation::find($id);
 
-        return view('/EditEvaluation',['evaluation_data'=>$evaluation_data]); 
+        return view('ManageEvaluationDetailsAndMarks/EditEvaluation',['evaluation_data'=>$evaluation_data]); 
 
 }
 
     public function UpdateEvaluation(Request $request,$id){
     $evaluation_data = \App\Models\Evaluation::find($id);
-    $evaluation_data -> edit($request->all());
+    $evaluation_data -> update($request->all());
 
         return redirect('/EvaluationMainPage')->with('success','Data Successfully Updated');
 }

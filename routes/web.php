@@ -152,20 +152,12 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageEvaluationDetailsAndMarks/ViewEvaluation');
         });
 
-    //route to DeleteEvaluation
-    Route::get('DeleteEvaluation', function () {
-        return view('ManageEvaluationDetailsAndMarks/DeleteEvaluation');
-        });
 
      //route to SubmitMarks
      Route::get('SubmitMarks', function () {
         return view('ManageEvaluationDetailsAndMarks/SubmitMarks');
     });
 
-    //route to EditEvaluation
-    Route::get('EditEvaluation', function () {
-            return view('ManageEvaluationDetailsAndMarks/EditEvaluation');
-        });
     
 
     //Submit Marks
@@ -175,16 +167,17 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     Route::post('evaluationdata/create','App\Http\Controllers\EvaluationController@AddEvaluation');
     
     //view Evaluation
-    Route::get('evaluationdata', 'App\Http\Controllers\EvaluationController@ViewEvaluation');
+    Route::get('ViewEvaluation', 'App\Http\Controllers\EvaluationController@ViewEvaluation');
 
     //Edit Evaluation
-    Route::post('/evaluationdata/{id}/edit','App\Http\Controllers\EvaluationController@EditEvaluation');
+    Route::get('/evaluationdata/{id}/edit','App\Http\Controllers\EvaluationController@EditEvaluation');
 
     //Update Evaluation
     Route::post('/evaluationdata/{id}/Update','App\Http\Controllers\EvaluationController@UpdateEvaluation');
 
     //Delete Evaluation
-    Route::post('/evaluationdata/{id}/delete','App\Http\Controllers\EvaluationController@DeleteEvaluation');
+    Route::get('/evaluationdata/{id}/delete','App\Http\Controllers\EvaluationController@DeleteEvaluation');
+    
 
 /*
 |--------------------------------------------------------------------------
