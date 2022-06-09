@@ -12,7 +12,8 @@
         <div class="text-center" style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
             <h1><b>Confirm Attendance Page</b></h1>
         </div>
-        <!-- form to insert data -->
+
+        <!-- form for STUDENTS to confirm attendance for industry evaluation -->
         <form action="/scheduleData/{{$data_schedule->schedule_id}}/updateEvaDateDetails" method="POST">
             <h1 class="p-2">- Please make sure you can attend the assigned slots before you click the "Confirm Attendance" button -</h1>
 
@@ -57,10 +58,10 @@
                 </div>
             </div><br><br>
 
-            <!-- <a id="customButton" href="/scheduleData/{{$data_schedule->schedule_id}}/attendanceStats"><input name="attendance_status" type="text">Confirm Attendance</a> -->
+            <!-- button to confirm attendance status -->
             <button type="submit" class="btn btn-success btn-lg" id="customButton" value="submitAttendance">Confirm Attendance</button>
 
-            <!-- <button id="customButton"><input name="attendance_status" type="text" value="Confirm Attendance" onclick="ConfirmAttendanceBtn()"></button> -->
+            <!-- button to request for slot change -->
             <button type="submit" class="btn btn-success btn-lg" id="customButton" value="requestChange">Request Slot Change</button>
         </form>
     </div>
