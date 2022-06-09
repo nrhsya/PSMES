@@ -9,31 +9,31 @@ use Illuminate\Support\Facades\DB;
 
 class FYPDetailsController extends Controller
 {
+    //Add FYP details function (PSM coordinator)
     public function createFYPDetails(Request $request ){
         \App\Models\FYPDetails::create($request->all());
 
         return redirect('/FYPMainPage')->with('success','New Data Successfully Inserted');
     } 
-    public function viewFYPDetails(){
-        $fyp_data = \App\Models\FYPDetails::where('std_id',$std_id)->first();
-        return view('ManageFYPDetails/ViewAndDeleteFYPDetails', ['fyp_data'=> $fyp_data]);
-    }
 
+    //Search FYP details function (PSM coordinator)
     public function searchFYPDetails()
     {
         $search_text = $_GET['query'];
         $fyp_data = FYPDetails::where('std_id', 'LIKE', $search_text)->get();
         
-            return view('ManageFYPDetails.ViewFYPDetails', compact('fyp_data'));
+            return view('ManageFYPDetails.ViewDeleteFYPDetails', compact('fyp_data'));
 
     }
 
+    //Edit FYP details function (PSM coordinator)
     public function editFYPDetails($id)
     {
         $fyp_data = FYPDetails::find($id);
         return view('ManageFYPDetails.EditFYPDetails', compact('fyp_data'));
     } 
-
+    
+    //Update FYP details after edit function (PSM coordinator )
     public function updateFYPDetails(Request $request, $id){
         $fyp_data = FYPDetails::find($id);
         $fyp_data->std_id = $request->input('std_id');
@@ -45,7 +45,7 @@ class FYPDetailsController extends Controller
 
         return redirect('/FYPMainPage')->with('success','Data Successfully Updated');
     }
-
+    //Delete FYP details function (PSM coordinator)
     public function deleteFYPDetails(Request $request, $id){
         $fyp_data = FYPDetails::find($id);
         $fyp_data->std_id = $request->input('std_id');
@@ -57,7 +57,7 @@ class FYPDetailsController extends Controller
     
         return redirect('/FYPMainPage')->with('success','Data Successfully Deleted');
     }
-    
+    //View FYP details function (student)
     public function viewFYPDetailsStudent($id){
         $fyp_data = \App\Models\FYPDetails::where('std_id',$std_id)->first();
         return view('ManageFYPDetails/ViewFYPDetailsStudent', ['fyp_data'=> $fyp_data]);

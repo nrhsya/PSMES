@@ -2,7 +2,7 @@
 @extends('layouts.PSMCoordinatorHomepageStyle')
 
 <head>
-    <title>FYP Details Homepage | PSMES</title>
+    <title>FYP Details Mainpage | PSMES</title>
 </head>
 
 @section('content')
