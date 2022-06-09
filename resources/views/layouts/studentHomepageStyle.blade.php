@@ -380,7 +380,7 @@
                             <a class="customFont" href="/studentHomepage">Home</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="#">Student FYP Details</a>
+                            <a class="customFont" href="/ViewFYPDetailsStudent">FYP Details</a>
                         </li><br>
                         <li>
                             <a class="customFont" href="/ViewRubric">Rubric</a>
