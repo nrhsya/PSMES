@@ -1,5 +1,5 @@
 <!-- to be called inside the master.blade.php -->
-@extends('layouts.PSMCoordinatorHomepageStyle')
+@extends('layouts.studentHomepageStyle')
 
 <head>
     <title>View FYP Details | PSMES</title>
