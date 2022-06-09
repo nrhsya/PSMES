@@ -137,8 +137,8 @@ Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents'
 
 
 
-   //route to rubric mainpage
-   Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
+
+
 
 
   
@@ -151,6 +151,7 @@ Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents'
         return view('managerubric/AddRubric');
     });
 
+    
    
  Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
     //read
