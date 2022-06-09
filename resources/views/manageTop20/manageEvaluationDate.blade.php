@@ -21,13 +21,13 @@
             <!-- Start Date -->
             <div class="mb-5">
                 <label for="exampleFormControlInput1" class="form-label"><b>Start Date</b></label>
-                <input name="start_date" type="date" class="form-control" id="startDateInput">
+                <input name="start_date" type="date" class="form-control" id="startDateInput" required>
             </div>
             
             <!-- End Date -->
             <div class="mb-5">
                 <label for="exampleFormControlInput1" class="form-label"><b>End Date</b></label>
-                <input name="end_date" type="date" class="form-control" id="endDateInput">
+                <input name="end_date" type="date" class="form-control" id="endDateInput" required>
             </div>
 
             <!-- button to save evaluation date into the database -->

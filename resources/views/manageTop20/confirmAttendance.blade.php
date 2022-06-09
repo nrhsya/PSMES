@@ -44,7 +44,7 @@
                 <!-- Evaluation Date -->
                 <div class="form-group row mb-5">
                     <label for="exampleFormControlInput1" class="form-label"><b>Evaluation Date</b></label>
-                    <input name="eva_date" type="date" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->eva_date}}">
+                    <input name="eva_date" type="date" class="form-control" id="exampleFormControlInput1" value="{{$data_schedule->eva_date}}" required>
                 </div>
 
                 <!-- Attendance Status -->
