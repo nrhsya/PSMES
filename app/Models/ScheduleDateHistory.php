@@ -9,8 +9,9 @@ class ScheduleDateHistory extends Model
 {
     use HasFactory;
 
+    // to set the default 'id' for the ScheduleDateHistory table as 'schedulehistory_id'
     protected $primaryKey = 'schedulehistory_id';
 
-    //fillable property must ada if nk key in data
+    //fillable property to allows data to be entered into the system
     protected $fillable = ['start_date','end_date'];
 }

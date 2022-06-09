@@ -14,7 +14,7 @@
         </div>
 
         <div class="container text-center font-weight-bold mt-2">
-            <!-- to alert the users -->
+            <!-- to alert the users with the status of their actions -->
             @if(session('success'))
             <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -24,6 +24,7 @@
         
         <div style="padding:10px;">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <!-- table to display list of students with evaluation marks -->
                 <table class="table table-hover" style="LINE-HEIGHT:35px;" width="100%">
                     <tr style="background-color:#0958A3;color:white;">
                         <th>No.</th>
@@ -33,11 +34,6 @@
                     </tr>
                     @foreach($data_mark as $mark)
                     <tr style="background-color:white;color:#0958A3;">
-                        <!--<td>1</td>
-                        <td>CB19079</td>
-                        <td>NUR HASYA BINTI MOHD NORDIN</td>
-                        <td>null</td>-->
-
                         <td>{{$mark->eva_id}}</td>
                         <td>{{$mark->std_id}}</td>
                         <td>{{$mark->std_name}}</td>
@@ -47,7 +43,10 @@
                 </table><br><br>
             </div>
 
+            <!-- button to generate top 20 students -->
             <a class="mt-5" id="customButton" href="generateTop" onclick="generateTop20()"><b>Generate Top 20 Students</b></a>
+
+            <!-- button to redirect to manage evaluation date page -->
             <a class="mt-5" id="customButton" href="/manageEvaluationDate"><b>Assign Slots</b></a>
         </div>
     </div>

@@ -14,7 +14,7 @@
         </div>
 
         <div class="container text-center font-weight-bold">
-            <!-- to alert the users -->
+            <!-- to alert the users with the status of their actions -->
             @if(session('success'))
             <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -24,6 +24,7 @@
 
         <div style="padding:10px;">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <!-- table that display student's evaluation schedule (COORDINATOR) -->
                 <table class="table table-hover" style="LINE-HEIGHT:35px;" width="100%">
                     <tr style="background-color:#0958A3;color:white;">
                         <th>No.</th>
@@ -45,8 +46,8 @@
             </div>
 
             <div class="mt-5">
+                <!-- button to redirect coordinator to the manage evaluation date page -->
                 <a id="customButton" href="/manageEvaluationDate"><b>Manage Schedule</b></a>
-                <!-- <a id="customButton" href="#" onclick="publishBtn()"><b>Publish Schedule</b></a><br><br> -->
             </div>
         </div>
     </div>

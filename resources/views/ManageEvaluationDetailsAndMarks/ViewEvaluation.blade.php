@@ -24,44 +24,37 @@
     <div style="width: 100%">
         @foreach($evaluation_data as $data)
         <center>
-        <div style="margin-left:20%;">
-            <table style=" margin-top: 50px">
-            <tr style="height: 60px;">
-                <td style="width:10%; margin-left:15px;"><label class="form-label">Student ID</label></td>
-                <td style="width:70%; " type="text" class="form-control">{{$data->std_id}}</td>
-            </tr>
-            <tr style="height: 60px;">
-                <td style="width:10%; margin-left:15px;"><label class="form-label">Student Name</label></td>
-                <td style="width:70%; " type="text" class="form-control">{{$data->std_name}}</td>
-            </tr>
-            <tr style="height: 60px;">
-                <td style="width:10%; margin-left:15px;"><label class="form-label">Supervisor Name</label></td>
-                <td style="width:70%;" type="text" class="form-control">{{$data->sv_name}}</td>
-            </tr>
-            <tr style="height: 60px;">
-                <td style="width:10%; margin-left:15px;"><label class="form-label">Evaluator Name</label></td>
-                <td style="width:70%;" type="text"  class="form-control">{{$data->eva_name}}</td>
-            </tr>
-            <tr style="height: 60px;">
-                <td style="width:10%; margin-left:15px;"><label  class="form-label">Evaluation Date</label></td>
-                <td style="width:70%;" type="date" class="form-control">{{$data->eva_date}}</td>
-            </tr>
-            <tr style="height: 60px;">
-                <td style="width:10%; margin-left:15px;"><label  class="form-label">Evaluation Time</label></td>
-                <td style="width:70%;" type="time" class="form-control">{{$data->eva_time}}</td>
-            </tr>
-            </table> 
+            <div class="col-12"style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
+            <h1 style="height: 40px;  color: #FFFFFF;background-color:#252825; font-size: 16px; padding: 10px 10px; text-align: center;">Evaluation Details List</h1><br>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-hover table-success table-striped" width="100%">
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Supervisor name</th>
+                        <th>Evaluator Name</th>
+                        <th>Evaluation Date</th>
+                        <th>Evaluation Time</th>
+                        <th colspan="2">Update / Delete</th>
+                    </tr>
+                    <tr>
+                        <td>{{$data->std_id}}</td>
+                        <td>{{$data->std_name}}</td>
+                        <td>{{$data->sv_name}}</td>
+                        <td>{{$data->eva_name}}</td>
+                        <td>{{$data->eva_date}}</td>
+                        <td>{{$data->eva_time}}</td>
+
+                        <td><a href="evaluationdata/{{$data->id}}/edit" class="btn btn-primary">Edit</a> </td>
+                        <td><a href="evaluationdata/{{$data->id}}/delete" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a></td>
+                </tr> 
+                </table>
+            </div><br>
         </div>
         <div>
         </div>    
             @endforeach
     </div>
-    <div>
-        <a href="{{ url('edit/'.$evaluation_data->id)}}" class="btn btn-primary">Edit</a>
-        <a href="{{ url('delete/'.$evaluation_data->id)}}" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
-        </center>
-    </div> 
-
 </div>
 </div>
        

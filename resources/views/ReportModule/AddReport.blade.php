@@ -5,12 +5,15 @@
 <!-- Kalaivani A/P Ramani-->
 <!-- CB19063-->
 
+<!-- For pop up message--> 
 
 @if(session('success'))
 <div class="alert alert-primary" role="alert">
      {{session('success')}}
 </div>
 @endif
+
+<!-- Add form for users to insert data--> 
 
 <div >
       <div style="margin-top: 15px; padding:10px 16px; height: 700px; background-color: #F5F5F5;">

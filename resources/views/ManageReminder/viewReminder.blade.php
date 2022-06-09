@@ -43,6 +43,9 @@
                 </table><br><br>
             </div>
 
+            <div style="padding:10px;">
+            <a id="customButton" href="AddReminder"><b>Add Reminder</b></a>
+            </div>
         
         </div>
     </div>
