@@ -500,12 +500,13 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
 | Evaluator (MANAGE REMINDER)
 |--------------------------------------------------------------------------
 */
-Route::get('Reminder', function () {
+Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
+Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
+Route::get('AddReminder', function () {
     return view('ManageReminder/AddReminder');
 });
 
-Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
-Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
+
 /*
 
 |--------------------------------------------------------------------------

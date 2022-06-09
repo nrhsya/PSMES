@@ -380,7 +380,7 @@
                             <a class="customFont" href="/studentEvaluationSchedule">Industry Evaluation</a>
                         </li><br>
                         <li>
-                            <a class="customFont" href="/Reminder">Reminder</a>
+                            <a class="customFont" href="/viewReminder">Reminder</a>
                         </li><br>
                     </center>
                 </ul>
