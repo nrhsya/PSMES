@@ -199,20 +199,7 @@ Route::get('/', function () {
         return view('ManageFYPDetails/AddFYPDetails');
     });
 
-    //Route for add FYP details 
-    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
-
-    //Route for search FYP details 
-    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');
-
-    //Route for edit FYP details
-    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');
-
-    //Route for update FYP details
-    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');
-
-    //Route for delete FYP details
-    Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
+    
     
     /* //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
@@ -392,6 +379,32 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
     /*
     |--------------------------------------------------------------------------
     | PSM COORDINATOR (MANAGE TOP20 MODULE END)
+    |--------------------------------------------------------------------------
+    */
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE FYP DETAILS MODULE START)
+    |--------------------------------------------------------------------------
+    */
+
+    //Route for add FYP details 
+    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
+
+    //Route for search FYP details 
+    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');
+
+    //Route for edit FYP details
+    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');
+
+    //Route for update FYP details
+    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');
+
+    //Route for delete FYP details
+    Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
+
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE FYP DETAILS MODULE END)
     |--------------------------------------------------------------------------
     */
        
