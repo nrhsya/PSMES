@@ -87,45 +87,6 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 | PSM COORDINATOR (REPORT MODULE END)
 |--------------------------------------------------------------------------
-*/
-/*
-|--------------------------------------------------------------------------
-| PSM COORDINATOR (Rubric MODULE )
-|--------------------------------------------------------------------------
-*/
-
-   //route to  Rubric Homepagae
-    Route::get('HomePage', function () {
-        return view('managerubric/HomePage');
-    });
-
-   //route to AddRubric page
-     Route::get('AddRubric', function () {
-        return view('managerubric/AddRubric');
-    });
-
-   //create rubric
-   Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
-
-   //View rubric
-   Route::get('rubricdata','App\Http\Controllers\RubricController@viewRubric');
-   Route::get('viewPSM1','App\Http\Controllers\RubricController@viewPSM1');
-   Route::get('viewPSM2','App\Http\Controllers\RubricController@viewPSM2');
-   Route::get('viewPTA','App\Http\Controllers\RubricController@viewPTA');
-
- //edit form
-   Route::get('/rubricdata/{id}/edit','App\Http\Controllers\RubricController@EditRubric');
-
- //update
-   Route::post('/rubricdata/{id}/update','App\Http\Controllers\RubricController@update');
-
- //delete
-  Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@delete');
-/*
-|--------------------------------------------------------------------------
-| END PSM COORDINATOR (Rubric MODULE )
-|--------------------------------------------------------------------------
-*/
 
 /*
 |--------------------------------------------------------------------------
@@ -199,7 +160,20 @@ Route::get('/', function () {
         return view('ManageFYPDetails/AddFYPDetails');
     });
 
-    
+    //Route for add FYP details 
+    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
+
+    //Route for search FYP details 
+    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');
+
+    //Route for edit FYP details
+    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');
+
+    //Route for update FYP details
+    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');
+
+    //Route for delete FYP details
+    Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
     
     /* //route to EditFYPDetails
     Route::get('EditFYPDetails', function () {
@@ -242,20 +216,7 @@ Route::get('/', function () {
     Route::get('studentHomepage', function () {
         return view('manageTop20/studentHomepage');
     });
-/*
- |--------------------------------------------------------------------------
- | STUDENT (MANAGE RUBRIC)
- |--------------------------------------------------------------------------
- */
- Route::get('ViewRubric','App\Http\Controllers\RubricController@StdviewRubric');
- Route::get('sviewPSM1','App\Http\Controllers\RubricController@sviewPSM1');
- Route::get('sviewPSM2','App\Http\Controllers\RubricController@sviewPSM2');
- Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
-/*
-|--------------------------------------------------------------------------
-| END STUDENT (Rubric MODULE )
-|--------------------------------------------------------------------------
-*/
+
     
 //});
 
@@ -285,6 +246,45 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
 Route::group(['middleware'=>['Coordinator','auth']],function(){
 
     //PLEASE DO PUT ALL YOUR ROUTES UNDER THIS COMMAND IF YOU ARE LOGGING IN AS COORDINATOR.TQ
+    /*
+|--------------------------------------------------------------------------
+| PSM COORDINATOR (Rubric MODULE )
+|--------------------------------------------------------------------------
+*/
+
+   //route to  Rubric Homepagae
+   Route::get('HomePage', function () {
+    return view('managerubric/HomePage');
+});
+
+//route to AddRubric page
+ Route::get('AddRubric', function () {
+    return view('managerubric/AddRubric');
+});
+
+//create rubric
+Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
+
+//View rubric
+Route::get('rubricdata','App\Http\Controllers\RubricController@viewRubric');
+Route::get('viewPSM1','App\Http\Controllers\RubricController@viewPSM1');
+Route::get('viewPSM2','App\Http\Controllers\RubricController@viewPSM2');
+Route::get('viewPTA','App\Http\Controllers\RubricController@viewPTA');
+
+//edit form
+Route::get('/rubricdata/{id}/edit','App\Http\Controllers\RubricController@EditRubric');
+
+//update
+Route::post('/rubricdata/{id}/update','App\Http\Controllers\RubricController@update');
+
+//delete
+Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@delete');
+/*
+|--------------------------------------------------------------------------
+| END PSM COORDINATOR (Rubric MODULE )
+|--------------------------------------------------------------------------
+*/
+
 
     /*
     |--------------------------------------------------------------------------
@@ -346,7 +346,7 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
 
     //route to PSM Coordinator Homepage
     Route::get('PSMCoordinatorHomepage', function () {
-        return view('coordinator/PSMCoordinatorHomepage');
+        return view('manageTop20/PSMCoordinatorHomepage');
     });
     
     //route to view evaluation marks page
@@ -379,32 +379,6 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
     /*
     |--------------------------------------------------------------------------
     | PSM COORDINATOR (MANAGE TOP20 MODULE END)
-    |--------------------------------------------------------------------------
-    */
-    /*
-    |--------------------------------------------------------------------------
-    | PSM COORDINATOR (MANAGE FYP DETAILS MODULE START)
-    |--------------------------------------------------------------------------
-    */
-
-    //Route for add FYP details 
-    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
-
-    //Route for search FYP details 
-    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');
-
-    //Route for edit FYP details
-    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');
-
-    //Route for update FYP details
-    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');
-
-    //Route for delete FYP details
-    Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
-
-    /*
-    |--------------------------------------------------------------------------
-    | PSM COORDINATOR (MANAGE FYP DETAILS MODULE END)
     |--------------------------------------------------------------------------
     */
        
@@ -466,7 +440,20 @@ Route::group(['middleware'=>['Student','auth']],function(){
     */
 
 
-    
+    /*
+ |--------------------------------------------------------------------------
+ | STUDENT (MANAGE RUBRIC)
+ |--------------------------------------------------------------------------
+ */
+ Route::get('ViewRubric','App\Http\Controllers\RubricController@StdviewRubric');
+ Route::get('sviewPSM1','App\Http\Controllers\RubricController@sviewPSM1');
+ Route::get('sviewPSM2','App\Http\Controllers\RubricController@sviewPSM2');
+ Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
+/*
+|--------------------------------------------------------------------------
+| END STUDENT (Rubric MODULE )
+|--------------------------------------------------------------------------
+*/
 
 });
 
@@ -490,38 +477,17 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
     Route::middleware(['auth:evaluator'])->group(function(){
          Route::view('/dashboard','evaluator.dashboard')->name('dashboard');
          Route::post('logout',[EvaluatorController::class,'logout'])->name('logout');
-     
-    });
-
-    Route::middleware(['auth:evaluator'])->group(function(){
-    Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
-    Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
-    Route::get('AddReminder', function () {
-    return view('ManageReminder/AddReminder');
-    });
-    });
-
-    Route::middleware(['auth:evaluator'])->group(function(){
-    Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
-    Route::get('eviewPSM1','App\Http\Controllers\RubricController@eviewPSM1');
-    Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
-    Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
-    });
-});
-
-
-/*
-|--------------------------------------------------------------------------
-| EVALUATOR 
-|--------------------------------------------------------------------------
-*/
 
 /*
 |--------------------------------------------------------------------------
 | Evaluator (MANAGE REMINDER)
 |--------------------------------------------------------------------------
 */
-
+Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
+Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
+Route::get('AddReminder', function () {
+    return view('ManageReminder/AddReminder');
+});
 
 
 /*
@@ -530,10 +496,29 @@ Route::prefix('evaluator')->name('evaluator.')->group(function(){
 | Evaluator (MANAGE RUBRIC)
 |--------------------------------------------------------------------------
 */
-
+Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
+Route::get('eviewPSM1','App\Http\Controllers\RubricController@eviewPSM1');
+Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
+Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
 /*
 
 |--------------------------------------------------------------------------
 |END  Evaluator (MANAGE RUBRIC)
+|--------------------------------------------------------------------------
+*/
+
+     
+    });
+
+
+
+
+    
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| EVALUATOR 
 |--------------------------------------------------------------------------
 */
