@@ -364,19 +364,12 @@
 
                 <ul class="list-inline components">
                     <center>
-                        <li>
-                            <a class="customFont" href="/dashboard">Home</a>
-                        </li><br>
+                       
                        
                         <li>
                             <a class="customFont" href="/EvalView">Rubric</a>
                         </li><br>
-                        <li>
-                            <a class="customFont" href="/EvaluationMainPage">Evaluation Details and Mark</a>
-                        </li><br>
-                        <li>
-                            <a class="customFont" href="/studentEvaluationSchedule">Industry Evaluation</a>
-                        </li><br>
+                       
                         <li>
                             <a class="customFont" href="/viewReminder">Reminder</a>
                         </li><br>
