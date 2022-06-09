@@ -376,6 +376,9 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
     //add evaluation date into database (create)
     Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
 
+    //route to delete evaluation date
+    Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
+
     //randomly assign evalution dates to top 20 students
     Route::get('assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
 
@@ -417,9 +420,6 @@ Route::group(['middleware'=>['Student','auth']],function(){
 
     //route to update evaluation date 
     Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
-
-    //route to delete evaluation date
-    Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
 
     //route to view evaluation start and end date
     Route::get('confirmAttendance','App\Http\Controllers\ScheduleController@viewDate');
