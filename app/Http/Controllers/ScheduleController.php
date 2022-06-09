@@ -12,7 +12,7 @@ class ScheduleController extends Controller
     //                                                    COORDINATOR
     /* ****************************************************************************************************************** */
 
-    //function to display evaluation schedule
+    //function to display evaluation schedule (COORDINATOR VIEW)
     public function viewSchedule(){
         $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
 		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
@@ -21,28 +21,21 @@ class ScheduleController extends Controller
         return view('manageTop20/evaluationSchedule', ['data_schedule'=> $data_schedule]);
     }
 
-    //function to view existing evaluation dates
+    //function to view existing evaluation dates (COORDINATOR VIEW)
     public function viewEvDate() {
         $data_schedulehistory = \App\Models\ScheduleDateHistory::all();
 
         return view('manageTop20/manageEvaluationDate', ['data_schedulehistory'=> $data_schedulehistory]);
     }
 
-    //function to add new industry evaluation date
+    //function to add new industry evaluation date 
     public function addEvDate(Request $request){
         \App\Models\ScheduleDateHistory::create($request->all());
 
         return redirect('manageEvaluationDate')->with('success','Industry Evaluation Date Successfully Added');
     }
 
-    //function to update industry evaluation date into database
-    // public function updateEvDate(Request $request,$id){
-    //     $data_schedule = \App\Models\Schedule::find($id);
-    //     $data_schedule -> update($request->all());
-
-    //     return redirect('evaluationSchedule')->with('success','Industry Evaluation Date Successfully Updated');
-    // }
-
+    // function to delete existing evaluation dates from the system
     public function deleteEvDate($id) {
         $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
         $data_schedulehistory -> delete($data_schedulehistory);
@@ -58,6 +51,7 @@ class ScheduleController extends Controller
 
         return view('manageTop20/evaluationSchedule', ['data_schedule'=> $data_schedule]);
     }
+    
     // public function assignSlot(Request $id, $start_date, $end_date){
     //     $data_schedulehistory = \App\Models\ScheduleDateHistory::find($id);
         
@@ -74,7 +68,7 @@ class ScheduleController extends Controller
     //                                                    STUDENT
     /* ****************************************************************************************************************** */
 
-    //function for top 20 students to view evaluation schedule
+    //function for top 20 students to view evaluation schedule (STUDENT VIEW)
     public function viewStudSchedule() {
         $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
 		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
@@ -84,14 +78,7 @@ class ScheduleController extends Controller
         return view('manageTop20/studentEvaluationSchedule', ['data_schedule'=> $data_schedule]);
     }
 
-    //function to view start and end date for industry evaluation
-    public function viewDate() {
-        $data_schedulehistory = \App\Models\ScheduleDateHistory::all();
-
-        return view('manageTop20/confirmAttendance', ['data_schedulehistory'=> $data_schedulehistory]);
-    }
-
-    //function for students to confirm their evaluation date details
+    //function for students to view their evaluation date details before confirm attendance
     public function viewEvaluationDateDetails($id) {
         $data_schedule = \App\Models\Schedule::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'schedules.std_id')
 		                                        ->get(['schedules.*', 'evaluation_marks.eva_mark'])
@@ -105,11 +92,10 @@ class ScheduleController extends Controller
         $data_schedule = \App\Models\Schedule::find($id);
         $data_schedule->update($request->all());
 
-        // return view('manageTop20/studentEvaluationSchedule', ['data_schedule'=> $data_schedule])->with('success','Evaluation Date Successfully Updated');
         return redirect('studentEvaluationSchedule')->with('success','Evaluation Date Successfully Updated');
     }
 
-    //function to update students' attendance status into the database
+    //function to update students' attendance status into the database (confirm attendance)
     public function attendanceStats(Request $request,$id){
         $data_schedule = \App\Models\Schedule::find($id);
         $data_schedule->update($request->all());

@@ -199,9 +199,6 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 |--------------------------------------------------------------------------
 */
     
-    //Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views//route to rubric mainpage
-    Route::get('/fypdata','App\Http\Controllers\FYPDetailsController@viewFYPDetails');
-    
     //route to FYP mainpage
     Route::get('FYPMainPage', function () {
         return view('ManageFYPDetails/FYPMainPage');
@@ -213,15 +210,19 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageFYPDetails/AddFYPDetails');
     });
 
-    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');//add
-    //read
+    //Route for add FYP details 
+    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
 
-    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
+    //Route for search FYP details 
+    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');
 
-    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
+    //Route for edit FYP details
+    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');
 
-    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    //Route for update FYP details
+    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');
 
+    //Route for delete FYP details
     Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
     
     /* //route to EditFYPDetails
@@ -310,23 +311,36 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
     | PSM COORDINATOR (MANAGE REPORT MODULE)
     |--------------------------------------------------------------------------
     */
-      
+    
+    //route to Report Dashbaord to choose button
     Route::get('reportDashboard', function () {
         return view('ReportModule/reportDashboard');
     });
     
+    //route to view Add from page
     Route::get('AddReport', function () {
         return view('ReportModule/AddReport');
     });
     
+    //route to display report data
     Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+
+    //route to enable user to add data and save in db
     Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+
+    //route to view Edit Form
     Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
+
+    //route to enable editing function and update data into db
     Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
 
+    //route to view Excellent Student page
     Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
 
+    //route to view Student Progress page
     Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
+
+    //route to display filter student progress by mark(function)
     Route::get('/80data/Above80','App\Http\Controllers\ReportController@Above80');
     Route::get('/70data/Above70','App\Http\Controllers\ReportController@Above70');
     Route::get('/60data/Above60','App\Http\Controllers\ReportController@Above60');
@@ -334,6 +348,7 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
     Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
     Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
 
+    //route to display count function
     Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
 
 
@@ -374,6 +389,9 @@ Route::group(['middleware'=>['Coordinator','auth']],function(){
 
     //add evaluation date into database (create)
     Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
+
+    //route to delete evaluation date
+    Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
 
     //randomly assign evalution dates to top 20 students
     Route::get('assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
@@ -417,18 +435,27 @@ Route::group(['middleware'=>['Student','auth']],function(){
     //route to update evaluation date 
     Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
 
-    //route to delete evaluation date
-    Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
-
-    //route to view evaluation start and end date
-    Route::get('confirmAttendance','App\Http\Controllers\ScheduleController@viewDate');
-
     //route to confirm attendance status
     Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');
 
     /*
     |--------------------------------------------------------------------------
     | STUDENT (MANAGETOP20 MODULE END)
+    |--------------------------------------------------------------------------
+    */
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGE FYP DETAILS START)
+    |--------------------------------------------------------------------------
+    */
+
+    //route to  view fyp details page page
+    Route::get('ViewFYPDetailsStudent','App\Http\Controllers\FYPDetailsController@viewFYPDetailsStudent');
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGE FYP DETAILS END)
     |--------------------------------------------------------------------------
     */
 
