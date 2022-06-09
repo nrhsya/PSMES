@@ -9,6 +9,7 @@ use \App\Models\Mark;
 
 class MarksController extends Controller
 {
+    //Submit marks
     public function SubmitMarks(Request $request ){
          \App\Models\Mark::create($request->all());
 
