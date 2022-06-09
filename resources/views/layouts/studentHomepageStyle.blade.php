@@ -380,9 +380,8 @@
                             <a class="customFont" href="/dashboard">Home</a>
                         </li><br>
                         <li>
-                        <form style="width:100%;" action="{{url('view/'.$fyp_data->id)}}" method="POST">
+                    
                             <a class="customFont" href="/ViewFYPDetailsStudent">FYP Details</a>
-                        </form>
                         </li><br>
                         <li>
                             <a class="customFont" href="/ViewRubric">Rubric</a>
