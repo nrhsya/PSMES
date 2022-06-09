@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Mark extends Model
 {
     use HasFactory;
-    protected $fillable = ['std_id','eva_mark','eva_comment'];
+    protected $fillable = ['std_name','std_id','eva_mark','eva_comment'];
 }

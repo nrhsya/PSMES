@@ -377,7 +377,7 @@
                 <ul class="list-inline components">
                     <center>
                         <li>
-                            <a class="customFont" href="/studentHomepage">Home</a>
+                            <a class="customFont" href="/dashboard">Home</a>
                         </li><br>
                         <li>
                         <form style="width:100%;" action="{{url('view/'.$fyp_data->id)}}" method="POST">
@@ -387,9 +387,9 @@
                         <li>
                             <a class="customFont" href="/ViewRubric">Rubric</a>
                         </li><br>
-                        <li>
+                        <!-- <li>
                             <a class="customFont" href="/EvaluationMainPage">Evaluation Details and Mark</a>
-                        </li><br>
+                        </li><br> -->
                         <li>
                             <a class="customFont" href="/studentEvaluationSchedule">Industry Evaluation</a>
                         </li><br>
