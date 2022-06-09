@@ -9,12 +9,13 @@ class RubricController extends Controller
 
 { 
 
-
-    public function viewRubric(){
-        $data_rubric = \App\Models\Rubric::all();
-        return view('managerubric/ViewAndDeleteRubric', ['data_rubric'=> $data_rubric]);
+//view Rubric
+public function viewRubric(){
+    $data_rubric = \App\Models\Rubric::all();
+    return view('managerubric/ViewAndDeleteRubric', ['data_rubric'=> $data_rubric]);
 }
     
+//add Rubric
     public function createRubric(Request $request ){
 
         $request->validate([
@@ -34,11 +35,14 @@ class RubricController extends Controller
         return redirect('/rubricdata')->with('success','New Data Successfully Inserted');
     } 
 
-    
+ //call edit rubric form  
     public function EditRubric($id ){
         $data_rubric = \App\Models\Rubric::find($id);
         return view('managerubric/EditRubric',['data_rubric'=>$data_rubric]);
     }
+
+
+//Update Rubric
 
     public function update(Request $request,$id){
         $data_rubric = \App\Models\Rubric::find($id);
@@ -47,6 +51,7 @@ class RubricController extends Controller
         return redirect('/rubricdata')->with('success','Data Successfully Updated');
 }
 
+//delete Rubric
 public function delete($id){
     $data_rubric = \App\Models\Rubric::find($id);
     $data_rubric -> delete($data_rubric);
@@ -54,22 +59,23 @@ public function delete($id){
     return redirect('/rubricdata')->with('success','Data Successfully Deleted');
 }
 
-//filter PSM1
-public function filterPSM1(){
+//filter PSM1 for coordinator view
+public function viewPSM1(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PSM1');
 
     return view('managerubric/ViewAndDeleteRubric', ['data_rubric'=> $data_rubric]);
 }
 
-//filter PSM2
+//filter PSM2 for coordinator view
 public function viewPSM2(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PSM2');
 
     return view('managerubric/ViewAndDeleteRubric', ['data_rubric'=> $data_rubric]);
 }
-//filter PSM1
+
+//filter PTA for coordinator view
 public function viewPTA(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PTA');
@@ -83,22 +89,24 @@ public function StdviewRubric(){
 
     return view('managerubric/ViewRubric', ['data_rubric'=> $data_rubric]);
 }
-//filter PSM1
-public function sfilterPSM1(){
+
+//filter PSM1 for student view
+public function sviewPSM1(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PSM1');
 
     return view('managerubric/ViewRubric', ['data_rubric'=> $data_rubric]);
 }
 
-//filter PSM2
+//filter PSM2 for student view
 public function sviewPSM2(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PSM2');
 
     return view('managerubric/ViewRubric', ['data_rubric'=> $data_rubric]);
 }
-//filter PSM1
+
+//filter PTA for student view
 public function sviewPTA(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PTA');
@@ -106,28 +114,31 @@ public function sviewPTA(){
     return view('managerubric/ViewRubric', ['data_rubric'=> $data_rubric]);
 
 }
+
    //function to display rubric for evaluator
 public function EvaviewRubric(){
     $data_rubric = \App\Models\Rubric::all();
 
     return view('managerubric/EvalView', ['data_rubric'=> $data_rubric]);
 }
-//filter PSM1
-public function efilterPSM1(){
+
+//filter PSM1  for evaluator
+public function eviewPSM1(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PSM1');
 
     return view('managerubric/EvalView', ['data_rubric'=> $data_rubric]);
 }
 
-//filter PSM2
+//filter PSM2  for evaluator
 public function eviewPSM2(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PSM2');
 
     return view('managerubric/EvalView', ['data_rubric'=> $data_rubric]);
 }
-//filter PSM1
+
+//filter PTA  for evaluator
 public function eviewPTA(){
     $data_rubric = \App\Models\Rubric::all()
     ->where('rubric_id', '=', 'PTA');

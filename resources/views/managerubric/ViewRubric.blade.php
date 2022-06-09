@@ -14,7 +14,7 @@
             <div class="col-12"style="background-color:#11ADA4;padding:10px;color:white;width:100%;">
 
             <div style="padding:2px; background-color:#e2e9e9">
-            <a id="customButton" href="sfilterPSM1"><b>PSM 1</b></a>
+            <a id="customButton" href="sviewPSM1"><b>PSM 1</b></a>
             <a id="customButton" href="sviewPSM2"><b>PSM 2</b></a>
             <a id="customButton" href="sviewPTA"><b>PTA</b></a>
 

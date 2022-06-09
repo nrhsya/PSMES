@@ -94,37 +94,33 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 
-
-
-   //route to rubric mainpage
-   Route::get('/rubricdata','App\Http\Controllers\RubricController@viewRubric');
-
-
-  
+   //route to  Rubric Homepagae
     Route::get('HomePage', function () {
         return view('managerubric/HomePage');
     });
 
-   //route to AddRubric
+   //route to AddRubric page
      Route::get('AddRubric', function () {
         return view('managerubric/AddRubric');
     });
 
-   
- Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
-    //read
-   
- Route::get('filterPSM1','App\Http\Controllers\RubricController@filterPSM1');
- Route::get('viewPSM2','App\Http\Controllers\RubricController@viewPSM2');
- Route::get('viewPTA','App\Http\Controllers\RubricController@viewPTA');
-     //edit form
-Route::get('/rubricdata/{id}/edit','App\Http\Controllers\RubricController@EditRubric');
+   //create rubric
+   Route::post('rubricdata/create','App\Http\Controllers\RubricController@createRubric');
 
-//update
-Route::post('/rubricdata/{id}/update','App\Http\Controllers\RubricController@update');
+   //View rubric
+   Route::get('rubricdata','App\Http\Controllers\RubricController@viewRubric');
+   Route::get('viewPSM1','App\Http\Controllers\RubricController@viewPSM1');
+   Route::get('viewPSM2','App\Http\Controllers\RubricController@viewPSM2');
+   Route::get('viewPTA','App\Http\Controllers\RubricController@viewPTA');
 
-//delete
-Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@delete');
+ //edit form
+   Route::get('/rubricdata/{id}/edit','App\Http\Controllers\RubricController@EditRubric');
+
+ //update
+   Route::post('/rubricdata/{id}/update','App\Http\Controllers\RubricController@update');
+
+ //delete
+  Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@delete');
 /*
 |--------------------------------------------------------------------------
 | END PSM COORDINATOR (Rubric MODULE )
@@ -152,20 +148,12 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageEvaluationDetailsAndMarks/ViewEvaluation');
         });
 
-    //route to DeleteEvaluation
-    Route::get('DeleteEvaluation', function () {
-        return view('ManageEvaluationDetailsAndMarks/DeleteEvaluation');
-        });
 
      //route to SubmitMarks
      Route::get('SubmitMarks', function () {
         return view('ManageEvaluationDetailsAndMarks/SubmitMarks');
     });
 
-    //route to EditEvaluation
-    Route::get('EditEvaluation', function () {
-            return view('ManageEvaluationDetailsAndMarks/EditEvaluation');
-        });
     
 
     //Submit Marks
@@ -175,16 +163,17 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
     Route::post('evaluationdata/create','App\Http\Controllers\EvaluationController@AddEvaluation');
     
     //view Evaluation
-    Route::get('evaluationdata', 'App\Http\Controllers\EvaluationController@ViewEvaluation');
+    Route::get('ViewEvaluation', 'App\Http\Controllers\EvaluationController@ViewEvaluation');
 
     //Edit Evaluation
-    Route::post('/evaluationdata/{id}/edit','App\Http\Controllers\EvaluationController@EditEvaluation');
+    Route::get('/evaluationdata/{id}/edit','App\Http\Controllers\EvaluationController@EditEvaluation');
 
     //Update Evaluation
     Route::post('/evaluationdata/{id}/Update','App\Http\Controllers\EvaluationController@UpdateEvaluation');
 
     //Delete Evaluation
-    Route::post('/evaluationdata/{id}/delete','App\Http\Controllers\EvaluationController@DeleteEvaluation');
+    Route::get('/evaluationdata/{id}/delete','App\Http\Controllers\EvaluationController@DeleteEvaluation');
+    
 
 /*
 |--------------------------------------------------------------------------
@@ -267,15 +256,19 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('manageTop20/studentHomepage');
     });
 /*
-    |--------------------------------------------------------------------------
-    | STUDENT (MANAGE RUBRIC)
-    |--------------------------------------------------------------------------
-    */
+ |--------------------------------------------------------------------------
+ | STUDENT (MANAGE RUBRIC)
+ |--------------------------------------------------------------------------
+ */
  Route::get('ViewRubric','App\Http\Controllers\RubricController@StdviewRubric');
- Route::get('sfilterPSM1','App\Http\Controllers\RubricController@sfilterPSM1');
+ Route::get('sviewPSM1','App\Http\Controllers\RubricController@sviewPSM1');
  Route::get('sviewPSM2','App\Http\Controllers\RubricController@sviewPSM2');
  Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
-
+/*
+|--------------------------------------------------------------------------
+| END STUDENT (Rubric MODULE )
+|--------------------------------------------------------------------------
+*/
     
 //});
 
@@ -514,6 +507,12 @@ Route::get('AddReminder', function () {
 |--------------------------------------------------------------------------
 */
 Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
-Route::get('efilterPSM1','App\Http\Controllers\RubricController@efilterPSM1');
+Route::get('eviewPSM1','App\Http\Controllers\RubricController@eviewPSM1');
 Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
 Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
+/*
+
+|--------------------------------------------------------------------------
+|END  Evaluator (MANAGE RUBRIC)
+|--------------------------------------------------------------------------
+*/
