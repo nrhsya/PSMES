@@ -346,7 +346,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 
     //route to PSM Coordinator Homepage
     Route::get('PSMCoordinatorHomepage', function () {
-        return view('manageTop20/PSMCoordinatorHomepage');
+        return view('coordinator/PSMCoordinatorHomepage');
     });
     
     //route to view evaluation marks page
