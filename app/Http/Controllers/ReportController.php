@@ -72,42 +72,55 @@ class ReportController extends Controller
 //<!-- $post to display the total number of students for every filter function-->
 
     public function Above80(){
-        $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [79,101]);
+        $data_progress = \App\Models\FYPDetails::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'f_y_p_details.std_id')
+                                                ->get(['f_y_p_details.*', 'evaluation_marks.eva_mark', 'evaluation_marks.eva_comment'])
+                                                ->whereBetween('eva_mark', [79,101]);
+    
 
         $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [79,101])->count();
         return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Above70(){
-        $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [69,80]);
+        $data_progress = \App\Models\FYPDetails::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'f_y_p_details.std_id')
+                                                ->get(['f_y_p_details.*', 'evaluation_marks.eva_mark', 'evaluation_marks.eva_comment'])
+                                                ->whereBetween('eva_mark', [69,80]);
 
         $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [69,80])->count();
         return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Above60(){
-        $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [59,70]);
+        $data_progress = \App\Models\FYPDetails::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'f_y_p_details.std_id')
+                                                ->get(['f_y_p_details.*', 'evaluation_marks.eva_mark', 'evaluation_marks.eva_comment'])
+                                                ->whereBetween('eva_mark', [59,70]);
 
         $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [59,70])->count();
         return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Above50(){
-        $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [49,60]);
-
-        $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [49,60])->count();
+        $data_progress = \App\Models\FYPDetails::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'f_y_p_details.std_id')
+                                                ->get(['f_y_p_details.*', 'evaluation_marks.eva_mark', 'evaluation_marks.eva_comment'])
+                                                ->whereBetween('eva_mark', [59,70]);
+        
+        $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [59,70])->count();
         return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Above40(){
-        $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [39,50]);
+        $data_progress = \App\Models\FYPDetails::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'f_y_p_details.std_id')
+                                                ->get(['f_y_p_details.*', 'evaluation_marks.eva_mark', 'evaluation_marks.eva_comment'])
+                                                ->whereBetween('eva_mark', [39,50]);
 
         $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [39,50])->count();
         return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
     public function Below40(){
-        $data_progress= \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [0,40]);
+        $data_progress = \App\Models\FYPDetails::join('evaluation_marks', 'evaluation_marks.std_id', '=', 'f_y_p_details.std_id')
+                                                ->get(['f_y_p_details.*', 'evaluation_marks.eva_mark', 'evaluation_marks.eva_comment'])
+                                                ->whereBetween('eva_mark', [0,40]);
 
         $post = \App\Models\EvaluationMark::whereBetween('eva_mark', [0,40])->count();
         return view('ReportModule/StudentProgress',compact('data_progress','post'));

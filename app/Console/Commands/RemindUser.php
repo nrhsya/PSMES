@@ -13,8 +13,11 @@ class RemindUser extends Command
      */
     protected $signature = 'command:name';
 
-    protected $signature = 'users:notify';
-       @var string
+    /**
+ * The console command description.
+ *
+ * @var string
+ */
     protected $description = 'Command description';
 
     /**
