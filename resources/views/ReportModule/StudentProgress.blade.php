@@ -56,7 +56,7 @@
 
             @foreach($data_progress as $progress)
             <tr>
-                <td>{{$progress->eva_id}}</td>
+                <td>{{$progress->id}}</td>
                 <td>{{$progress->std_id}}</td>
                 <td>{{$progress->std_name}}</td>
                 <td>{{$progress->sv_name}}</td>
