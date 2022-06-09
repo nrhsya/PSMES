@@ -17,19 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <style>
-       .section-1 {
-         background-color: #f5ccff;
-       }
-         
-       </style>
-    
-        @if(session('success'))
-        <div class="alert alert-primary" role="alert">
-             {{session('success')}}
-        </div>
-        @endif
-    
         <div >
         <div style="margin-top: 15px; padding:10px 16px; height: 800px; background-color: #F5F5F5;">
           
@@ -59,15 +46,21 @@
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">No</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Student ID</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Student Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Supervisor Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluator Name</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Mark</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Comment</th>
             </tr>
+
+    <!-- Calling all the data from evaluation_mark db--> 
 
             @foreach($data_progress as $progress)
             <tr>
                 <td>{{$progress->eva_id}}</td>
                 <td>{{$progress->std_id}}</td>
                 <td>{{$progress->std_name}}</td>
+                <td>{{$progress->sv_name}}</td>
+                <td>{{$progress->eva_name}}</td>
                 <td>{{$progress->eva_mark}}</td>
                 <td>{{$progress->eva_comment}}</td>
             </tr>
@@ -76,6 +69,8 @@
           
         </div> 
     </div><br><br>
+
+    <!-- To display total number of students--> 
 
     <p style="color:black;margin-top:30px;"><b>Total number of students: {{$post}}</b></p> 
     <button class="btn btn-success " style="border: 3px solid black; margin-left:35%; margin-right:30px; margin-top:25px;" id="myButton" onclick="window.print()">Print </button>

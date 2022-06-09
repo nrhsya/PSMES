@@ -48,81 +48,40 @@ Route::get('/', function () {
 
     //route to PSM Coordinator Homepage
 
-    /*
-|--------------------------------------------------------------------------
-| PSM COORDINATOR (MANAGETOP20 MODULE)
-|--------------------------------------------------------------------------
-*/
-    //route to PSM Coordinator Homepage
-    Route::get('PSMCoordinatorHomepage', function () {
-        return view('manageTop20/PSMCoordinatorHomepage');
-    });
-    
-    //route to view evaluation marks page
-    Route::get('viewMarks','App\Http\Controllers\EvaluationMarksController@viewMarks');
-
-    //route to generate top 20 students
-    Route::get('generateTop','App\Http\Controllers\Top20Controller@generateTop');
-    
-    //route to industry evaluation mainpage
-    Route::get('industryEvaluationMainpage', function () {
-        return view('manageTop20/industryEvaluationMainpage');
-    });
-
-    //route to evaluation schedule page
-    Route::get('evaluationSchedule','App\Http\Controllers\ScheduleController@viewSchedule');
-
-    //route to manage evaluation date page
-    //view existing evaluation dates
-    Route::get('manageEvaluationDate','App\Http\Controllers\ScheduleController@viewEvDate');
-
-    //add evaluation date into database (create)
-    Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
-
-    //randomly assign evalution dates to top 20 students
-    Route::get('assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
-
-  /*
-|--------------------------------------------------------------------------
-| PSM COORDINATOR (MANAGE TOP20 MODULE END)
-|--------------------------------------------------------------------------
-*/
-
-
  /*
 |--------------------------------------------------------------------------
 | PSM COORDINATOR (REPORT MODULE)
 |--------------------------------------------------------------------------
 */
 
-Route::get('reportDashboard', function () {
-    return view('ReportModule/reportDashboard');
-});
+//Route::get('reportDashboard', function () {
+//    return view('ReportModule/reportDashboard');
+//});
 
-Route::get('AddReport', function () {
-    return view('ReportModule/AddReport');
-});
+//Route::get('AddReport', function () {
+//    return view('ReportModule/AddReport');
+//});
 
-Route::get('tryindex', function () {
-    return view('ReportModule/tryindex');
-});
+//Route::get('tryindex', function () {
+//    return view('ReportModule/tryindex');
+//});
 
-Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
-Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
-Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
-Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
+//Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+//Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+//Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
+//Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
 
-Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
+//Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
 
-Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
-Route::get('/80data/Above80','App\Http\Controllers\ReportController@Above80');
-Route::get('/70data/Above70','App\Http\Controllers\ReportController@Above70');
-Route::get('/60data/Above60','App\Http\Controllers\ReportController@Above60');
-Route::get('/50data/Above50','App\Http\Controllers\ReportController@Above50');
-Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
-Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
+//Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
+//Route::get('/80data/Above80','App\Http\Controllers\ReportController@Above80');
+//Route::get('/70data/Above70','App\Http\Controllers\ReportController@Above70');
+//Route::get('/60data/Above60','App\Http\Controllers\ReportController@Above60');
+//Route::get('/50data/Above50','App\Http\Controllers\ReportController@Above50');
+//Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
+//Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
 
-Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
+//Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
 
 /*
 |--------------------------------------------------------------------------
@@ -189,7 +148,12 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageEvaluationDetailsAndMarks/AddEvaluation');
     });
 
-    //route to SubmitMarks
+    //route to ViewEvaluation
+    Route::get('ViewEvaluation', function () {
+        return view('ManageEvaluationDetailsAndMarks/ViewEvaluation');
+        });
+
+    //route to DeleteEvaluation
     Route::get('DeleteEvaluation', function () {
         return view('ManageEvaluationDetailsAndMarks/DeleteEvaluation');
         });
@@ -199,9 +163,29 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageEvaluationDetailsAndMarks/SubmitMarks');
     });
 
-    Route::post('markdata/create','App\Http\Controllers\MarksController@SubmitMarks');//add
-    // Route::post('markdata/SubmitMarks','App\Http\Controllers\MarksController@SubmitMarks');
+    //route to EditEvaluation
+    Route::get('EditEvaluation', function () {
+            return view('ManageEvaluationDetailsAndMarks/EditEvaluation');
+        });
+    
 
+    //Submit Marks
+    Route::post('markdata/create','App\Http\Controllers\MarksController@SubmitMarks');
+
+    //Add Evaluation
+    Route::post('evaluationdata/create','App\Http\Controllers\EvaluationController@AddEvaluation');
+    
+    //view Evaluation
+    Route::get('evaluationdata', 'App\Http\Controllers\EvaluationController@ViewEvaluation');
+
+    //Edit Evaluation
+    Route::post('/evaluationdata/{id}/edit','App\Http\Controllers\EvaluationController@EditEvaluation');
+
+    //Update Evaluation
+    Route::post('/evaluationdata/{id}/Update','App\Http\Controllers\EvaluationController@UpdateEvaluation');
+
+    //Delete Evaluation
+    Route::post('/evaluationdata/{id}/delete','App\Http\Controllers\EvaluationController@DeleteEvaluation');
 
 /*
 |--------------------------------------------------------------------------
@@ -216,9 +200,6 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
 |--------------------------------------------------------------------------
 */
     
-    //Route::resource('FYPdetails', 'FYPDetailsController');//1 argument from views//route to rubric mainpage
-    Route::get('/fypdata','App\Http\Controllers\FYPDetailsController@viewFYPDetails');
-    
     //route to FYP mainpage
     Route::get('FYPMainPage', function () {
         return view('ManageFYPDetails/FYPMainPage');
@@ -230,15 +211,19 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
         return view('ManageFYPDetails/AddFYPDetails');
     });
 
-    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');//add
-    //read
+    //Route for add FYP details 
+    Route::post('fypdata/create','App\Http\Controllers\FYPDetailsController@createFYPDetails');
 
-    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');//search and view
+    //Route for search FYP details 
+    Route::get('/fypdata/search', 'App\Http\Controllers\FYPDetailsController@searchFYPDetails');
 
-    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');//edit
+    //Route for edit FYP details
+    Route::get('/edit/{id}', 'App\Http\Controllers\FYPDetailsController@editFYPDetails');
 
-    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');//update
+    //Route for update FYP details
+    Route::put('/update/{id}', 'App\Http\Controllers\FYPDetailsController@updateFYPDetails');
 
+    //Route for delete FYP details
     Route::get('/delete/{id}','App\Http\Controllers\FYPDetailsController@deleteFYPDetails');
     
     /* //route to EditFYPDetails
@@ -292,35 +277,7 @@ Route::get('/rubricdata/{id}/delete','App\Http\Controllers\RubricController@dele
  Route::get('sviewPSM2','App\Http\Controllers\RubricController@sviewPSM2');
  Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
 
-    /*
-    |--------------------------------------------------------------------------
-    | STUDENT (MANAGETOP20 MODULE START)
-    |--------------------------------------------------------------------------
-    */
-
-    //route to student evaluation schedule page
-    Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
-
-    //route to confirm attendance page
-    Route::get('/scheduleData/{id}/viewEvaluationDateDetails','App\Http\Controllers\ScheduleController@viewEvaluationDateDetails');
-
-    //route to update evaluation date 
-    Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
-
-    //route to delete evaluation date
-    Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
-
-    //route to view evaluation start and end date
-    Route::get('confirmAttendance','App\Http\Controllers\ScheduleController@viewDate');
-
-    //route to confirm attendance status
-    Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');
-
-    /*
-    |--------------------------------------------------------------------------
-    | STUDENT (MANAGETOP20 MODULE END)
-    |--------------------------------------------------------------------------
-    */
+    
 //});
 
 //home
@@ -343,8 +300,109 @@ Route::group(['prefix'=>'coordinator','middleware'=>['Coordinator','auth']],func
     Route::get('dashboard',[PSMCoordinatorController::class,'homepage'])->name('coordinator.dashboard');
     Route::get('profile',[PSMCoordinatorController::class,'profile'])->name('coordinator.profile');
     Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
-    Route::get('settings',[PSMCoordinatorController::class,'settings'])->name('coordinator.settings');
-   
+});   
+
+//restrict access to only coordinator
+Route::group(['middleware'=>['Coordinator','auth']],function(){
+
+    //PLEASE DO PUT ALL YOUR ROUTES UNDER THIS COMMAND IF YOU ARE LOGGING IN AS COORDINATOR.TQ
+
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE REPORT MODULE)
+    |--------------------------------------------------------------------------
+    */
+    
+    //route to Report Dashbaord to choose button
+    Route::get('reportDashboard', function () {
+        return view('ReportModule/reportDashboard');
+    });
+    
+    //route to view Add from page
+    Route::get('AddReport', function () {
+        return view('ReportModule/AddReport');
+    });
+    
+    //route to display report data
+    Route::get('/reportdata','App\Http\Controllers\ReportController@ReportPage');
+
+    //route to enable user to add data and save in db
+    Route::post('reportdata/create','App\Http\Controllers\ReportController@createReport');
+
+    //route to view Edit Form
+    Route::get('/reportdata/{id}/EditReport','App\Http\Controllers\ReportController@EditReport');
+
+    //route to enable editing function and update data into db
+    Route::post('/reportdata/{id}/update','App\Http\Controllers\ReportController@updateReport');
+
+    //route to view Excellent Student page
+    Route::get('ExcellentStudent','App\Http\Controllers\ReportController@ExcellentStudent');
+
+    //route to view Student Progress page
+    Route::get('StudentProgress','App\Http\Controllers\ReportController@StudentProgress');
+
+    //route to display filter student progress by mark(function)
+    Route::get('/80data/Above80','App\Http\Controllers\ReportController@Above80');
+    Route::get('/70data/Above70','App\Http\Controllers\ReportController@Above70');
+    Route::get('/60data/Above60','App\Http\Controllers\ReportController@Above60');
+    Route::get('/50data/Above50','App\Http\Controllers\ReportController@Above50');
+    Route::get('/40data/Above40','App\Http\Controllers\ReportController@Above40');
+    Route::get('/0data/Below40','App\Http\Controllers\ReportController@Below40');
+
+    //route to display count function
+    Route::get('CountStudents','App\Http\Controllers\ReportController@CountStudents');
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE REPORT MODULE END)
+    |--------------------------------------------------------------------------
+    */
+
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE TOP20 MODULE)
+    |--------------------------------------------------------------------------
+    */
+
+    //route to PSM Coordinator Homepage
+    Route::get('PSMCoordinatorHomepage', function () {
+        return view('manageTop20/PSMCoordinatorHomepage');
+    });
+    
+    //route to view evaluation marks page
+    Route::get('viewMarks','App\Http\Controllers\EvaluationMarksController@viewMarks');
+
+    //route to generate top 20 students
+    Route::get('generateTop','App\Http\Controllers\Top20Controller@generateTop');
+    
+    //route to industry evaluation mainpage
+    Route::get('industryEvaluationMainpage', function () {
+        return view('manageTop20/industryEvaluationMainpage');
+    });
+
+    //route to evaluation schedule page
+    Route::get('evaluationSchedule','App\Http\Controllers\ScheduleController@viewSchedule');
+
+    //route to manage evaluation date page
+    //view existing evaluation dates
+    Route::get('manageEvaluationDate','App\Http\Controllers\ScheduleController@viewEvDate');
+
+    //add evaluation date into database (create)
+    Route::post('/scheduleData/addEvDate', 'App\Http\Controllers\ScheduleController@addEvDate');
+
+    //route to delete evaluation date
+    Route::get('/scheduleData/{id}/deleteEvDate','App\Http\Controllers\ScheduleController@deleteEvDate');
+
+    //randomly assign evalution dates to top 20 students
+    Route::get('assignSlot', 'App\Http\Controllers\ScheduleController@assignSlot');
+
+    /*
+    |--------------------------------------------------------------------------
+    | PSM COORDINATOR (MANAGE TOP20 MODULE END)
+    |--------------------------------------------------------------------------
+    */
+       
 }); 
 
 /*
@@ -357,7 +415,57 @@ Route::group(['prefix'=>'student','middleware'=>['Student','auth']],function(){
     Route::get('profile',[StudentController::class,'profile'])->name('student.profile');
     Route::get('settings',[StudentController::class,'settings'])->name('student.settings');
 }); 
-  
+
+//restrict access to only students
+Route::group(['middleware'=>['Student','auth']],function(){
+
+    //PLEASE DO PUT ALL YOUR ROUTES UNDER THIS COMMAND IF YOU ARE LOGGING IN AS STUDENT.TQ
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE START)
+    |--------------------------------------------------------------------------
+    */
+
+    //route to student evaluation schedule page
+    Route::get('studentEvaluationSchedule','App\Http\Controllers\ScheduleController@viewStudSchedule');
+
+    //route to confirm attendance page
+    Route::get('/scheduleData/{id}/viewEvaluationDateDetails','App\Http\Controllers\ScheduleController@viewEvaluationDateDetails');
+
+    //route to update evaluation date 
+    Route::post('/scheduleData/{id}/updateEvaDateDetails','App\Http\Controllers\ScheduleController@updateEvaDateDetails');
+
+    //route to confirm attendance status
+    Route::post('/scheduleData/{id}/attendanceStats','App\Http\Controllers\ScheduleController@attendanceStats');
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGETOP20 MODULE END)
+    |--------------------------------------------------------------------------
+    */
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGE FYP DETAILS START)
+    |--------------------------------------------------------------------------
+    */
+
+    //route to  view fyp details page page
+    Route::get('ViewFYPDetailsStudent','App\Http\Controllers\FYPDetailsController@viewFYPDetailsStudent');
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | STUDENT (MANAGE FYP DETAILS END)
+    |--------------------------------------------------------------------------
+    */
+
+
+    
+
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | EVALUATOR LOGIN
@@ -398,6 +506,7 @@ Route::get('Reminder', function () {
 });
 
 Route::post('submit','App\Http\Controllers\ReminderController@insertReminder');
+Route::get('viewReminder','App\Http\Controllers\ReminderController@viewReminder');
 /*
 
 |--------------------------------------------------------------------------

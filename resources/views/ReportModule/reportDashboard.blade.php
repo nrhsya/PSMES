@@ -14,20 +14,7 @@
 <html>
   
     <head>
-    
-    <style>
-       .section-1 {
-         background-color: #f5ccff;
-       }
-         
-       </style>
-    
-        @if(session('success'))
-        <div class="alert alert-primary" role="alert">
-             {{session('success')}}
-        </div>
-        @endif
-    
+
         <div >
         <div style="margin-top: 15px; padding:10px 16px; height: 700px; background-color: #F5F5F5;">
           

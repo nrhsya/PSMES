@@ -12,6 +12,6 @@ class MarksController extends Controller
     public function SubmitMarks(Request $request ){
          \App\Models\Mark::create($request->all());
 
-         return redirect('/markdata')->with('success','New Data Successfully Inserted');
+         return redirect('/EvaluationMainPage')->with('success','New Data Successfully Inserted');
     } 
 }

@@ -7,7 +7,7 @@ use \App\Models\EvaluationMark;
 
 class EvaluationMarksController extends Controller
 {
-    //function to display all evaluation marks (take from evaluation module)
+    //function to display all evaluation marks
     public function viewMarks(){
         $data_mark = \App\Models\EvaluationMark::all();
 

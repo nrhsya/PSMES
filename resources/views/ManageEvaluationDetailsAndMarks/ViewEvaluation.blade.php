@@ -2,7 +2,7 @@
 @extends('layouts.PSMCoordinatorHomepageStyle')
 
 <head>
-    <title>View FYP Details | PSMES</title>
+    <title>View Evaluation Details | PSMES</title>
 </head>
 
 @section('content')
@@ -18,44 +18,49 @@
 <div style="margin: 0px 0px; padding:0px 0px;height:90%; background-color: white;">
 <div style="margin-top: 15px; padding:10px 16px; height:100%;background-color: #F5F5F5;">
           
-    <h2 style="height: 40px;  color: #FFFFFF; font-size: 18px; padding: 10px 10px; background-color:#11ADA4; text-align: center;">Student FYP Details</h2>
+    <h2 style="height: 40px;  color: #FFFFFF; font-size: 18px; padding: 10px 10px; background-color:#11ADA4; text-align: center;">Evaluation Details</h2>
 
     
     <div style="width: 100%">
-        @foreach($fyp_data as $fypdata)
+        @foreach($evaluation_data as $data)
         <center>
         <div style="margin-left:20%;">
             <table style=" margin-top: 50px">
             <tr style="height: 60px;">
                 <td style="width:10%; margin-left:15px;"><label class="form-label">Student ID</label></td>
-                <td style="width:70%; " type="text" class="form-control">{{$fypdata->std_id}}</td>
+                <td style="width:70%; " type="text" class="form-control">{{$data->std_id}}</td>
             </tr>
             <tr style="height: 60px;">
                 <td style="width:10%; margin-left:15px;"><label class="form-label">Student Name</label></td>
-                <td style="width:70%; " type="text" class="form-control">{{$fypdata->std_name}}</td>
+                <td style="width:70%; " type="text" class="form-control">{{$data->std_name}}</td>
             </tr>
             <tr style="height: 60px;">
                 <td style="width:10%; margin-left:15px;"><label class="form-label">Supervisor Name</label></td>
-                <td style="width:70%;" type="text" class="form-control">{{$fypdata->sv_name}}</td>
+                <td style="width:70%;" type="text" class="form-control">{{$data->sv_name}}</td>
             </tr>
             <tr style="height: 60px;">
                 <td style="width:10%; margin-left:15px;"><label class="form-label">Evaluator Name</label></td>
-                <td style="width:70%;" type="text"  class="form-control">{{$fypdata->eva_name}}</td>
+                <td style="width:70%;" type="text"  class="form-control">{{$data->eva_name}}</td>
             </tr>
             <tr style="height: 60px;">
-                <td style="width:10%; margin-left:15px;"><label  class="form-label">FYP Title</label></td>
-                <td style="width:70%;" type="text" class="form-control">{{$fypdata->fyp_title}}</td>
+                <td style="width:10%; margin-left:15px;"><label  class="form-label">Evaluation Date</label></td>
+                <td style="width:70%;" type="date" class="form-control">{{$data->eva_date}}</td>
+            </tr>
+            <tr style="height: 60px;">
+                <td style="width:10%; margin-left:15px;"><label  class="form-label">Evaluation Time</label></td>
+                <td style="width:70%;" type="time" class="form-control">{{$data->eva_time}}</td>
             </tr>
             </table> 
         </div>
         <div>
-            <a href="{{ url('edit/'.$fypdata->id)}}" class="btn btn-primary">Edit</a>
-            <a href="{{ url('delete/'.$fypdata->id)}}" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
-            </center>
         </div>    
             @endforeach
     </div>
-
+    <div>
+        <a href="{{ url('edit/'.$evaluation_data->id)}}" class="btn btn-primary">Edit</a>
+        <a href="{{ url('delete/'.$evaluation_data->id)}}" class="btn btn-danger" onClick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
+        </center>
+    </div> 
 
 </div>
 </div>

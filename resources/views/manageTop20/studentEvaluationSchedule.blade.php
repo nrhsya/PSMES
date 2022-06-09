@@ -14,7 +14,7 @@
         </div>
 
         <div class="container text-center font-weight-bold mt-2">
-            <!-- to alert the users -->
+            <!-- to alert the users with the status of their actions -->
             @if(session('success'))
             <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -24,6 +24,7 @@
 
         <div style="padding:10px;">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <!-- table to show students's industry evaluation schedule (STUDENT) -->
                 <table class="table table-hover" style="LINE-HEIGHT:35px;" width="100%">
                     <tr style="background-color:#0958A3;color:white;">
                         <th>No.</th>
@@ -40,6 +41,7 @@
                         <td>{{$schedule->std_name}}</td>
                         <td>{{$schedule->eva_date}}</td>
                         <td>{{$schedule->attendance_status}}</td>
+                        <!-- button that redirects students to the confirm attendance page -->
                         <td><a href="scheduleData/{{$schedule->schedule_id}}/viewEvaluationDateDetails" class="btn btn-warning"> Confirm Attendance</a></td>
                     </tr>
                     @endforeach

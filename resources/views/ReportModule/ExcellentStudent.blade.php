@@ -17,18 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <style>
-       .section-1 {
-         background-color: #f5ccff;
-       }
-         
-       </style>
-    
-        @if(session('success'))
-        <div class="alert alert-primary" role="alert">
-             {{session('success')}}
-        </div>
-        @endif
     
         <div >
         <div style="margin-top: 15px; padding:10px 16px; height: 800px; background-color: #F5F5F5;">
@@ -44,14 +32,20 @@
             <tr>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Student ID</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Student Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Supervisor Name</th>
+                <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluator Name</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Mark</th>
                 <th style="background-color:#404040; color: white ; border: 3px solid black;">Evaluation Comment</th>
             </tr>
+
+    <!-- Calling all the data from evaluation_mark db--> 
 
             @foreach($data_excellent as $excellent)
             <tr>
                 <td>{{$excellent->std_id}}</td>
                 <td>{{$excellent->std_name}}</td>
+                <td>{{$excellent->sv_name}}</td>
+                <td>{{$excellent->eva_name}}</td>
                 <td>{{$excellent->eva_mark}}</td>
                 <td>{{$excellent->eva_comment}}</td>
             </tr>

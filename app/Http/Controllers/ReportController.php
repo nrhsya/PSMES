@@ -9,11 +9,16 @@ use \App\Models\EvaluationMark;
 
 class ReportController extends Controller
 {
+
+    //<!-- Calling Report Main page and display report data--> 
+
     public function ReportPage(){
         $data_report =\App\Models\Report::all();
 
         return view('ReportModule/ReportPage',['data_report'=> $data_report]);
     }
+
+    //<!-- Function to allow user to insert data in Add Form--> 
 
     public function createReport(Request $request ){
         \App\Models\Report::create($request->all());
@@ -21,11 +26,15 @@ class ReportController extends Controller
         return redirect('/reportdata')->with('success','New Data Inserted Into The Sytem');
     }
 
+    //<!-- Function to allow user to view Edit Form--> 
+
     public function EditReport($id ){
         $data_report = \App\Models\Report::find($id);
 
         return view('ReportModule\EditReport',['data_report'=>$data_report]);
     }
+
+    //<!-- Function to allow user to edit retrieved data in Edit Form with success message--> 
 
     public function updateReport(Request $request,$id){
         $data_report = \App\Models\Report::find($id);
@@ -34,12 +43,18 @@ class ReportController extends Controller
         return redirect('/reportdata')->with('success','Report Successfully updated');
     }
 
+    //<!-- Function to display excellentstudent page with the data-->
+
     public function ExcellentStudent(){
         $data_excellent =\App\Models\EvaluationMark::paginate(20)
         ->sortByDesc('eva_mark');
 
         return view('ReportModule/ExcellentStudent',['data_excellent'=> $data_excellent]);
-    }
+    }  
+
+//<!-- Function to display studentprogress page with the data-->
+   
+//<!-- $post to display the total number of students in the evalaution mark db-->
 
     public function StudentProgress(){
         $data_progress =\App\Models\EvaluationMark::all();
@@ -48,7 +63,10 @@ class ReportController extends Controller
         return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
-//Filter function//
+//<!-- Filter function-->
+
+//<!-- $data_progress to filter data-->
+//<!-- $post to display the total number of students for every filter function-->
 
     public function Above80(){
         $data_progress = \App\Models\EvaluationMark::all()->whereBetween('eva_mark', [79,101]);
@@ -92,28 +110,7 @@ class ReportController extends Controller
         return view('ReportModule/StudentProgress',compact('data_progress','post'));
     }
 
-//End Filter
-
-public function tryindex()
-{
-    $data_result = Rubric::leftJoin('rubrics', 'rubrics.id', '=', 'report.id')
-            ->select('rubrics.*')
-            ->get();
-            return view('ReportModule/StudentProgress',['data_result'=> $data_result]);
-}
-
-//Count
-
-//public function CountStudents(){
-//    $data_progress =\App\Models\EvaluationMark::all();
-//
-  // $post = \App\Models\EvaluationMark::where('eva_mark', '=' ,'10.61')->count();
- //return view('ReportModule/StudentProgress',compact('data_progress','post'));
-//} 
-
-
-
-//End Count
+//<!-- End Filter Function-->
 
     
 }
